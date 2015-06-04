@@ -13,6 +13,7 @@ def generate_csrf_token():
         session['_csrf_token'] = str(uuid4())
     return session['_csrf_token']
 
+
 app = Flask(__name__)
 app.secret_key = '3FvdD7dFsdgfn=AF923Rdfad4%nsdfmLsweAo9='
 app.jinja_env.globals['csrf_token'] = generate_csrf_token
@@ -40,8 +41,15 @@ def hello():
 
 def get_yaml(block, id):
     full_path = os.path.join(templates_dir, block, id, 'desc.yaml')
-    document = open(full_path).read()
+    document = open(full_path).read().decode('utf8')
     return load(document)
+
+
+def get_desc(block, id):
+    full_path = os.path.join(templates_dir, block, id, 'big_text.html')
+    document = open(full_path).read().decode('utf8')
+    return document
+
 
 @app.route('/animated')
 def animated():
@@ -49,18 +57,37 @@ def animated():
     items = []
     for item_id in os.listdir(path):
         yaml = get_yaml('cartoons', item_id)
-        desc = yaml['hover_text']
-        item = {'url': item_id, 'img': '/cartoons/img/' + item_id + '/small_pic.jpg', 'desc': desc}
+
+        item = {'url': '/cartoon/' + yaml['url'],
+                'img': '/cartoon_img/' + item_id + '/small_pic.jpg',
+                'desc': yaml['hover_text']}
         items.append(item)
 
     return render_template('animated.html', cartoons=items)
 
-@app.route("/cartoons/img/<path:path>")
+
+@app.route("/cartoon_img/<path:path>")
 def cartoons_img(path):
     full_path = os.path.join(templates_dir, 'cartoons', path)
     resp = make_response(open(full_path).read())
     resp.content_type = "image/jpeg"
     return resp
+
+
+@app.route("/cartoon/<path:path>")
+def cartoon_page(path):
+    full_path = os.path.join(templates_dir, 'cartoons')
+    for item_id in os.listdir(full_path):
+        yaml = get_yaml('cartoons', item_id)
+
+        if yaml['url'] == path:
+            item = {'name': yaml['hover_text'],
+                    'desc': get_desc('cartoons', item_id),
+                    'youtube': yaml['youtube']
+                    }
+            return render_template('cartoon.html', item=item)
+    return 'Sorry, cartoon not found'
+
 
 @app.errorhandler(404)
 def page_not_found(e):
