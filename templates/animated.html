@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}2Diggers - Настоящее агентство по найму IT-людей{% endblock %}
+{% block title %}Animated{% endblock %}
 {% block content %}
     <div>Big menu</div>
     <div>This page menu</div>
 
-    <h1>Cartoons</h1>
+    <div class="anim_section">cartoons</div>
     {% for item in cartoons %}
-        <div class="col-md-4 cartoon_item">
-            <a href="{{ item.url }}"><img src="{{ item.img }}" width="300px"/></a>
+        <div class="col-md-2 cartoon_item">
+            <a href="{{ item.url }}"><img src="{{ item.img }}" width="200px"/></a>
 
             <div class="cartoon_desc">
                 {{ item.desc }}
