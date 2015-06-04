@@ -35,6 +35,10 @@ app.jinja_env.globals['debug'] = DEBUG
 def hello():
     return render_template('index.html')
 
+@app.route('/animated')
+def hello():
+    return render_template('animated.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect("/")
