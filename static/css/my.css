@@ -6,7 +6,7 @@
 
 .desc {font-family: sans-serif; font-size: 12px; text-align: right
 }
-.anim_section{font-family: sans-serif; font-size: 30px; text-align: left; [color: #4f98c6]; line-height: 90px;
+.anim_section{font-family: sans-serif; font-size: 30px; text-align: left; /*color: #4f98c6*/; line-height: 90px;
 }
 .cartoon_desc{font-family: sans-serif; font-size: 10px;text-align: center; line-height: 30px
 }
