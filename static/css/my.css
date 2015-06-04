@@ -1,12 +1,37 @@
-.title {font-family: sans-serif; font-size: 20px; text-align: right; line-height: 30px;
+.title {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
 }
 
-.length {font-family: sans-serif; font-size: 11px; text-align: right; line-height: 20px;
+.length {
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: right;
+    margin-top: 10px;
 }
 
-.desc {font-family: sans-serif; font-size: 12px; text-align: right
+.desc {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: right
 }
-.anim_section{font-family: sans-serif; font-size: 30px; text-align: left; /*color: #4f98c6*/; line-height: 90px;
+
+.anim_section {
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: left; /*color: #4f98c6*/;
+    margin-bottom: 50px;
 }
-.cartoon_desc{font-family: sans-serif; font-size: 10px;text-align: center; line-height: 30px
+
+.cartoon_desc {
+    font-family: sans-serif;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cartoon_item {
+    height: 180px;
 }
