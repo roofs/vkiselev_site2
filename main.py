@@ -58,23 +58,14 @@ def animated():
     for item_id in os.listdir(path):
         yaml = get_yaml('cartoons', item_id)
 
-        item = {'url': '/cartoon/' + yaml['url'],
-                'img': '/cartoon_img/' + item_id + '/small_pic.jpg',
+        item = {'url': '/cartoons/' + yaml['url'],
+                'img': '/cartoons/' + item_id + '/small_pic.jpg',
                 'desc': yaml['hover_text']}
         items.append(item)
 
     return render_template('animated.html', cartoons=items)
 
-
-@app.route("/cartoon_img/<path:path>")
-def cartoons_img(path):
-    full_path = os.path.join(templates_dir, 'cartoons', path)
-    resp = make_response(open(full_path).read())
-    resp.content_type = "image/jpeg"
-    return resp
-
-
-@app.route("/cartoon/<path:path>")
+@app.route("/cartoons/<path:path>")
 def cartoon_page(path):
     full_path = os.path.join(templates_dir, 'cartoons')
     for item_id in os.listdir(full_path):
