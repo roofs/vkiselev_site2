@@ -26,16 +26,16 @@ handlers:
   upload: static/favicons/favicons\.ico
 
 - url: /cartoons/([0-9]*)/(.*\.jpg)$
-  static_files: templates/cartoons/\1/small_pic.jpg
-  upload: static/cartoons/\1/\2
+  static_files: templates/cartoons/\1/\2
+  upload: templates/cartoons/.*\.jpg
 
 - url: /misc/([0-9]*)/(.*\.jpg)$
-  static_files: templates/misc/\1/small_pic.jpg
-  upload: static/misc/\1/\2
+  static_files: templates/misc/\1/\2
+  upload: templates/misc/.*\.jpg
 
 - url: /princess/([0-9]*)/(.*\.jpg)$
-  static_files: templates/princess/\1/small_pic.jpg
-  upload: static/princess/\1/\2
+  static_files: templates/princess/\1/\2
+  upload: templates/princess/.*\.jpg
 
 # This handler tells app engine how to route requests to a WSGI application.
 # The script value is in the format <path.to.module>.<wsgi_application>

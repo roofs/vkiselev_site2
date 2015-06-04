@@ -7,7 +7,7 @@
         <option name="sdkFolder" value="/usr/local/google_appengine" />
         <option name="templatesFolder" value="" />
         <option name="oauth2" value="false" />
-        <option name="deployConfigured" value="false" />
+        <option name="deployConfigured" value="true" />
         <option name="saveCredentials" value="true" />
       </configuration>
     </facet>
