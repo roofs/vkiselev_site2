@@ -69,12 +69,6 @@
 
 <script>
     setup_ajax("{{ csrf_token() }}");
-    $(document).ready(function () {
-        $(document).delay(50).queue(function () {
-            scrollNav();
-        });
-        scrollNav();
-    });
 </script>
 
 {% include 'counters.html' %}
