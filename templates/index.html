@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+
+{% block title %}2Diggers - Настоящее агентство по найму IT-людей{% endblock %}
+{% block content %}
+    <section id="pages">
+        <ul class="nostyle">
+            <li id="main" class="main-section">
+                <div class="container">
+                    <h1 class="text-center">+7 (812) 900-79-92</h1>
+
+                    <h2 class="text-center"><a href="mailto:hello@2diggers.ru">hello@2diggers.ru</a></h2>
+
+                    <h2 class="text-center">Мы &mdash; настоящее специализированное агентство по найму IT-людей.</h2>
+
+                    <hr/>
+
+                    <div class="row bigger-font">
+                        <div class="text-center">
+                            Настоящее &mdash; потому что мы своими руками делали то, для чего теперь ищем вам людей.
+                        </div>
+                        <div class="text-center">
+                            Говорим с IT на одном языке и на одном уровне.
+                        </div>
+                        <br/>
+                        <div class="text-center"><a class="slide" href="/#what">Что мы можем для вас сделать? <i class="fa fa-arrow-circle-down"></i></a></div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li id="what" class="what-section">
+                <div class="container">
+                    <h1>Что?</h1>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-puzzle-piece"></i> <a class="hlink" href="{{ url_for('hire') }}">Находим
+                                IT-специалистов</a></h3>
+
+                            Наша задача &mdash; найти для вашего бизнеса самых лучших IT-шников.
+                            Мы поможем сформулировать ваши требования так, чтобы они были понятны кандидатам, и найдем
+                            именно тех, кто подходит вашему бизнесу.
+                        </div>
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-puzzle-piece"></i> <a class="hlink" href="{{ url_for('complex') }}">Закрываем
+                                сложные вакансии</a></h3>
+
+                            Не можете долго найти члена команды? Мы не ограничиваемся поиском на известных ресурсах.
+                            Большинство сильных и редких специалистов
+                            не ищут работу прямо сейчас. Мы решаем эту проблему за счет контакта с&nbsp;профессиональными
+                            сообществами и&nbsp;поиском там, где никто не ищет.
+                        </div>
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-puzzle-piece"></i> <a class="hlink" href="{{ url_for('interview') }}">Проводим
+                                настоящие технические
+                                интервью</a></h3>
+
+                            Не знаете, как оценить программиста или нового технического руководителя вашего проекта?
+                            Не уверены, справится ли он с&nbsp;поставленными задачами? Подходит ли он для вашего бизнеса?
+                            Мы проведем настоящее техническое интервью.
+                        </div>
+                    </div>
+
+                    {#                    <br/>#}
+                    {##}
+                    {#                    <div class="row">#}
+                    {#                        <div class="col-md-4">#}
+                    {#                            <h3><i class="fa fa-chevron-right"></i> Привозим людей</h3>#}
+                    {##}
+                    {#                            Много хороших кандидатов: грамотных, энергичных, мотивированных и не избалованных, живут в странах СНГ.#}
+                    {#                            Мы поможем вам найти и привезти этих специалистов. Берем на себя все оформлание документов.#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+
+                </div>
+            </li>
+
+            <li id="who" class="who-section">
+                <div class="container">
+                    <h1>Кто?</h1>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 no-padding">
+                                <div class="card">
+                                    <img class="card-img" src="/static/img/sasha.jpg">
+
+                                    <div class="card-text">
+                                        <div class="card-name">Саша Зверев <a href="https://facebook.com/sasha.2d" target="_blank"><i class="fa fa-facebook-official"></i></a></div>
+                                        <div class="card-title">Основатель: мозг, идеи и руки</div>
+                                    </div>
+                                </div>
+
+                                <div class="smaller-text">
+                                    <p>
+                                        Я более 10 лет работаю программистом в маленьких и больших компаниях.
+                                        Я был внутри как слабых, так и очень сильных команд, делающих продукты с
+                                        мировым именем. Во всех командах я занимался наймом новых людей, совершил
+                                        на этом пути все возможные ошибки, теперь переработал эти ошибки в знание и помогаю другим.
+                                    </p>
+
+                                    <p>Опыт работы в IT дает мне возможность разговаривать с кандидатами на&nbsp;равных.
+                                        Качество моей экспертизы в области IT &mdash; это 10 лет
+                                        профессиональной разработки.</p>
+
+                                    <p>Увлечен проблемой преодоления коммуникационных барьеров между IT-людьми и
+                                        реальным миром.</p>
+
+                                    <p>Приверженец <a href="http://amzn.com/0470128356" target="_blank">Performance
+                                        Based Hiring</a> &mdash; стройной,
+                                        логичной и эффективной методологии найма.</p>
+
+                                    <p>
+
+                                        <small><a href="{{ url_for('sasha_cv') }}">Что же я делал? <i class="fa fa-caret-square-o-right"></i></a></small>
+                                        <br/>
+                                        <small>Напишите мне: <a href="mailto:sasha@2diggers.ru">sasha@2diggers.ru</a>
+                                        </small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 no-padding">
+                                <div class="card">
+                                    <img class="card-img" src="/static/img/egg_head.jpg">
+
+                                    <div class="card-text">
+                                        <div class="card-name">Другие люди</div>
+                                        <div class="card-title">Экспертиза и помощь</div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>
+                                        Моей основной идеей было сделать сервис, который не декларирует
+                                        опыт найма людей в какой-то области, а обладает опытом работы в этой области. Согласитесь, это разные вещи!
+                                        </p>
+                                        <p>Мне очень нравится то, что <a
+                                            href="https://signalvnoise.com/posts/2628-how-to-hire-a-programmer-when-youre-not-a-programmer"
+                                            target="_blank">
+                                        37Signals сделали с наймом админов</a>. Они сами научились делать эту работу (быть админами, программировать на PHP),
+                                        прежде чем кого-то нанять.
+                                        Мы не сделаем за вас никакую работу, но мы делали много разного в IT и помогаем
+                                        вам нанимать тех людей,
+                                        в работе которых мы разбираемся.
+                                    </p>
+
+                                    <p>
+                                        Если мы в чем-то не разбираемся, то приглашаем экспертов.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="whom" class="whom-section">
+                <div class="container">
+                    <h1>Для кого мы работаем?</h1>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-chevron-circle-right"></i> Стартапы</h3>
+
+                            Мы идеально подойдем небольшим компаниям и
+                            стартапам, у которых нет своего HR-а и которые предъявляют
+                            высокие требования к кандидатам.
+                        </div>
+
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-chevron-circle-right"></i> Большие компании</h3>
+
+                            Большим компаниям мы поможем снизить нагрузку,
+                            когда необходимо закрыть
+                            сложную позицию,
+                            а у менеджеров физически не хватает времени проводить большое количество технических
+                            собеседований.
+                        </div>
+
+                        <div class="col-md-4">
+                            <h3><i class="fa fa-chevron-circle-right"></i> IT и не-IT компании</h3>
+
+                            Мы полезны всем остальным, кому нужно нанять
+                            любых
+                            IT-шников: мы внятные,
+                            понимающие и не гоним фигню.
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li id="contact" class="contact-section">
+                {% include 'contact_form.html' %}
+            </li>
+        </ul>
+    </section>
+{% endblock %}

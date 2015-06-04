@@ -1,0 +1,10 @@
+*.pyc
+# don't include third-party dependencies.
+penv/
+.DS_Store
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries/Google_App_Engine_SDK.xml
