@@ -51,57 +51,72 @@ def get_desc(block, id):
     return document
 
 
+def prepare_section(section_name):
+    def to_int(x):
+        return int(x)
+
+    path = os.path.join(templates_dir, section_name)
+    items = []
+    listdir = sorted(map(to_int, os.listdir(path)))
+    for item_id in listdir:
+        item_id = str(item_id)
+        yaml = get_yaml(section_name, item_id)
+
+        item_url = yaml['url']
+        if not item_url:
+            item_url = str(item_id)
+        item = {'url': '/' + section_name + '/' + item_url,
+                'img': '/' + section_name + '/' + item_id + '/small_pic.jpg',
+                'desc': yaml['hover_text']}
+        items.append(item)
+
+    return items
+
+
 @app.route('/animated')
 def animated():
-    path = os.path.join(templates_dir, 'cartoons')
-    citems = []
-    for item_id in os.listdir(path):
-        yaml = get_yaml('cartoons', item_id)
+    citems = prepare_section('cartoons')
+    mitems = prepare_section('misc')
+    pitems = prepare_section('princess')
 
-        item = {'url': '/cartoons/' + yaml['url'],
-                'img': '/cartoons/' + item_id + '/small_pic.jpg',
-                'desc': yaml['hover_text']}
-        citems.append(item)
+    return render_template('animated.html', cartoons=citems, misc=mitems, princess=pitems)
 
-    path = os.path.join(templates_dir, 'misc')
-    mitems = []
-    for item_id in os.listdir(path):
-        yaml = get_yaml('cartoons', item_id)
 
-        item = {'url': '/misc/' + yaml['url'],
-                'img': '/misc/' + item_id + '/small_pic.jpg',
-                'desc': yaml['hover_text']}
-        mitems.append(item)
+def process_video_url(url):
+    if "youtube.com" in url:
+        return url + "?rel=0&showinfo=0&autohide=1&cc_load_policy=1&disablekb=1"
+    return url
 
-    return render_template('animated.html', cartoons=citems, misc=mitems)
+
+def render_section_item(section_name, path):
+    full_path = os.path.join(templates_dir, section_name)
+    for item_id in os.listdir(full_path):
+        yaml = get_yaml(section_name, item_id)
+
+        item_url = yaml['url']
+        if not item_url:
+            item_url = str(item_id)
+        if item_url == path:
+            item = {'name': yaml['hover_text'],
+                    'desc': get_desc(section_name, item_id),
+                    'youtube': process_video_url(yaml['youtube'])}
+            return render_template('cartoon.html', item=item)
+    return 'Sorry, cartoon not found'
+
 
 @app.route("/cartoons/<path:path>")
 def cartoon_page(path):
-    full_path = os.path.join(templates_dir, 'cartoons')
-    for item_id in os.listdir(full_path):
-        yaml = get_yaml('cartoons', item_id)
+    return render_section_item('cartoons', path)
 
-        if yaml['url'] == path:
-            item = {'name': yaml['hover_text'],
-                    'desc': get_desc('cartoons', item_id),
-                    'youtube': yaml['youtube']
-                    }
-            return render_template('cartoon.html', item=item)
-    return 'Sorry, cartoon not found'
 
 @app.route("/misc/<path:path>")
 def misc_page(path):
-    full_path = os.path.join(templates_dir, 'misc')
-    for item_id in os.listdir(full_path):
-        yaml = get_yaml('cartoons', item_id)
+    return render_section_item('misc', path)
 
-        if yaml['url'] == path:
-            item = {'name': yaml['hover_text'],
-                    'desc': get_desc('cartoons', item_id),
-                    'youtube': yaml['youtube']
-                    }
-            return render_template('cartoon.html', item=item)
-    return 'Sorry, cartoon not found'
+
+@app.route("/princess/<path:path>")
+def princess_page(path):
+    return render_section_item('princess', path)
 
 
 @app.errorhandler(404)
