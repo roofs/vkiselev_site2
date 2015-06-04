@@ -2,9 +2,18 @@
 
 {% block title %}2Diggers - Настоящее агентство по найму IT-людей{% endblock %}
 {% block content %}
-<div>Big menu</div>
-<div>This page menu</div>
+    <div>Big menu</div>
+    <div>This page menu</div>
 
-<h1>Cartoons</h1>
+    <h1>Cartoons</h1>
+    {% for item in cartoons %}
+        <div class="col-md-4 cartoon_item">
+            <a href="{{ item.url }}"><img src="{{ item.img }}" width="300px"/></a>
+
+            <div class="cartoon_desc">
+                {{ item.desc }}
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock %}

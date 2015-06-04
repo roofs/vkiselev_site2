@@ -2,8 +2,9 @@ from uuid import uuid4
 
 from google.appengine.api import mail
 
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, make_response
 from flask import redirect
+from yaml import load
 import os
 
 
@@ -22,6 +23,7 @@ else:
     DEBUG = False
 
 app.jinja_env.globals['debug'] = DEBUG
+templates_dir = os.path.join(os.path.dirname(__file__), 'templates')
 
 # app.jinja_env = jinja2.Environment(
 # loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')),
@@ -35,9 +37,30 @@ app.jinja_env.globals['debug'] = DEBUG
 def hello():
     return render_template('index.html')
 
+
+def get_yaml(block, id):
+    full_path = os.path.join(templates_dir, block, id, 'desc.yaml')
+    document = open(full_path).read()
+    return load(document)
+
 @app.route('/animated')
 def animated():
-    return render_template('animated.html')
+    path = os.path.join(templates_dir, 'cartoons')
+    items = []
+    for item_id in os.listdir(path):
+        yaml = get_yaml('cartoons', item_id)
+        desc = yaml['hover_text']
+        item = {'url': item_id, 'img': '/cartoons/img/' + item_id + '/small_pic.jpg', 'desc': desc}
+        items.append(item)
+
+    return render_template('animated.html', cartoons=items)
+
+@app.route("/cartoons/img/<path:path>")
+def cartoons_img(path):
+    full_path = os.path.join(templates_dir, 'cartoons', path)
+    resp = make_response(open(full_path).read())
+    resp.content_type = "image/jpeg"
+    return resp
 
 @app.errorhandler(404)
 def page_not_found(e):
