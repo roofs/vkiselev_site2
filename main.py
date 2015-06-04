@@ -36,7 +36,7 @@ def hello():
     return render_template('index.html')
 
 @app.route('/animated')
-def hello():
+def animated():
     return render_template('animated.html')
 
 @app.errorhandler(404)
