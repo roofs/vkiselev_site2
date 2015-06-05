@@ -3,8 +3,8 @@
 {% block title %}{{ item.name }}{% endblock %}
 {% block microformats %}
     <meta property="og:title" content="{{ item.name }}"/>
-    <meta property="og:description" content="{{ item.desc }}"/>
-    <meta property="og:image" content="{{ request.host_url }}{{ item.img }}"/>
+    <meta property="og:description" content="{{ item.og_desc }}"/>
+    <meta property="og:image" content="http://{{ request.host }}{{ item.img }}"/>
 {% endblock %}
 {% block content %}
     <div class="container">

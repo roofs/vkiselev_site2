@@ -1,6 +1,7 @@
 from uuid import uuid4
 
 from google.appengine.api import mail
+from bs4 import BeautifulSoup
 
 from flask import Flask, render_template, request, session, make_response
 from flask import redirect
@@ -117,8 +118,12 @@ def render_section_item(section_name, path):
                 next = {'url': get_cartoon_url(next_yaml, section_name, str(next_id)),
                         'name': next_yaml['hover_text']}
 
+            desc = get_desc(section_name, item_id)
+            soup = BeautifulSoup(desc)
+            og_desc = soup.findAll('div', class_='desc')[0].text
             item = {'name': yaml['hover_text'],
-                    'desc': get_desc(section_name, item_id),
+                    'desc': desc,
+                    'og_desc': og_desc,
                     'youtube': process_video_url(yaml['youtube']),
                     'img': '/' + section_name + '/' + item_id + '/small_pic.jpg'}
             if 'width' in yaml:
