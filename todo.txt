@@ -2,6 +2,7 @@
 - 3: base.html - microformats
 - 4: domain setup
 - 5: принцесса-сезоны
+- 6: favicons
 
 
 ----- Done
