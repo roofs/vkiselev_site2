@@ -52,7 +52,7 @@ def get_desc(block, id):
     return document
 
 
-def prepare_section(section_name):
+def prepare_animated_section(section_name):
     def to_int(x):
         return int(x)
 
@@ -63,7 +63,7 @@ def prepare_section(section_name):
         item_id = str(item_id)
         yaml = get_yaml(section_name, item_id)
 
-        item_url = get_cartoon_url(yaml, section_name, item_id)
+        item_url = get_subpage_url(yaml, section_name, item_id)
         item = {'url': item_url,
                 'img': '/' + section_name + '/' + item_id + '/small_pic.jpg',
                 'desc': yaml['hover_text']}
@@ -71,8 +71,10 @@ def prepare_section(section_name):
 
     return items
 
+def prepare_flat_section(section_name):
+    return prepare_animated_section(section_name)
 
-def get_cartoon_url(yaml, section_name, item_id):
+def get_subpage_url(yaml, section_name, item_id):
     item_url = yaml['url']
     if not item_url:
         item_url = str(item_id)
@@ -81,15 +83,16 @@ def get_cartoon_url(yaml, section_name, item_id):
 
 @app.route('/animated')
 def animated():
-    citems = prepare_section('cartoons')
-    mitems = prepare_section('misc')
-    pitems = prepare_section('princess')
+    citems = prepare_animated_section('cartoons')
+    mitems = prepare_animated_section('misc')
+    pitems = prepare_animated_section('princess')
 
     return render_template('animated.html', cartoons=citems, misc=mitems, princess=pitems)
 
 @app.route('/still')
 def still():
-    return render_template('still.html')
+    fitems = prepare_flat_section('flat')
+    return render_template('still.html', flat=fitems)
 
 @app.route('/memories')
 def memories():
@@ -105,7 +108,7 @@ def process_video_url(url):
     return url
 
 
-def render_section_item(section_name, path):
+def render_animated_subpage(section_name, path):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
         yaml = get_yaml(section_name, item_id)
@@ -114,20 +117,7 @@ def render_section_item(section_name, path):
         if not item_url:
             item_url = str(item_id)
         if item_url == path:
-            prev = None
-            next = None
-
-            prev_id = int(item_id) - 1
-            if prev_id != 0:
-                prev_yaml = get_yaml(section_name, str(prev_id))
-                prev = {'url': get_cartoon_url(prev_yaml, section_name, str(prev_id)),
-                        'name': prev_yaml['hover_text']}
-
-            next_id = int(item_id) + 1
-            if os.path.isfile(os.path.join(templates_dir, section_name, str(next_id), 'desc.yaml')):
-                next_yaml = get_yaml(section_name, str(next_id))
-                next = {'url': get_cartoon_url(next_yaml, section_name, str(next_id)),
-                        'name': next_yaml['hover_text']}
+            prev, next = get_next_prev(section_name, item_id)
 
             desc = get_desc(section_name, item_id)
             soup = BeautifulSoup(desc)
@@ -142,20 +132,63 @@ def render_section_item(section_name, path):
             return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
+def get_next_prev(section_name, item_id):
+    prev = None
+    next = None
+
+    prev_id = int(item_id) - 1
+    if prev_id != 0:
+        prev_yaml = get_yaml(section_name, str(prev_id))
+        prev = {'url': get_subpage_url(prev_yaml, section_name, str(prev_id)),
+                'name': prev_yaml['hover_text']}
+
+    next_id = int(item_id) + 1
+    if os.path.isfile(os.path.join(templates_dir, section_name, str(next_id), 'desc.yaml')):
+        next_yaml = get_yaml(section_name, str(next_id))
+        next = {'url': get_subpage_url(next_yaml, section_name, str(next_id)),
+                'name': next_yaml['hover_text']}
+
+    return prev, next
+
+def render_flat_subpage(section_name, path):
+    full_path = os.path.join(templates_dir, section_name)
+    for item_id in os.listdir(full_path):
+        yaml = get_yaml(section_name, item_id)
+
+        item_url = yaml['url']
+        if not item_url:
+            item_url = str(item_id)
+        if item_url == path:
+            prev, next = get_next_prev(section_name, item_id)
+
+            desc = get_desc(section_name, item_id)
+            og_desc = desc
+            item = {'name': yaml['hover_text'],
+                    'desc': desc,
+                    'og_desc': og_desc,
+                    'img': '/' + section_name + '/' + item_id + '/big_pic.jpg'}
+            return render_template('flat.html', item=item, prev=prev, next=next)
+    return 'Sorry, cartoon not found'
+
+
 
 @app.route("/cartoons/<path:path>")
 def cartoon_page(path):
-    return render_section_item('cartoons', path)
+    return render_animated_subpage('cartoons', path)
 
 
 @app.route("/misc/<path:path>")
 def misc_page(path):
-    return render_section_item('misc', path)
+    return render_animated_subpage('misc', path)
 
 
 @app.route("/princess/<path:path>")
 def princess_page(path):
-    return render_section_item('princess', path)
+    return render_animated_subpage('princess', path)
+
+@app.route("/flat/<path:path>")
+def flat_page(path):
+    return render_flat_subpage('flat', path)
 
 
 @app.errorhandler(404)

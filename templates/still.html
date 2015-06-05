@@ -11,8 +11,20 @@
 {% block content %}
     <div class="container">
         {% include 'common_header.html' %}
+        {% include 'still_header.html' %}
 
-        STILL
+        <div id='flat' class="still_section">flat</div>
+        <div class="row">
+            {% for item in flat %}
+                <div class="col-md-2 still_item">
+                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+
+                    <div class="still_desc">
+                        <a href="{{ item.url }}">{{ item.desc }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
         <div class="row">
             {% include 'social_share.html' %}

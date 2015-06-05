@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block microformats %}
+    <meta property="og:title" content="{{ item.name }}"/>
+    <meta property="og:description" content="{{ item.og_desc }}"/>
+    <meta property="og:image" content="http://{{ request.host }}{{ item.img }}"/>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% include 'common_header.html' %}
+
+        <br/>
+
+        <div class="navigation">
+            {% if prev %}<a href="{{ prev.url }}">&lt;&lt; {{ prev.name }}</a> | {% endif %}
+            {% include 'animated_header.html' %}
+            {% if next %} | <a href="{{ next.url }}">{{ next.name }} &gt;&gt;</a>{% endif %}
+        </div>
+
+        <br/>
+
+        <div class="padding-top-big"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    <p>
+                        <img src="{{ item.img }}" width="100%">
+                    </p>
+                    <p>
+                        {{ item.desc | safe }}
+                    </p>
+
+                    <p>
+                        {% include 'social_share.html' %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

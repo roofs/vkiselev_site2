@@ -19,14 +19,14 @@
     margin-top: 10px;
 }
 
-.anim_section {
+.anim_section, .still_section {
     font-family: sans-serif;
     font-size: 30px;
     text-align: left; /*color: anim #5099c6; still #ae111a; mem #eac31a;vk #3daf35 */;
     margin-bottom: 50px;
 }
 
-.cartoon_desc {
+.cartoon_desc, .still_desc {
     font-family: sans-serif;
     font-size: 10px;
     text-align: center;
@@ -34,9 +34,10 @@
     color: black
 }
 
-.cartoon_item {
+.cartoon_item, .still_item {
     height: 180px;
 }
+
 .page_menu{
     font-family: sans-serif;
     font-size: 15px;
