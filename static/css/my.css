@@ -3,13 +3,14 @@
     font-size: 20px;
     text-align: right;
     margin-top: 10px;
+    margin-bottom: 10px
 }
 
 .length {
     font-family: sans-serif;
     font-size: 11px;
     text-align: right;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .desc {
