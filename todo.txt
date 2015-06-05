@@ -1,6 +1,7 @@
 - 2: Куда засунуть кнопку youtube-subscribe
 - 3: base.html - microformats
 - 4: domain setup
+- 5: принцесса-сезоны
 
 
 ----- Done
