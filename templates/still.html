@@ -39,6 +39,19 @@
             {% endfor %}
         </div>
 
+        <div id='comics' class="still_section">comics</div>
+        <div class="row">
+            {% for item in comics %}
+                <div class="col-md-2 still_item">
+                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+
+                    <div class="still_desc">
+                        <a href="{{ item.url }}">{{ item.desc }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
         <div class="row">
             {% include 'social_share.html' %}
         </div>

@@ -1,5 +1,6 @@
 from uuid import uuid4
 import os
+import re
 
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, session
@@ -91,7 +92,8 @@ def animated():
 def still():
     fitems = prepare_flat_section('flat')
     pitems = prepare_flat_section('projects')
-    return render_template('still.html', flat=fitems, projects=pitems)
+    citems = prepare_flat_section('comics')
+    return render_template('still.html', flat=fitems, projects=pitems, comics=citems)
 
 @app.route('/memories')
 def memories():
@@ -161,7 +163,7 @@ def render_flat_subpage(section_name, path):
             prev, next = get_next_prev(section_name, item_id)
 
             desc = get_desc(section_name, item_id)
-            og_desc = desc
+            og_desc = yaml['hover_text']
             item = {'name': yaml['hover_text'],
                     'desc': desc,
                     'og_desc': og_desc,
@@ -169,6 +171,32 @@ def render_flat_subpage(section_name, path):
             return render_template('flat.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
+
+def render_comics_subpage(section_name, path):
+    full_path = os.path.join(templates_dir, section_name)
+    for item_id in os.listdir(full_path):
+        yaml = get_yaml(section_name, item_id)
+
+        item_url = yaml['url']
+        if not item_url:
+            item_url = str(item_id)
+        if item_url == path:
+            prev, next = get_next_prev(section_name, item_id)
+
+            desc = get_desc(section_name, item_id)
+            og_desc = yaml['hover_text']
+
+            pages = []
+            for page_id in os.listdir(os.path.join(full_path, item_id)):
+                if re.search('p[0-9]*\.jpg', page_id):
+                    pages.append('/' + section_name + '/' + item_id + '/' + page_id)
+
+            item = {'name': yaml['hover_text'],
+                    'desc': desc,
+                    'og_desc': og_desc,
+                    'cover': '/' + section_name + '/' + item_id + '/cover.jpg'}
+            return render_template('comics.html', item=item, prev=prev, next=next, pages=pages)
+    return 'Sorry, cartoon not found'
 
 
 @app.route("/cartoons/<path:path>")
@@ -193,7 +221,7 @@ def projects_page(path):
 
 @app.route("/comics/<path:path>")
 def comics_page(path):
-    return render_flat_subpage('comics', path)
+    return render_comics_subpage('comics', path)
 
 @app.errorhandler(404)
 def page_not_found(e):
