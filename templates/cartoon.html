@@ -8,13 +8,14 @@
 {% endblock %}
 {% block content %}
     <div class="container">
-        {% include 'animated_header.html' %}
+        {% include 'common_header.html' %}
 
         <br/>
 
         <div class="navigation">
-            {% if prev %}<a href="{{ prev.url }}">&lt;&lt; {{ prev.name }}</a>{% endif %} ||
-            {% if next %}<a href="{{ next.url }}">{{ next.name }} &gt;&gt;</a>{% endif %}
+            {% if prev %}<a href="{{ prev.url }}">&lt;&lt; {{ prev.name }}</a> | {% endif %}
+            {% include 'animated_header.html' %}
+            {% if next %} | <a href="{{ next.url }}">{{ next.name }} &gt;&gt;</a>{% endif %}
         </div>
 
         <br/>
