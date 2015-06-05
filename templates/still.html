@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Animated{% endblock %}
+{% block microformats %}
+    <meta property="og:title" content="Animated"/>
+    {# о чем эта страница ???#}
+    <meta property="og:description" content="Vasili Kiselev"/>
+    {# и картинку, которая будет при шаринге ссылки на тебя через fb#}
+    <meta property="og:image" content="http://vkiselev.com/static/img/anim_big.jpg?cache=1"/>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% include 'common_header.html' %}
+
+        STILL
+
+        <div class="row">
+            {% include 'social_share.html' %}
+        </div>
+    </div>
+{% endblock %}

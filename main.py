@@ -87,6 +87,17 @@ def animated():
 
     return render_template('animated.html', cartoons=citems, misc=mitems, princess=pitems)
 
+@app.route('/still')
+def still():
+    return render_template('still.html')
+
+@app.route('/memories')
+def memories():
+    return render_template('memories.html')
+
+@app.route('/vasili')
+def vasili():
+    return render_template('vasili.html')
 
 def process_video_url(url):
     if "youtube.com" in url:
