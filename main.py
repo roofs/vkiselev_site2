@@ -100,6 +100,8 @@ def render_section_item(section_name, path):
             item = {'name': yaml['hover_text'],
                     'desc': get_desc(section_name, item_id),
                     'youtube': process_video_url(yaml['youtube'])}
+            if 'width' in yaml:
+                item['width'] = yaml['width']
             return render_template('cartoon.html', item=item)
     return 'Sorry, cartoon not found'
 
