@@ -28,6 +28,9 @@
                         <img src="{{ item.cover }}" width="100%">
                     </p>
                     <p>
+                        {{ item.desc | safe }}
+                    </p>
+                    <p>
                         {% for page in pages %}
                             <img src="{{ page }}" width="100%">
                         {% endfor %}

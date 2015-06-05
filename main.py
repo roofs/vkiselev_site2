@@ -171,6 +171,8 @@ def render_flat_subpage(section_name, path):
             return render_template('flat.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
+import logging
+
 
 def render_comics_subpage(section_name, path):
     full_path = os.path.join(templates_dir, section_name)
@@ -187,9 +189,8 @@ def render_comics_subpage(section_name, path):
             og_desc = yaml['hover_text']
 
             pages = []
-            for page_id in os.listdir(os.path.join(full_path, item_id)):
-                if re.search('p[0-9]*\.jpg', page_id):
-                    pages.append('/' + section_name + '/' + item_id + '/' + page_id)
+            for i in range(1, yaml['pages']):
+                pages.append('/' + section_name + '/' + item_id + '/p' + str(i) + '.jpg')
 
             item = {'name': yaml['hover_text'],
                     'desc': desc,
