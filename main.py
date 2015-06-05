@@ -57,7 +57,7 @@ def prepare_animated_section(section_name, reverse=True):
 
     path = os.path.join(templates_dir, section_name)
     items = []
-    listdir = sorted(map(to_int, os.listdir(path)), reverse=reverse)
+    listdir = sorted(map(to_int, filter(str.isdigit, os.listdir(path))), reverse=reverse)
     for item_id in listdir:
         item_id = str(item_id)
         yaml = get_yaml(section_name, item_id)
@@ -112,6 +112,8 @@ def process_video_url(url):
 def render_animated_subpage(section_name, path):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
+        if not item_id.isdigit():
+            continue
         yaml = get_yaml(section_name, item_id)
 
         item_url = yaml['url']
@@ -154,6 +156,8 @@ def get_next_prev(section_name, item_id):
 def render_flat_subpage(section_name, path):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
+        if not item_id.isdigit():
+            continue
         yaml = get_yaml(section_name, item_id)
 
         item_url = yaml['url']
@@ -175,6 +179,8 @@ def render_flat_subpage(section_name, path):
 def render_comics_subpage(section_name, path):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
+        if not item_id.isdigit():
+            continue
         yaml = get_yaml(section_name, item_id)
 
         item_url = yaml['url']
