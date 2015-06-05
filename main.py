@@ -109,7 +109,7 @@ def process_video_url(url):
     return url
 
 
-def render_animated_subpage(section_name, path):
+def render_animated_subpage(section_name, path, reverse=True):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
         if not item_id.isdigit():
@@ -120,7 +120,7 @@ def render_animated_subpage(section_name, path):
         if not item_url:
             item_url = str(item_id)
         if item_url == path:
-            prev, next = get_next_prev(section_name, item_id)
+            prev, next = get_next_prev(section_name, item_id, reverse)
 
             desc = get_desc(section_name, item_id)
             soup = BeautifulSoup(desc)
@@ -135,7 +135,7 @@ def render_animated_subpage(section_name, path):
             return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
-def get_next_prev(section_name, item_id):
+def get_next_prev(section_name, item_id, reverse=True):
     prev = None
     next = None
 
@@ -151,9 +151,12 @@ def get_next_prev(section_name, item_id):
         next = {'url': get_subpage_url(next_yaml, section_name, str(next_id)),
                 'name': next_yaml['hover_text']}
 
-    return prev, next
+    if reverse:
+        return next, prev
+    else:
+        return prev, next
 
-def render_flat_subpage(section_name, path):
+def render_flat_subpage(section_name, path, reverse=True):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
         if not item_id.isdigit():
@@ -164,7 +167,7 @@ def render_flat_subpage(section_name, path):
         if not item_url:
             item_url = str(item_id)
         if item_url == path:
-            prev, next = get_next_prev(section_name, item_id)
+            prev, next = get_next_prev(section_name, item_id, reverse)
 
             desc = get_desc(section_name, item_id)
             og_desc = yaml['hover_text']
@@ -176,7 +179,7 @@ def render_flat_subpage(section_name, path):
     return 'Sorry, cartoon not found'
 
 
-def render_comics_subpage(section_name, path):
+def render_comics_subpage(section_name, path, reverse=True):
     full_path = os.path.join(templates_dir, section_name)
     for item_id in os.listdir(full_path):
         if not item_id.isdigit():
@@ -187,7 +190,7 @@ def render_comics_subpage(section_name, path):
         if not item_url:
             item_url = str(item_id)
         if item_url == path:
-            prev, next = get_next_prev(section_name, item_id)
+            prev, next = get_next_prev(section_name, item_id, reverse)
 
             desc = get_desc(section_name, item_id)
             og_desc = yaml['hover_text']
@@ -206,7 +209,7 @@ def render_comics_subpage(section_name, path):
 
 @app.route("/cartoons/<path:path>")
 def cartoon_page(path):
-    return render_animated_subpage('cartoons', path)
+    return render_animated_subpage('cartoons', path, reverse=False)
 
 @app.route("/misc/<path:path>")
 def misc_page(path):
