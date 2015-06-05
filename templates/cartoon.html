@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 
 {% block title %}{{ item.name }}{% endblock %}
+{% block microformats %}
+        <meta property="og:title" content="{{ item.name }}"/>
+        <meta property="og:description" content="{{ item.desc }}"/>
+        <meta property="og:image" content="http://vkiselev.com{{ item.img }}"/>
+{% endblock %}
 {% block content %}
     <div class="container">
         {% include 'animated_header.html' %}
-
 
         <div class="padding-top-big"></div>
         <div class="container-fluid">
@@ -20,7 +24,6 @@
                     <p>
                         {{ item.desc | safe }}
                     </p>
-
                     <p>
                         {% include 'social_share.html' %}
                     </p>
