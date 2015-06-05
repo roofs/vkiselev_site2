@@ -62,15 +62,20 @@ def prepare_section(section_name):
         item_id = str(item_id)
         yaml = get_yaml(section_name, item_id)
 
-        item_url = yaml['url']
-        if not item_url:
-            item_url = str(item_id)
-        item = {'url': '/' + section_name + '/' + item_url,
+        item_url = get_cartoon_url(yaml, section_name, item_id)
+        item = {'url': item_url,
                 'img': '/' + section_name + '/' + item_id + '/small_pic.jpg',
                 'desc': yaml['hover_text']}
         items.append(item)
 
     return items
+
+
+def get_cartoon_url(yaml, section_name, item_id):
+    item_url = yaml['url']
+    if not item_url:
+        item_url = str(item_id)
+    return '/' + section_name + '/' + item_url
 
 
 @app.route('/animated')
@@ -97,13 +102,28 @@ def render_section_item(section_name, path):
         if not item_url:
             item_url = str(item_id)
         if item_url == path:
+            prev = None
+            next = None
+
+            prev_id = int(item_id) - 1
+            if prev_id != 0:
+                prev_yaml = get_yaml(section_name, str(prev_id))
+                prev = {'url': get_cartoon_url(prev_yaml, section_name, str(prev_id)),
+                        'name': prev_yaml['hover_text']}
+
+            next_id = int(item_id) + 1
+            if os.path.isfile(os.path.join(templates_dir, section_name, str(next_id), 'desc.yaml')):
+                next_yaml = get_yaml(section_name, str(next_id))
+                next = {'url': get_cartoon_url(next_yaml, section_name, str(next_id)),
+                        'name': next_yaml['hover_text']}
+
             item = {'name': yaml['hover_text'],
                     'desc': get_desc(section_name, item_id),
                     'youtube': process_video_url(yaml['youtube']),
                     'img': '/' + section_name + '/' + item_id + '/small_pic.jpg'}
             if 'width' in yaml:
                 item['width'] = yaml['width']
-            return render_template('cartoon.html', item=item)
+            return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
 

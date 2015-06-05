@@ -2,13 +2,22 @@
 
 {% block title %}{{ item.name }}{% endblock %}
 {% block microformats %}
-        <meta property="og:title" content="{{ item.name }}"/>
-        <meta property="og:description" content="{{ item.desc }}"/>
-        <meta property="og:image" content="http://vkiselev.com{{ item.img }}"/>
+    <meta property="og:title" content="{{ item.name }}"/>
+    <meta property="og:description" content="{{ item.desc }}"/>
+    <meta property="og:image" content="{{ request.host_url }}{{ item.img }}"/>
 {% endblock %}
 {% block content %}
     <div class="container">
         {% include 'animated_header.html' %}
+
+        <br/>
+
+        <div class="navigation">
+            {% if prev %}<a href="{{ prev.url }}">&lt;&lt; {{ prev.name }}</a>{% endif %} ||
+            {% if next %}<a href="{{ next.url }}">{{ next.name }} &gt;&gt;</a>{% endif %}
+        </div>
+
+        <br/>
 
         <div class="padding-top-big"></div>
         <div class="container-fluid">
@@ -24,6 +33,7 @@
                     <p>
                         {{ item.desc | safe }}
                     </p>
+
                     <p>
                         {% include 'social_share.html' %}
                     </p>
