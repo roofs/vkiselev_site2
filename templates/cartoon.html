@@ -11,12 +11,12 @@
             <div class="row">
                 <div class="col-md-9">
                     <p>
-                        <iframe width="587" height="390"
-                                src="{{ item.youtube }}"
+                        <iframe src="{{ item.youtube }}"
+                                height="390"
+                                {% if item.width %} width="{{ item.width }}" {% else %} width="587"  {% endif %}
                                 frameborder="0" allowfullscreen>
                         </iframe>
                     </p>
-                    {# width надо делать разным для разных видео, так как они все разные :(((( #}
                     <p>
                         {{ item.desc | safe }}
                     </p>
