@@ -1,12 +1,10 @@
 from uuid import uuid4
+import os
 
-from google.appengine.api import mail
 from bs4 import BeautifulSoup
-
-from flask import Flask, render_template, request, session, make_response
+from flask import Flask, render_template, session
 from flask import redirect
 from yaml import load
-import os
 
 
 def generate_csrf_token():
@@ -92,7 +90,8 @@ def animated():
 @app.route('/still')
 def still():
     fitems = prepare_flat_section('flat')
-    return render_template('still.html', flat=fitems)
+    pitems = prepare_flat_section('projects')
+    return render_template('still.html', flat=fitems, projects=pitems)
 
 @app.route('/memories')
 def memories():
@@ -176,11 +175,9 @@ def render_flat_subpage(section_name, path):
 def cartoon_page(path):
     return render_animated_subpage('cartoons', path)
 
-
 @app.route("/misc/<path:path>")
 def misc_page(path):
     return render_animated_subpage('misc', path)
-
 
 @app.route("/princess/<path:path>")
 def princess_page(path):
@@ -190,12 +187,18 @@ def princess_page(path):
 def flat_page(path):
     return render_flat_subpage('flat', path)
 
+@app.route("/projects/<path:path>")
+def projects_page(path):
+    return render_flat_subpage('projects', path)
+
+@app.route("/comics/<path:path>")
+def comics_page(path):
+    return render_flat_subpage('comics', path)
 
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect("/")
     # return 'Sorry, Nothing at this URL.', 404
-
 
 @app.errorhandler(500)
 def application_error(e):
