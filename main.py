@@ -51,13 +51,13 @@ def get_desc(block, id):
     return document
 
 
-def prepare_animated_section(section_name):
+def prepare_animated_section(section_name, reverse=True):
     def to_int(x):
         return int(x)
 
     path = os.path.join(templates_dir, section_name)
     items = []
-    listdir = sorted(map(to_int, os.listdir(path)))
+    listdir = sorted(map(to_int, os.listdir(path)), reverse=reverse)
     for item_id in listdir:
         item_id = str(item_id)
         yaml = get_yaml(section_name, item_id)
@@ -84,7 +84,7 @@ def get_subpage_url(yaml, section_name, item_id):
 def animated():
     citems = prepare_animated_section('cartoons')
     mitems = prepare_animated_section('misc')
-    pitems = prepare_animated_section('princess')
+    pitems = prepare_animated_section('princess', reverse=False)
 
     return render_template('animated.html', cartoons=citems, misc=mitems, princess=pitems)
 
@@ -170,8 +170,6 @@ def render_flat_subpage(section_name, path):
                     'img': '/' + section_name + '/' + item_id + '/big_pic.jpg'}
             return render_template('flat.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
-
-import logging
 
 
 def render_comics_subpage(section_name, path):
