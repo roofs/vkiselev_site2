@@ -3,10 +3,9 @@
 {% block title %}Animated{% endblock %}
 {% block content %}
     <div class="container">
-        <div>Big menu</div>
-        <div>This page menu</div>
+        {% include 'animated_header.html' %}
 
-        <div class="anim_section">cartoons</div>
+        <div id='cartoon' class="anim_section">cartoons</div>
         <div class="row">
             {% for item in cartoons %}
                 <div class="col-md-2 cartoon_item">
@@ -19,7 +18,7 @@
             {% endfor %}
         </div>
 
-        <div class="anim_section">princess episodes</div>
+        <div id='princess' class="anim_section">princess episodes</div>
         <div class="row">
             {% for item in princess %}
                 <div class="col-md-2 col-lg-2 cartoon_item">
@@ -32,7 +31,7 @@
             {% endfor %}
         </div>
 
-        <div class="anim_section">misc</div>
+        <div id='misc' class="anim_section">misc</div>
         <div class="row">
             {% for item in misc %}
                 <div class="col-md-2 cartoon_item">

@@ -2,23 +2,25 @@
 
 {% block title %}{{ item.name }}{% endblock %}
 {% block content %}
-    <div>Big menu</div>
-    <div>This page menu</div>
+    <div class="container">
+        {% include 'animated_header.html' %}
 
-    <div class="padding-top-big"></div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-9">
-                <p>
-                    <iframe width="587" height="390"
-                            src="{{ item.youtube }}"
-                            frameborder="0" allowfullscreen>
-                    </iframe>
-                </p>
-                {# width надо делать разным для разных видео, так как они все разные :(((( #}
-                <p>
-                    {{ item.desc | safe }}
-                </p>
+
+        <div class="padding-top-big"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    <p>
+                        <iframe width="587" height="390"
+                                src="{{ item.youtube }}"
+                                frameborder="0" allowfullscreen>
+                        </iframe>
+                    </p>
+                    {# width надо делать разным для разных видео, так как они все разные :(((( #}
+                    <p>
+                        {{ item.desc | safe }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
