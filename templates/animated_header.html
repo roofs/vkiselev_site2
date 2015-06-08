@@ -1,7 +1,7 @@
 <div class="page_menu">
         {% if prev %}<img src="/static/img/arrow_left.jpg" width=10px></a><a href="{{ prev.url }}"> {{ prev.name }}</a> || {% endif %}
-        <a href="{{ url_for('animated') }}#cartoon">CARTOONS</a> | 
-        <a href="{{ url_for('animated') }}#princess">PRINCESS</a> | 
+        <a href="{{ url_for('animated') }}#cartoon">ANIMATION</a> | 
+        <a href="{{ url_for('animated') }}#princess">THE PRINCESS</a> | 
         <a href="{{ url_for('animated') }}#misc">MISC</a>
         {% if next %} || <a href="{{ next.url }}">{{ next.name }} </a><img src="/static/img/arrow_right.jpg" width=10px></a>{% endif %}
 </div>

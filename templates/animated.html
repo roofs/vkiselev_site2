@@ -3,9 +3,9 @@
 {% block title %}Animated{% endblock %}
 {% block microformats %}
     <meta property="og:title" content="Animated"/>
-    {# о чем эта страница ???#}
+    {# о чем эта страница: A collection of moving stuff by Vasili Kiselev. It includes different types of clay, cut-out animation on sports, LGBT, love etc., finger puppet show about adventures of a little princess and a number of experimental videos.#}
     <meta property="og:description" content="Vasili Kiselev"/>
-    {# и картинку, которая будет при шаринге ссылки на тебя через fb#}
+    {# и картинку, которая будет при шаринге ссылки на тебя через fb - можно сделать случайные 4 картинки со страницы в прямоугольник?#}
     <meta property="og:image" content="http://vkiselev.com/static/img/anim_big.jpg?cache=1"/>
 {% endblock %}
 {% block content %}
@@ -13,7 +13,7 @@
         {% include 'common_header.html' %}
         {% include 'animated_header.html' %}
 
-        <div id='cartoon' class="anim_section">cartoons</div>
+        <div id='cartoon' class="anim_section">animation</div>
         <div class="row">
             {% for item in cartoons %}
                 <div class="col-md-2 cartoon_item">
@@ -26,7 +26,7 @@
             {% endfor %}
         </div>
 
-        <div id='princess' class="anim_section">princess episodes</div>
+        <div id='princess' class="anim_section">the princess</div>
         <div class="row">
             {% for item in princess %}
                 <div class="col-md-2 col-lg-2 cartoon_item">
