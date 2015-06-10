@@ -45,7 +45,16 @@
     text-align: center
 }
 
+.animated-header {
+    background-color: #5099c6;
+}
 
+.rest-header {
+    margin-left: 0;
+    padding-left: 2px;
+    margin-right: 0;
+    padding-right: 2px;
+}
 
 
 /*! Social Likes v3.0.14 by Artem Sapegin - http://sapegin.github.com/social-likes - Licensed MIT */
