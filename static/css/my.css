@@ -20,6 +20,25 @@
     margin-top: 10px;
 }
 
+/*ЦВЕТ ССЫЛОК*/
+.link {
+    color: red;
+}
+
+.link:hover{
+    color: red;
+    text-decoration: none;
+}
+
+a {
+    color: red;
+}
+
+a:hover {
+    color:green;
+}
+/*ЦВЕТ ССЫЛОК*/
+
 .anim_section, .still_section {
     font-family: sans-serif;
     font-size: 30px;
