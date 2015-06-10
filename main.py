@@ -196,7 +196,7 @@ def render_comics_subpage(section_name, path, reverse=True):
             og_desc = yaml['hover_text']
 
             pages = []
-            for i in range(1, yaml['pages']):
+            for i in range(1, yaml['pages'] + 1):
                 pages.append('/' + section_name + '/' + item_id + '/p' + str(i) + '.jpg')
 
             item = {'name': yaml['hover_text'],
