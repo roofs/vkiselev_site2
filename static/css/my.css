@@ -44,6 +44,7 @@ a:hover {
     font-size: 30px;
     text-align: left; /*color: anim #5099c6; still #ae111a; mem #eac31a;vk #3daf35 */;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .cartoon_desc, .still_desc {

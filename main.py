@@ -70,8 +70,10 @@ def prepare_animated_section(section_name, reverse=True):
 
     return items
 
+
 def prepare_flat_section(section_name):
     return prepare_animated_section(section_name)
+
 
 def get_subpage_url(yaml, section_name, item_id):
     item_url = yaml['url']
@@ -89,6 +91,7 @@ def animated():
 
     return render_template('animated.html', cartoons=citems, misc=mitems, princess_seasons=psitems, princess=pitems)
 
+
 @app.route('/still')
 def still():
     fitems = prepare_flat_section('flat')
@@ -96,17 +99,21 @@ def still():
     citems = prepare_flat_section('comics')
     return render_template('still.html', flat=fitems, projects=pitems, comics=citems)
 
+
 @app.route('/memories')
 def memories():
     return render_template('memories.html')
+
 
 @app.route('/vasili')
 def vasili():
     return render_template('vasili.html')
 
+
 def process_video_url(url):
     if "youtube.com" in url:
-        return url + "?rel=0&showinfo=0&autohide=1&cc_load_policy=1&disablekb=1"
+        if "playlist" not in url:
+            return url + "?rel=0&showinfo=0&autohide=1&cc_load_policy=1&disablekb=1"
     return url
 
 
@@ -136,6 +143,7 @@ def render_animated_subpage(section_name, path, reverse=True):
             return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
+
 def get_next_prev(section_name, item_id, reverse=True):
     prev = None
     next = None
@@ -156,6 +164,7 @@ def get_next_prev(section_name, item_id, reverse=True):
         return next, prev
     else:
         return prev, next
+
 
 def render_flat_subpage(section_name, path, reverse=True):
     full_path = os.path.join(templates_dir, section_name)
@@ -212,34 +221,42 @@ def render_comics_subpage(section_name, path, reverse=True):
 def cartoon_page(path):
     return render_animated_subpage('cartoons', path, reverse=False)
 
+
 @app.route("/misc/<path:path>")
 def misc_page(path):
     return render_animated_subpage('misc', path)
+
 
 @app.route("/princess/<path:path>")
 def princess_page(path):
     return render_animated_subpage('princess', path)
 
-@app.route("/princess_season/<path:path>")
+
+@app.route("/princess_seasons/<path:path>")
 def princess_season_page(path):
-    return render_animated_subpage('princess_season', path)
+    return render_animated_subpage('princess_seasons', path)
+
 
 @app.route("/flat/<path:path>")
 def flat_page(path):
     return render_flat_subpage('flat', path)
 
+
 @app.route("/projects/<path:path>")
 def projects_page(path):
     return render_flat_subpage('projects', path)
+
 
 @app.route("/comics/<path:path>")
 def comics_page(path):
     return render_comics_subpage('comics', path)
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     return redirect("/")
     # return 'Sorry, Nothing at this URL.', 404
+
 
 @app.errorhandler(500)
 def application_error(e):
