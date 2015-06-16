@@ -84,9 +84,10 @@ def get_subpage_url(yaml, section_name, item_id):
 def animated():
     citems = prepare_animated_section('cartoons')
     mitems = prepare_animated_section('misc')
+    psitems = prepare_animated_section('princess_seasons', reverse=False)
     pitems = prepare_animated_section('princess', reverse=False)
 
-    return render_template('animated.html', cartoons=citems, misc=mitems, princess=pitems)
+    return render_template('animated.html', cartoons=citems, misc=mitems, princess_seasons=psitems, princess=pitems)
 
 @app.route('/still')
 def still():
@@ -218,6 +219,10 @@ def misc_page(path):
 @app.route("/princess/<path:path>")
 def princess_page(path):
     return render_animated_subpage('princess', path)
+
+@app.route("/princess_season/<path:path>")
+def princess_season_page(path):
+    return render_animated_subpage('princess_season', path)
 
 @app.route("/flat/<path:path>")
 def flat_page(path):

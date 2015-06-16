@@ -37,6 +37,10 @@ handlers:
   static_files: templates/princess/\1/\2
   upload: templates/princess/.*\.jpg
 
+- url: /princess_seasons/([0-9]*)/(.*\.jpg)$
+  static_files: templates/princess_seasons/\1/\2
+  upload: templates/princess_seasons/.*\.jpg
+
 - url: /flat/([0-9]*)/(.*\.jpg)$
   static_files: templates/flat/\1/\2
   upload: templates/flat/.*\.jpg
