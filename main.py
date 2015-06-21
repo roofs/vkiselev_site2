@@ -140,7 +140,8 @@ def render_animated_subpage(section_name, path, reverse=True):
                     'desc': desc,
                     'og_desc': og_desc,
                     'youtube': process_video_url(yaml['youtube']),
-                    'img': '/' + section_name + '/' + item_id + '/thumbnail.jpg'}
+                    'img': '/' + section_name + '/' + item_id + '/thumbnail.jpg',
+                    'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1'}
             if 'width' in yaml:
                 item['width'] = yaml['width']
             if 'hight' in yaml:
@@ -189,7 +190,8 @@ def render_flat_subpage(section_name, path, reverse=True):
             item = {'name': yaml['hover_text'],
                     'desc': desc,
                     'og_desc': og_desc,
-                    'img': '/' + section_name + '/' + item_id + '/full.jpg'}
+                    'img': '/' + section_name + '/' + item_id + '/full.jpg',
+                    'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1'}
             return render_template('flat.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
