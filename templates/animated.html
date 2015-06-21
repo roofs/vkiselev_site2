@@ -9,7 +9,6 @@
     <meta property="og:image" content="http://vkiselev.com/static/img/anim_big.jpg?cache=1"/>
 {% endblock %}
 {% block content %}
-    {% include 'common_header.html' %}
     {% include 'animated_header.html' %}
 
     <div class="container">
@@ -28,6 +27,17 @@
 
         <div id='princess' class="anim_section">the princess</div>
         <div class="row">
+            {% for item in princess_seasons %}
+                <div class="col-md-3 cartoon_item">
+                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+
+                    <div class="cartoon_desc">
+                        <a href="{{ item.url }}">{{ item.desc }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
             {% for item in princess %}
                 <div class="col-md-3 cartoon_item">
                     <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
@@ -39,18 +49,6 @@
             {% endfor %}
         </div>
 
-        <div id='princess_seasons' class="anim_section">the princess &mdash; seasons????</div>
-        <div class="row">
-            {% for item in princess_seasons %}
-                <div class="col-md-3 cartoon_item">
-                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
-
-                    <div class="cartoon_desc">
-                        <a href="{{ item.url }}">{{ item.desc }}</a>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
 
         <div id='misc' class="anim_section">misc</div>
         <div class="row">

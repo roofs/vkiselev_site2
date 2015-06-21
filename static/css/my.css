@@ -22,20 +22,20 @@
 
 /*ЦВЕТ ССЫЛОК*/
 .link {
-    color: red;
+    color: black;
 }
 
 .link:hover{
-    color: red;
-    text-decoration: none;
+    color: black;
+    text-decoration: underline;
 }
 
 a {
-    color: red;
+    color: black;
 }
 
 a:hover {
-    color:green;
+    text-decoration: underline;
 }
 /*ЦВЕТ ССЫЛОК*/
 
@@ -68,8 +68,37 @@ a:hover {
     text-align: center
 }
 
+.navigation{
+    font-family: sans-serif;
+    font-size: 10px;
+    text-align: center
+}
+
 .animated-header {
     background-color: #5099c6;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+.still-header {
+    background-color: #ae111a;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.mem-header {
+    background-color: #eac31a;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.vk-header {
+    background-color: #3daf35;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
 }
 
 .rest-header {

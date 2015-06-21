@@ -1,7 +1,27 @@
+<div>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-10 rest-header">
+                    <div class="still-header">
+                        <a href="{{ url_for('still') }}"> <img src="/static/img/still_inv.jpg"></a> still
+                    </div>
+                </div>
+            <div class="col-md-2 rest-header">
+                <div>
+                    <a href="{{ url_for('animated') }}"><img src="/static/img/anim_sm.jpg"></a>
+                    <a href="{{ url_for('memories') }}"><img src="/static/img/mem_sm.jpg"></a>
+                    <a href="{{ url_for('vasili') }}"><img src="/static/img/vk_sm.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="page_menu">
-    {% if prev %}<img src="/static/img/arrow_left.jpg" width=10px></a><a href="{{ prev.url }}"> {{ prev.name }}</a> || {% endif %}
     <a href="{{ url_for('still') }}#flat">FLAT</a> |
     <a href="{{ url_for('still') }}#projects">PROJECTS</a> |
     <a href="{{ url_for('still') }}#comics">COMICS</a>
-    {% if next %} || <a href="{{ next.url }}">{{ next.name }} </a><img src="/static/img/arrow_right.jpg" width=10px></a>{% endif %}
+</div>
+<div class="navigation"> 
+    {% if prev %}<img src="/static/img/arrow_left.jpg" width=10px></a><a href="{{ prev.url }}"> {{ prev.name }}</a> |{% endif %}
+    {% if next %}| <a href="{{ next.url }}">{{ next.name }} </a><img src="/static/img/arrow_right.jpg" width=10px></a>{% endif %}
 </div>
