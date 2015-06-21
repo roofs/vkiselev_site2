@@ -90,6 +90,12 @@ a:hover {
 
 .header-rest {
     background-color: white;
+    margin-right: 10px;
+}
+
+.header-rest > a > img
+{
+    height: 40px;
 }
 
 .still-header {
@@ -124,6 +130,12 @@ a:hover {
     padding-left: 2px;
     margin-right: 0;
     padding-right: 2px;
+}
+
+.global-header > div > a > img
+{
+    margin-left: 10px;
+    height: 40px;
 }
 
 /*! Social Likes v3.0.14 by Artem Sapegin - http://sapegin.github.com/social-likes - Licensed MIT */
