@@ -14,23 +14,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                        <iframe src="{{ item.youtube }}"
-                                height="390"
-                                {% if item.width %} width="{{ item.width }}" {% else %} width="640"  {% endif %}
-                                frameborder="0" allowfullscreen>
-                        </iframe>
+                    <iframe class="cartoon_item-big" src="{{ item.youtube }}"
+                            {% if item.height %} height="{{ item.height }}" {% else %} height="390"  {% endif %}
+                            {% if item.width %} width="{{ item.width }}" {% else %} width="420"  {% endif %}
+                            frameborder="0" allowfullscreen>
+                    </iframe>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 cartoon_item-text">
                     <p>
                         {{ item.desc | safe }}
                     </p>
+
+                    {% include 'social_share.html' %}
                 </div>
-            </div>
-                    <div class="row">
-                    <p>
-                        {% include 'social_share.html' %}
-                    </p>
-            
             </div>
         </div>
     </div>

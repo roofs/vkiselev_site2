@@ -12,33 +12,21 @@
 
         <div class="padding-top-big"></div>
         <div class="row">
-            <div class="col-md-12">
-                <p class="center-align">
+            <div class="col-md-9">
+                <p class="flat-img-container">
                     <img id='myimg' src="{{ item.img }}" class="flat-img">
-                    <script>
-                        $('#myimg').click(function () {
-                            if($(this).hasClass('flat-img')) {
-                                $(this).addClass('flat-img-large');
-                                $(this).removeClass('flat-img');
-                            } else {
-                               $(this).removeClass('flat-img-large');
-                                $(this).addClass('flat-img');
-                            }
-                        });
-                    </script>
                 </p>
             </div>
-        </div>
-        <div class="row">
+
             <div class="col-md-3">
-            </div>
-            <div class="col-md-9">
                 <p>
                     {{ item.desc | safe }}
                 </p>
 
-                <p>
-                    {% include 'social_share.html' %}
-                </p>
+                <div>
+                    {% include 'social_share2.html' %}
+                </div>
             </div>
+        </div>
+    </div>
 {% endblock %}

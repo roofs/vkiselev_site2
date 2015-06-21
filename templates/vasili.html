@@ -7,6 +7,7 @@
     <meta property="og:description" content="Vasili Kiselev"/>
     {# и картинку, которая будет при шаринге ссылки на тебя через fb#}
     <meta property="og:image" content="http://vkiselev.com/static/img/anim_big.jpg?cache=1"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 {% endblock %}
 {% block content %}
     <div class="container">
@@ -14,42 +15,31 @@
 
         <div class="padding-top-big"></div>
         <div class="row">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="center-align">
-                        <img src="/static/img/vasili.gif">
-                    </p>
-                </div>
+            <div class="col-md-9">
+                <img src="/static/img/vasili.gif" class="vk-img">
             </div>
+            <div class="col-md-3">
+                <div>
+                    <h1>About</h1>
 
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-9">
-                    <div>
-                        <h1>About</h1>
-                        <div class="desc">Vasily Kiselev was born in Leningrad, USSR back in 1984. He is interested
-                            in
-                            the world
-                            around, problems of perception, interpretation and exploration of colour and movement.
-                            Vasily
-                            started
-                            his work with painting and applications and gradually moved to puppetry and animation.
-                        </div>
-                        <div class="desc">Василий Киселёв родился в Ленинграде, СССР в 1984 году. Его интересует мир
-                            вокруг,
-                            процессы восприятия, интерпретации и изучения цвета и движения. Василий начал работу с
-                            живописи и
-                            аппликаций и постепенно перешел к куклам и анимации.
-                        </div>
-                        <div class="desc">+ 7 90 52 78 90 20</div>
-                        <div class="desc"><a href="mailto:me@vkiselev.com">me@vkiselev.com</a></div>
-
-                        <div class="row">
-                            {% include 'social_share.html' %}
-                        </div>
+                    <div class="desc">Vasily Kiselev was born in Leningrad, USSR back in 1984. He is interested
+                        in
+                        the world
+                        around, problems of perception, interpretation and exploration of colour and movement.
+                        Vasily
+                        started
+                        his work with painting and applications and gradually moved to puppetry and animation.
                     </div>
+                    <div class="desc">Василий Киселёв родился в Ленинграде, СССР в 1984 году. Его интересует мир
+                        вокруг,
+                        процессы восприятия, интерпретации и изучения цвета и движения. Василий начал работу с
+                        живописи и
+                        аппликаций и постепенно перешел к куклам и анимации.
+                    </div>
+                    <div class="desc"><i class="fa fa-phone"></i> + 7 90 52 78 90 20</div>
+                    <div class="desc"><i class="fa fa-envelope-o"></i> <a href="mailto:me@vkiselev.com">me@vkiselev.com</a></div>
                 </div>
             </div>
         </div>
+    </div>
 {% endblock %}

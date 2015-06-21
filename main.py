@@ -143,6 +143,8 @@ def render_animated_subpage(section_name, path, reverse=True):
                     'img': '/' + section_name + '/' + item_id + '/small_pic.jpg'}
             if 'width' in yaml:
                 item['width'] = yaml['width']
+            if 'hight' in yaml:
+                item['hight'] = yaml['hight']
             return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 

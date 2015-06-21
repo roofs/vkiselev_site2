@@ -539,10 +539,34 @@ a:hover {
     margin-left: -40px;
 }
 
+.flat-img-container {
+    height: 78vh;
+    width: 100%;
+}
+
 .flat-img {
-    height: 70vh;
+    height: auto;
+    width: 100%;
+    margin-left: -25px;
 }
 
 .flat-img-large {
     width: 100%;
+}
+
+.cartoon_item-big {
+    padding: 0;
+    margin-left: -25px;
+}
+
+.cartoon_item-text {
+    padding-left: 20px;
+}
+
+.social-likes-topm {
+    margin-top: 100px;
+}
+
+.vk-img {
+    margin-left: -10px;
 }
