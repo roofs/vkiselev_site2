@@ -15,7 +15,7 @@
         <div id='cartoon' class="anim_section">animation</div>
         <div class="row">
             {% for item in cartoons %}
-                <div class="col-md-3 cartoon_item">
+                <div class="{{ cols_class }} cartoon_item">
                     <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
@@ -28,7 +28,7 @@
         <div id='princess' class="anim_section">the princess</div>
         <div class="row">
             {% for item in princess_seasons %}
-                <div class="col-md-3 cartoon_item">
+                <div class="{{ cols_class }} cartoon_item">
                     <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
@@ -39,7 +39,7 @@
         </div>
         <div class="row">
             {% for item in princess %}
-                <div class="col-md-3 cartoon_item">
+                <div class="{{ cols_class }} cartoon_item">
                     <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
@@ -53,7 +53,7 @@
         <div id='misc' class="anim_section">misc</div>
         <div class="row">
             {% for item in misc %}
-                <div class="col-md-3 cartoon_item">
+                <div class="{{ cols_class }} cartoon_item">
                     <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">

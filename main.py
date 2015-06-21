@@ -7,6 +7,7 @@ from flask import Flask, render_template, session
 from flask import redirect
 from yaml import load
 
+columns_class = 'col-md-3'
 
 def generate_csrf_token():
     if '_csrf_token' not in session:
@@ -89,7 +90,8 @@ def animated():
     psitems = prepare_animated_section('princess_seasons', reverse=False)
     pitems = prepare_animated_section('princess', reverse=False)
 
-    return render_template('animated.html', cartoons=citems, misc=mitems, princess_seasons=psitems, princess=pitems)
+    return render_template('animated.html', cartoons=citems, misc=mitems, princess_seasons=psitems, princess=pitems,
+                           cols_class=columns_class)
 
 
 @app.route('/still')
@@ -97,7 +99,8 @@ def still():
     fitems = prepare_flat_section('flat')
     pitems = prepare_flat_section('projects')
     citems = prepare_flat_section('comics')
-    return render_template('still.html', flat=fitems, projects=pitems, comics=citems)
+    return render_template('still.html', flat=fitems, projects=pitems, comics=citems,
+                           cols_class=columns_class)
 
 
 @app.route('/memories')
