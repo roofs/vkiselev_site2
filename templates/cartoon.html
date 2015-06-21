@@ -13,28 +13,24 @@
         <div class="padding-top-big"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <p class="center-align">
+                <div class="col-md-7">
                         <iframe src="{{ item.youtube }}"
                                 height="390"
                                 {% if item.width %} width="{{ item.width }}" {% else %} width="640"  {% endif %}
                                 frameborder="0" allowfullscreen>
                         </iframe>
-                    </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-9">
+                <div class="col-md-5">
                     <p>
                         {{ item.desc | safe }}
                     </p>
-
+                </div>
+            </div>
+                    <div class="row">
                     <p>
                         {% include 'social_share.html' %}
                     </p>
-                </div>
+            
             </div>
         </div>
     </div>
