@@ -8,19 +8,25 @@
 {% endblock %}
 {% block content %}
     <div class="container">
-            {% include 'animated_header.html' %}
+        {% include 'animated_header.html' %}
 
         <div class="padding-top-big"></div>
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <p>
+                <div class="col-md-12">
+                    <p class="center-align">
                         <iframe src="{{ item.youtube }}"
                                 height="390"
                                 {% if item.width %} width="{{ item.width }}" {% else %} width="640"  {% endif %}
                                 frameborder="0" allowfullscreen>
                         </iframe>
                     </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-9">
                     <p>
                         {{ item.desc | safe }}
                     </p>

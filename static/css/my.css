@@ -495,3 +495,12 @@ a:hover {
     padding-left: 190px;
     padding-right: 190px;
 }
+
+.center-align {
+    display: table;
+    margin: 0 auto;
+}
+
+.padding-top-big {
+    margin-bottom: 40px;
+}
