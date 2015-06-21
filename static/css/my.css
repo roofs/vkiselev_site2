@@ -538,3 +538,11 @@ a:hover {
     margin-bottom: 60px;
     margin-left: -40px;
 }
+
+.flat-img {
+    height: 70vh;
+}
+
+.flat-img-large {
+    width: 100%;
+}
