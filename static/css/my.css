@@ -95,8 +95,7 @@ a:hover {
     margin-right: 10px;
 }
 
-.header-rest > a > img
-{
+.header-rest > a > img {
     height: 40px;
 }
 
@@ -134,8 +133,7 @@ a:hover {
     padding-right: 2px;
 }
 
-.global-header > div > a > img
-{
+.global-header > div > a > img {
     margin-left: 10px;
     height: 40px;
 }
@@ -531,7 +529,7 @@ a:hover {
 }
 
 .index_image {
-    height:calc(49vh - 60px);
+    height: calc(49vh - 60px);
     max-height: 233px;
 }
 
@@ -571,4 +569,17 @@ a:hover {
 
 .vk-img {
     margin-left: -10px;
+}
+
+.main-header-item {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.main-header-item:hover {
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
 }
