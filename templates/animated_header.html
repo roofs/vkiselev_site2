@@ -1,35 +1,41 @@
-<div>
-    <div class="container">
-        <div class="row">
-                <div class="col-md-10 rest-header">
-                    <div class="animated-header">
-                        <a href="{{ url_for('animated') }}"> <img src="/static/img/anim_inv.jpg"></a> animated
-                    </div>
-                </div>
-            <div class="col-md-2 rest-header">
-                <div>
-                    <a href="{{ url_for('still') }}"><img src="/static/img/still_sm.jpg"></a>
-                    <a href="{{ url_for('memories') }}"><img src="/static/img/mem_sm.jpg"></a>
-                    <a href="{{ url_for('vasili') }}"><img src="/static/img/vk_sm.jpg"></a>
-                </div>
+<div class="row">
+    <div class="col-md-10 rest-header">
+        <div class="animated-header">
+            <a href="{{ url_for('animated') }}"> <img src="/static/img/anim_inv.jpg"></a> animated
+        </div>
+    </div>
+    <div class="col-md-2 rest-header">
+        <div>
+            <a href="{{ url_for('still') }}"><img src="/static/img/still_sm.jpg"></a>
+            <a href="{{ url_for('memories') }}"><img src="/static/img/mem_sm.jpg"></a>
+            <a href="{{ url_for('vasili') }}"><img src="/static/img/vk_sm.jpg"></a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page_menu">
+            <a href="{{ url_for('animated') }}#cartoon">ANIMATION</a> |
+            <a href="{{ url_for('animated') }}#princess">THE PRINCESS</a> |
+            <a href="{{ url_for('animated') }}#misc">MISC</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 navigation rest-header">
+        {% if prev %}
+            <div class="pull-left">
+                <img src="/static/img/arrow_left.jpg" width=10px></a>
+                <a href="{{ prev.url }}"> {{ prev.name }}</a>
             </div>
-        </div>
+        {% endif %}
+        {% if next %}
+            <div class="pull-right">
+                <a href="{{ next.url }}">{{ next.name }} </a>
+                <img src="/static/img/arrow_right.jpg" width=10px></a>
+            </div>
+        {% endif %}
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="page_menu">
-                <a href="{{ url_for('animated') }}#cartoon">ANIMATION</a> |
-                <a href="{{ url_for('animated') }}#princess">THE PRINCESS</a> |
-                <a href="{{ url_for('animated') }}#misc">MISC</a>
-            </div>   
-        </div>
-    </div>
-</div>
-<div class="navigation">
-                {% if prev %}<img src="/static/img/arrow_left.jpg" width=10px></a>
-                    <a href="{{ prev.url }}"> {{ prev.name }}</a> |{% endif %}
-                {% if next %}| <a href="{{ next.url }}">{{ next.name }} </a>
-                    <img src="/static/img/arrow_right.jpg" width=10px></a>{% endif %}
 </div>

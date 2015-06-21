@@ -9,9 +9,9 @@
     <meta property="og:image" content="http://vkiselev.com/static/img/anim_big.jpg?cache=1"/>
 {% endblock %}
 {% block content %}
-    {% include 'animated_header.html' %}
-
     <div class="container">
+        {% include 'animated_header.html' %}
+
         <div id='cartoon' class="anim_section">animation</div>
         <div class="row">
             {% for item in cartoons %}
