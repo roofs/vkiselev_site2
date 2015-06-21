@@ -50,8 +50,8 @@ a:hover {
     font-family: sans-serif;
     font-size: 30px;
     text-align: left; /*color: anim #5099c6; still #ae111a; mem #eac31a;vk #3daf35 */;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 25px;
+    margin-top: 70px;
 }
 
 .cartoon_desc, .still_desc {
@@ -65,7 +65,7 @@ a:hover {
 .cartoon_item {
     padding-left: 5px;
     padding-right: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .page_menu {
@@ -76,7 +76,9 @@ a:hover {
 
 .navigation {
     font-family: sans-serif;
-    font-size: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .animated-header {
