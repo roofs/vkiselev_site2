@@ -56,10 +56,9 @@ a:hover {
 }
 
 .cartoon_item, .still_item {
-    height: 180px;
-    /* размеры картинок */
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 15px;
 }
 
 .page_menu{
