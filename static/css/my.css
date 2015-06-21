@@ -84,6 +84,12 @@ a:hover {
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+    width: 100%;
+    border: double #5099c6;
+}
+
+.header-rest {
+    background-color: white;
 }
 
 .still-header {
@@ -91,6 +97,8 @@ a:hover {
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+    width: 100%;
+    border: double #ae111a;
 }
 
 .mem-header {
@@ -98,6 +106,8 @@ a:hover {
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+    width: 100%;
+    border: double #eac31a;
 }
 
 .vk-header {
@@ -105,9 +115,11 @@ a:hover {
     color: white;
     font-family: sans-serif;
     font-size: 20px;
+    width: 100%;
+    border: double #3daf35;
 }
 
-.rest-header {
+.global-header {
     margin-left: 0;
     padding-left: 2px;
     margin-right: 0;

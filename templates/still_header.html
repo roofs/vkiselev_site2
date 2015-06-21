@@ -1,15 +1,13 @@
 <div class="row">
-    <div class="col-md-10 rest-header">
+    <div class="col-md-12 global-header">
         <div class="still-header">
-            <a href="{{ url_for('still') }}"> <img src="/static/img/still_inv.jpg"></a> S: 
+            <a href="{{ url_for('still') }}"><img src="/static/img/still_inv.jpg" style="margin-left: 10px;"></a> S:
             <a href="{{ url_for('still') }}#flat">flat</a> |
             <a href="{{ url_for('still') }}#projects">projects</a> |
             <a href="{{ url_for('still') }}#comics">comics</a>
-        </div>
-    </div>
-    <div class="col-md-2 rest-header">
-        <div>
+        <span class="header-rest pull-right">
             <a href="{{ url_for('animated') }}"><img src="/static/img/anim_sm.jpg"></a>
+            <a href="{{ url_for('still') }}"><img src="/static/img/still_sm.jpg"></a>
             <a href="{{ url_for('memories') }}"><img src="/static/img/mem_sm.jpg"></a>
             <a href="{{ url_for('vasili') }}"><img src="/static/img/vk_sm.jpg"></a>
         </div>
@@ -18,7 +16,7 @@
 
 
 <div class="row">
-    <div class="col-md-12 navigation rest-header">
+    <div class="col-md-12 navigation global-header">
         {% if prev %}
             <div class="pull-left">
                 <img src="/static/img/arrow_left.jpg" width=10px></a>
