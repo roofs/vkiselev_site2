@@ -39,7 +39,7 @@ a:hover {
 }
 /*ЦВЕТ ССЫЛОК*/
 
-.anim_section, .still_section {
+.anim_section, .still_section, .mem_section {
     font-family: sans-serif;
     font-size: 30px;
     text-align: left; /*color: anim #5099c6; still #ae111a; mem #eac31a;vk #3daf35 */;
