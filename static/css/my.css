@@ -503,3 +503,14 @@ a:hover {
 .padding-top-big {
     margin-bottom: 40px;
 }
+
+.index_image {
+    height:calc(49vh - 60px);
+    max-height: 233px;
+}
+
+.index-row {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: -40px;
+}
