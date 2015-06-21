@@ -2,6 +2,7 @@
 - 10: из принцессы ссылки на fb,twitter и страницу mem
 - 2: Куда засунуть кнопку youtube-subscribe
 - 11: Уменшить картинки + картинки для FB (+ ?cache=1)
+- 12: Google/Yandex analytics
 
 
 ----- Done
