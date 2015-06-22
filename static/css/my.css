@@ -588,7 +588,7 @@ a:hover {
     margin-left: -10px;
 }
 
-.main-header-item {
+.shade-hover {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -596,7 +596,7 @@ a:hover {
     transition: all 0.5s ease;
 }
 
-.main-header-item:hover {
+.shade-hover:hover {
     -webkit-filter: brightness(70%);
     filter: brightness(70%);
 }

@@ -16,7 +16,7 @@
         <div class="row">
             {% for item in cartoons %}
                 <div class="{{ cols_class }} cartoon_item">
-                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+                    <a href="{{ item.url }}"><img class="shade-hover" src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
                         <a href="{{ item.url }}">{{ item.desc }}</a>
@@ -29,7 +29,7 @@
         <div class="row">
             {% for item in princess_seasons %}
                 <div class="{{ cols_class }} cartoon_item">
-                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+                    <a href="{{ item.url }}"><img class="shade-hover" src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
                         <a href="{{ item.url }}">{{ item.desc }}</a>
@@ -41,7 +41,7 @@
         <div class="row">
             {% for item in princess %}
                 <div class="{{ cols_class }} cartoon_item">
-                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+                    <a href="{{ item.url }}"><img class="shade-hover" src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
                         <a href="{{ item.url }}">{{ item.desc }}</a>
@@ -55,7 +55,7 @@
         <div class="row">
             {% for item in misc %}
                 <div class="{{ cols_class }} cartoon_item">
-                    <a href="{{ item.url }}"><img src="{{ item.img }}" width="100%"/></a>
+                    <a href="{{ item.url }}"><img class="shade-hover" src="{{ item.img }}" width="100%"/></a>
 
                     <div class="cartoon_desc">
                         <a href="{{ item.url }}">{{ item.desc }}</a>
