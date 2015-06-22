@@ -597,7 +597,7 @@ a:hover {
 }
 
 .shade-hover:hover {
-    -webkit-filter: brightness(170%);
-    filter: brightness(170%);
+    -webkit-filter: brightness(130%);
+    filter: brightness(130%);
 }
 
