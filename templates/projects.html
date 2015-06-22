@@ -12,18 +12,18 @@
 
         <div class="padding-top-big"></div>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-6">
                 <p class="flat-img-container">
                     <img id='myimg' src="{{ item.img }}" class="flat-img">
                 </p>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-6">
 
                 {{ item.desc | safe }}
 
                 <div>
-                    {% include 'social_share_vertical.html' %}
+                    {% include 'social_share.html' %}
                 </div>
             </div>
         </div>
