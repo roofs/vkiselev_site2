@@ -23,13 +23,12 @@
                         <img src="{{ page }}" width="100%">
                     {% endfor %}
                 </p>
-                <p>
-                    {{ item.desc | safe }}
-                </p>
+
+                {{ item.desc | safe }}
                 <p>
                     {% include 'social_share.html' %}
                 </p>
-                
+
             </div>
         </div>
     </div>

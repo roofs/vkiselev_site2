@@ -192,7 +192,7 @@ def render_flat_subpage(section_name, path, reverse=True):
                     'og_desc': og_desc,
                     'img': '/' + section_name + '/' + item_id + '/full.jpg',
                     'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1'}
-            return render_template('flat.html', item=item, prev=prev, next=next)
+            return render_template(section_name + '.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 
 
