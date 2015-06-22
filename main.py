@@ -144,8 +144,8 @@ def render_animated_subpage(section_name, path, reverse=True):
                     'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1'}
             if 'width' in yaml:
                 item['width'] = yaml['width']
-            if 'hight' in yaml:
-                item['hight'] = yaml['hight']
+            if 'height' in yaml:
+                item['height'] = yaml['height']
             return render_template('cartoon.html', item=item, prev=prev, next=next)
     return 'Sorry, cartoon not found'
 

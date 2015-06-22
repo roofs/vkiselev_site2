@@ -2,7 +2,7 @@
     font-family: sans-serif;
     font-size: 20px;
     text-align: right;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px
 }
 
@@ -79,6 +79,8 @@ a:hover {
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 30px;
+    width: 100%;
+    
 }
 
 .animated-header {
@@ -583,3 +585,4 @@ a:hover {
     -webkit-filter: brightness(70%);
     filter: brightness(70%);
 }
+
