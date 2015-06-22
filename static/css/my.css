@@ -1,3 +1,6 @@
+.row {margin: 0em 0px}
+[class*="col-"] {padding: 0 0px;}
+
 .title, h1 {
     font-family: sans-serif;
     font-size: 20px;
