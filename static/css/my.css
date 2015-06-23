@@ -218,6 +218,7 @@ a:hover {
 
 .social-likes-topm {
     margin-top: 20px;
+    padding-top: 30px;
 }
 
 .vk-img {
@@ -237,3 +238,12 @@ a:hover {
     filter: brightness(130%);
 }
 
+.social-buttons-v {
+    display: inline;
+}
+
+/*@media (min-width: 992px) {*/
+    /*.vertical-br {*/
+        /*display: inline;*/
+    /*}*/
+/*}*/
