@@ -115,6 +115,8 @@ def vasili():
 
 def process_video_url(url):
     if "youtube.com" in url:
+        url = url.replace("http://", "//")
+
         if "playlist" not in url:
             return url + "?rel=0&showinfo=0&autohide=1&cc_load_policy=1&disablekb=1"
     return url

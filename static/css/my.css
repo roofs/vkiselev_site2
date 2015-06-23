@@ -222,6 +222,10 @@ a:hover {
     align-items: left;
 }
 
+.videoWrapper {
+	width: 100%;
+}
+
 .cartoon_item-text {
     padding-left: 20px;
 }

@@ -11,21 +11,55 @@
         {% include 'animated_header.html' %}
 
         <div class="padding-top-big"></div>
-            <div class="row">
-                <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-7">
+                <div id="wrapper" class="videoWrapper">
                     <iframe class="cartoon_item-big" src="{{ item.youtube }}"
                             {% if item.height %} height="{{ item.height }}" {% else %} height="390"  {% endif %}
                             {% if item.width %} width="{{ item.width }}" {% else %} width="587"  {% endif %}
                             frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
-                <div class="col-md-5 cartoon_item-text">
-                    <p>
-                        {{ item.desc | safe }}
-                    </p>
-
-                    {% include 'social_share.html' %}
-                </div>
             </div>
+            <div class="col-md-5 cartoon_item-text">
+                <p>
+                    {{ item.desc | safe }}
+                </p>
+
+                {% include 'social_share.html' %}
+            </div>
+        </div>
     </div>
+    <script>
+        // Find all YouTube videos
+        var $allVideos = $("iframe[src^='//www.youtube.com']"),
+
+        // The element that is fluid width
+                $fluidEl = $("#wrapper");
+
+        // Figure out and save aspect ratio for each video
+        $allVideos.each(function () {
+            $(this).data('aspectRatio', this.height / this.width)
+                // and remove the hard coded width/height
+                    .removeAttr('height')
+                    .removeAttr('width');
+
+        });
+
+        // When the window is resized
+        $(window).resize(function () {
+            var newWidth = $fluidEl.width();
+
+            // Resize all videos according to their own aspect ratio
+            $allVideos.each(function () {
+                var $el = $(this);
+                $el
+                        .width(newWidth)
+                        .height(newWidth * $el.data('aspectRatio'));
+
+            });
+
+// Kick off one resize to fix all videos on page load
+        }).resize();
+    </script>
 {% endblock %}
