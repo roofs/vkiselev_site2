@@ -253,6 +253,19 @@ a:hover {
     filter: brightness(130%);
 }
 
+.black-hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.black-hover:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
 .navprev {
     float: none !important;
     text-align: center;
