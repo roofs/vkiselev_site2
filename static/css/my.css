@@ -1,5 +1,10 @@
-.row {margin: 0em 0px}
-[class*="col-"] {padding: 0 0px;}
+.row {
+    margin: 0em 0px
+}
+
+[class*="col-"] {
+    padding: 0 0px;
+}
 
 .title, h1 {
     font-family: sans-serif;
@@ -87,7 +92,7 @@ a:hover {
     margin-top: 10px;
     margin-bottom: 0px;
     width: 100%;
-    
+
 }
 
 .animated-header {
@@ -175,9 +180,14 @@ a:hover {
 }
 
 .index-row {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: -40px;
+}
+
+@media (min-width: 768px) {
+    .index-row {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        margin-left: -40px;
+    }
 }
 
 .flat-img-container {
@@ -223,6 +233,7 @@ a:hover {
 
 .vk-img {
     margin-left: 0px;
+    width: 100%;
 }
 
 .shade-hover {
@@ -243,7 +254,7 @@ a:hover {
 }
 
 /*@media (min-width: 992px) {*/
-    /*.vertical-br {*/
-        /*display: inline;*/
-    /*}*/
+/*.vertical-br {*/
+/*display: inline;*/
+/*}*/
 /*}*/
