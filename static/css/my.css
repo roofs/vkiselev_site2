@@ -180,8 +180,19 @@ a:hover {
 }
 
 .flat-img-container {
-    height: 78vh;
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .flat-img-container {
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .flat-img-container {
+        height: 78vh;
+    }
 }
 
 .flat-img {
