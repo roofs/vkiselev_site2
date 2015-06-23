@@ -28,6 +28,7 @@
     font-size: 12px;
     text-align: right;
     margin-top: 10px;
+    padding-left: 20px;
 }
 
 /*ЦВЕТ ССЫЛОК*/
@@ -198,7 +199,7 @@ a:hover {
 .flat-img {
     height: auto;
     width: 100%;
-    margin-left: -25px;
+    margin-left: 0px;
 }
 
 .flat-img-large {
@@ -216,11 +217,11 @@ a:hover {
 }
 
 .social-likes-topm {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .vk-img {
-    margin-left: -10px;
+    margin-left: 0px;
 }
 
 .shade-hover {
@@ -232,7 +233,7 @@ a:hover {
 }
 
 .shade-hover:hover {
-    -webkit-filter: brightness(170%);
-    filter: brightness(170%);
+    -webkit-filter: brightness(130%);
+    filter: brightness(130%);
 }
 
