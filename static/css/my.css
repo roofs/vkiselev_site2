@@ -249,12 +249,22 @@ a:hover {
     filter: brightness(130%);
 }
 
-.social-buttons-v {
-    display: inline;
+.navprev {
+    float: none !important;
+    text-align: center;
 }
 
-/*@media (min-width: 992px) {*/
-/*.vertical-br {*/
-/*display: inline;*/
-/*}*/
-/*}*/
+.navnext {
+    float: none !important;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navprev {
+        float: left !important;
+    }
+
+    .navnext {
+        float: right !important;
+    }
+}
