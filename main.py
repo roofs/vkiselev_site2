@@ -226,7 +226,7 @@ def render_comics_subpage(section_name, path, reverse=True):
 
 @app.route("/cartoons/<path:path>")
 def cartoon_page(path):
-    return render_animated_subpage('cartoons', path, reverse=False)
+    return render_animated_subpage('cartoons', path, reverse=True)
 
 
 @app.route("/misc/<path:path>")
@@ -236,12 +236,12 @@ def misc_page(path):
 
 @app.route("/princess/<path:path>")
 def princess_page(path):
-    return render_animated_subpage('princess', path)
+    return render_animated_subpage('princess', path, reverse=False)
 
 
 @app.route("/princess_seasons/<path:path>")
 def princess_season_page(path):
-    return render_animated_subpage('princess_seasons', path)
+    return render_animated_subpage('princess_seasons', path, reverse=False)
 
 
 @app.route("/flat/<path:path>")
