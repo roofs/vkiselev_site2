@@ -282,7 +282,7 @@ a:hover {
     text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 450px) {
     .navprev {
         float: left !important;
     }
