@@ -7,7 +7,7 @@ from flask import Flask, render_template, session
 from flask import redirect
 from yaml import load
 
-columns_class = 'col-md-3 col-sm-4'
+columns_class = 'col-md-3 col-sm-4 col-landscape'
 
 def generate_csrf_token():
     if '_csrf_token' not in session:

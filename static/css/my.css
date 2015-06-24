@@ -291,3 +291,12 @@ a:hover {
         float: right !important;
     }
 }
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .col-landscape {
+        width: 50%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+    }
+}
