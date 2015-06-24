@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-7">
                 <div id="wrapper" class="videoWrapper">
-                    <iframe class="cartoon_item-big" src="{{ item.youtube }}"
+                    <iframe id="video" class="cartoon_item-big" src="{{ item.youtube }}"
                             {% if item.height %} height="{{ item.height }}" {% else %} height="390"  {% endif %}
                             {% if item.width %} width="{{ item.width }}" {% else %} width="587"  {% endif %}
                             frameborder="0" allowfullscreen>
@@ -32,7 +32,7 @@
     </div>
     <script>
         // Find all YouTube videos
-        var $allVideos = $("iframe[src^='//www.youtube.com']"),
+        var $allVideos = $("#video"),
 
         // The element that is fluid width
                 $fluidEl = $("#wrapper");
