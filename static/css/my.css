@@ -175,8 +175,7 @@ a:hover {
 }
 
 .index_image {
-    height: calc(49vh - 60px);
-    max-height: 233px;
+    width: 45%;
 }
 
 .index-row {
@@ -187,6 +186,12 @@ a:hover {
         margin-top: 60px;
         margin-bottom: 60px;
         margin-left: -40px;
+    }
+
+    .index_image {
+        height: calc(49vh - 60px);
+        max-height: 233px;
+        width: auto;
     }
 }
 
@@ -223,7 +228,7 @@ a:hover {
 }
 
 .videoWrapper {
-	width: 100%;
+    width: 100%;
 }
 
 .cartoon_item-text {
