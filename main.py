@@ -143,7 +143,10 @@ def render_animated_subpage(section_name, path, reverse=True):
                     'og_desc': og_desc,
                     'youtube': process_video_url(yaml['youtube']),
                     'img': '/' + section_name + '/' + item_id + '/thumbnail.jpg',
-                    'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1'}
+                    'fb_thumb': '/' + section_name + '/' + item_id + '/thumbnail.jpg?cache=1',
+                    'twitter_ref': yaml['twitter'] if 'twitter' in yaml else None,
+                    'facebook_ref': yaml['facebook'] if 'facebook' in yaml else None,
+                    'the_book_ref': yaml['the_book'] if 'the_book' in yaml else None}
             if 'width' in yaml:
                 item['width'] = yaml['width']
             if 'height' in yaml:

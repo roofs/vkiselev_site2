@@ -26,6 +26,18 @@
                     {{ item.desc | safe }}
                 </p>
 
+                <div class="pull-right">
+                    {% if item.twitter_ref %}
+                        <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank"><i class="fa fa-twitter"></i> Princes on Twitter</a></div>
+                    {% endif %}
+                    {% if item.facebook_ref %}
+                        <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank"><i class="fa fa-facebook"></i> Princess on Facebook</a></div>
+                    {% endif %}
+                    {% if item.the_book_ref %}
+                        <div class="ext_ref"><a href="{{ item.the_book_ref }}"><i class="fa fa-book"></i> Princess book</a></div>
+                    {% endif %}
+                </p>
+
                 {% include 'social_share.html' %}
             </div>
         </div>
