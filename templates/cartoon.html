@@ -19,27 +19,6 @@
                             {% if item.width %} width="{{ item.width }}" {% else %} width="587"  {% endif %}
                             frameborder="0" allowfullscreen>
                     </iframe>
-                    <div class="g-ytsubscribe pull-right" data-channel="ystavatube" data-layout="default"
-                         data-count="hidden"></div>
-                    <div class="follow-block">
-                        <div class="">
-                            {% if item.twitter_ref %}
-                                <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank"><i
-                                        class="fa fa-twitter"></i> Princes on Twitter</a></div>
-                            {% endif %}
-                            {% if item.facebook_ref %}
-                                <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank"><i
-                                        class="fa fa-facebook"></i> Princess on Facebook</a></div>
-                            {% endif %}
-                            {% if item.the_book_ref %}
-                                <div class="ext_ref"><a href="{{ item.the_book_ref }}"><i class="fa fa-book"></i>
-                                    Princess
-                                    book</a>
-                                </div>
-                            {% endif %}
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-5 cartoon_item-text">
@@ -51,6 +30,25 @@
                 <div class="share-block">
                     {% include 'social_share.html' %}
                 </div>
+                <div class="follow-block pull-right">
+                        <div class=""><div class="desc">Follow: </div>
+                            <div class="g-ytsubscribe pull-right" data-channel="ystavatube" data-layout="default"
+                         data-count="hidden"></div>
+                            {% if item.twitter_ref %}
+                                <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank"><i
+                                        class="fa fa-twitter"></i></a></div>
+                            {% endif %}
+                            {% if item.facebook_ref %}
+                                <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank"><i
+                                        class="fa fa-facebook"></i></a></div>
+                            {% endif %}
+                            {% if item.the_book_ref %}
+                                <div class="ext_ref"><a href="{{ item.the_book_ref }}"><i class="fa fa-book"></i></a>
+                                </div>
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
