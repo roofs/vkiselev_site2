@@ -1,6 +1,7 @@
 - 3: base.html - microformats
-- 17: social share - убрать рамочки, сделать меньше и по середине
-- 18: follow - убрать слова Youtube, сделать картинки как в social share, для memories - mem_mark
+- 18: follow: сделать картинки как в social share, для memories - mem_mark
+  + убрать слова Youtube,
+- 19:
 
 ----- Done
 + 1: Сделать стрелочки back/forward для разделов сайта - сделал как-то
@@ -22,3 +23,4 @@
 + 10: из принцессы ссылки на fb,twitter и страницу mem
 + 2: Куда засунуть кнопку youtube-subscribe
 + 15: крайняя граница маленьких больших картинок
++ 17: social share - убрать рамочки, сделать меньше и по середине

@@ -300,3 +300,9 @@ a:hover {
         min-height: 1px;
     }
 }
+
+.social-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
