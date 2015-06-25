@@ -1,4 +1,4 @@
-- 3: base.html - microformats - картинки для FB переделать в лучшем качестве. Уточнить размеры
+- 3: base.html - microformats
 - 17: social share - убрать рамочки, сделать меньше и по середине
 - 18: follow - убрать слова Youtube, сделать картинки как в social share, для memories - mem_mark
 
