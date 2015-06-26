@@ -301,7 +301,11 @@ a:hover {
 }
 
 .social-center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*text-align: center;*/
+}
+
+.ext_ref {
+    padding-right: 7px;
 }

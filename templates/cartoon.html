@@ -31,25 +31,22 @@
                     {% include 'social_share.html' %}
                 </div>
                 <div class="follow-block pull-right text-right">
-                    <div class="">
-                        <div class="desc">Follow:</div>
-                        <div class="ext_ref"><a href="//www.youtube.com/user/ystavatube/" target="_blank">
-                            <img src="/static/img/buttons/yb.png" width="12px"></a></div>
-                        {% if item.twitter_ref %}
-                            <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
-                                <img src="/static/img/buttons/twitter.png"></a></div>
-                        {% endif %}
-                        {% if item.facebook_ref %}
-                            <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank">
-                                <img src="/static/img/buttons/fb.png"></a></div>
-                        {% endif %}
-                        {% if item.the_book_ref %}
-                            <div class="ext_ref"><a href="{{ item.the_book_ref }}">
-                                <img src="/static/img/buttons/mem_mark.jpg" width="12px"></a>
-                            </div>
-                        {% endif %}
-                        </p>
-                    </div>
+                    <span class="desc">Follow:</span>
+                    <span class="ext_ref"><a href="//www.youtube.com/user/ystavatube/" target="_blank">
+                        <img src="/static/img/buttons/yb.png" width="12px"></a></span>
+                    {% if item.twitter_ref %}
+                        <span class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
+                            <img src="/static/img/buttons/twitter.png"></a></span>
+                    {% endif %}
+                    {% if item.facebook_ref %}
+                        <span class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank">
+                            <img src="/static/img/buttons/fb.png"></a></span>
+                    {% endif %}
+                    {% if item.the_book_ref %}
+                        <span class="ext_ref"><a href="{{ item.the_book_ref }}">
+                            <img src="/static/img/buttons/mem_mark.jpg" width="12px"></a>
+                        </span>
+                    {% endif %}
                 </div>
             </div>
         </div>
