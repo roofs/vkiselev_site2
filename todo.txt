@@ -1,6 +1,4 @@
 - 3: base.html - microformats
-- 18: follow: сделать картинки как в social share, для memories - mem_mark
-  + убрать слова Youtube,
 - 19:
 
 ----- Done
@@ -24,3 +22,5 @@
 + 2: Куда засунуть кнопку youtube-subscribe
 + 15: крайняя граница маленьких больших картинок
 + 17: social share - убрать рамочки, сделать меньше и по середине
++ 18: follow: сделать картинки как в social share, для memories - mem_mark
+  + убрать слова Youtube,

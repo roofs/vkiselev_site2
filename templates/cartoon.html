@@ -31,26 +31,26 @@
                     {% include 'social_share.html' %}
                 </div>
                 <div class="follow-block pull-right text-right">
-                        <div class=""><div class="desc">Follow: </div>
-{#                            {% if item.twitter_ref %}#}
-                                <div class="ext_ref"><a href="//www.youtube.com/user/ystavatube/" target="_blank"><i
-                                        class="fa fa-youtube"></i></a></div>
-{#                            {% endif %}#}
-                            {% if item.twitter_ref %}
-                                <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank"><i
-                                        class="fa fa-twitter"></i></a></div>
-                            {% endif %}
-                            {% if item.facebook_ref %}
-                                <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank"><i
-                                        class="fa fa-facebook"></i></a></div>
-                            {% endif %}
-                            {% if item.the_book_ref %}
-                                <div class="ext_ref"><a href="{{ item.the_book_ref }}"><i class="fa fa-book"></i></a>
-                                </div>
-                            {% endif %}
-                            </p>
-                        </div>
+                    <div class="">
+                        <div class="desc">Follow:</div>
+                        <div class="ext_ref"><a href="//www.youtube.com/user/ystavatube/" target="_blank">
+                            <img src="/static/img/buttons/yb.png" width="12px"></a></div>
+                        {% if item.twitter_ref %}
+                            <div class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
+                                <img src="/static/img/buttons/twitter.png"></a></div>
+                        {% endif %}
+                        {% if item.facebook_ref %}
+                            <div class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank">
+                                <img src="/static/img/buttons/fb.png"></a></div>
+                        {% endif %}
+                        {% if item.the_book_ref %}
+                            <div class="ext_ref"><a href="{{ item.the_book_ref }}">
+                                <img src="/static/img/buttons/mem_mark.jpg" width="12px"></a>
+                            </div>
+                        {% endif %}
+                        </p>
                     </div>
+                </div>
             </div>
         </div>
     </div>
