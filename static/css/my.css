@@ -307,5 +307,11 @@ a:hover {
 }
 
 .ext_ref {
-    padding-right: 7px;
+    padding-right: 8px;
+}
+
+.follow-down {
+    position: relative;
+    top: 8px;
+    padding-right: 8px;
 }

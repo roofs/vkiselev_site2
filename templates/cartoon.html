@@ -32,8 +32,11 @@
                 </div>
                 <div class="follow-block pull-right text-right">
                     <span class="desc">Follow:</span>
-                    <span class="ext_ref"><a href="//www.youtube.com/user/ystavatube/" target="_blank">
-                        <img src="/static/img/buttons/yb.png" width="12px"></a></span>
+
+                    <span class="follow-down">
+                        <div class="g-ytsubscribe" data-channel="ystavatube" data-layout="default"
+                             data-count="hidden"></div>
+                    </span>
                     {% if item.twitter_ref %}
                         <span class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
                             <img src="/static/img/buttons/twitter.png"></a></span>
