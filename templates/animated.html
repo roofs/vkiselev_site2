@@ -4,7 +4,8 @@
 {% block microformats %}
     <meta property="og:title" content="Animated"/>
     {# о чем эта страница#}
-    <meta property="og:description" content="A collection of moving stuff by Vasili Kiselev. It includes different types of clay, cut-out animation on sports, LGBT, love etc., finger puppet show about adventures of a little princess and a number of experimental videos."/>
+    <meta property="og:description"
+          content="A collection of moving stuff by Vasili Kiselev. It includes different types of clay, cut-out animation on sports, LGBT, love etc., finger puppet show about adventures of a little princess and a number of experimental videos."/>
     {# и картинку, которая будет при шаринге ссылки на тебя через fb#}
     <meta property="og:image" content="http://vkiselev.com/static/img/fb_anim.jpg?cache=2"/>
 {% endblock %}
@@ -38,6 +39,7 @@
             {% endfor %}
         </div>
         <br></br>
+
         <div class="row">
             {% for item in princess %}
                 <div class="{{ cols_class }} cartoon_item">
@@ -65,7 +67,13 @@
         </div>
 
         <div class="row">
-            <a href="javascript:window.scrollTo(0,0);"><img src="/static/img/arrow_up.jpg" width="20px"/></a>
+            <div>
+                <a href="javascript:window.scrollTo(0,0);" class="pull-right"><img src="/static/img/arrow_up.jpg"
+                                                                                   width="20px"
+                        alt="Up!"/></a>
+            </div>
+            <br/>
+            <div class="clear-fix"></div>
             {% include 'social_share.html' %}
         </div>
     </div>
