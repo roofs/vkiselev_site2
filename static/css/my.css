@@ -325,3 +325,7 @@ a:hover {
     padding-right: 8px;
 }
 
+.follow-block {
+    width: 100%;
+    margin-right: -14px;
+}

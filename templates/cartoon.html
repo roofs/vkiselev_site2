@@ -30,26 +30,29 @@
                 <div class="share-block">
                     {% include 'social_share.html' %}
                 </div>
-                <div class="follow-block pull-right text-right">
-                    <span class="share">Follow:</span>
+                <div class="clear-fix"></div>
+                <div>
+                    <div class="follow-block pull-right text-right">
+                        <span class="share">Follow:</span>
 
-                    {% if item.twitter_ref %}
-                        <span class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
-                            <img src="/static/img/buttons/twitter.png"></a></span>
-                    {% endif %}
-                    {% if item.facebook_ref %}
-                        <span class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank">
-                            <img src="/static/img/buttons/fb.png"></a></span>
-                    {% endif %}
-                    {% if item.the_book_ref %}
-                        <span class="ext_ref"><a href="{{ item.the_book_ref }}">
-                            <img src="/static/img/buttons/mem_mark.jpg" width="12px"></a>
+                        {% if item.twitter_ref %}
+                            <span class="ext_ref"><a href="{{ item.twitter_ref }}" target="_blank">
+                                <img src="/static/img/buttons/twitter.png"></a></span>
+                        {% endif %}
+                        {% if item.facebook_ref %}
+                            <span class="ext_ref"><a href="{{ item.facebook_ref }}" target="_blank">
+                                <img src="/static/img/buttons/fb.png"></a></span>
+                        {% endif %}
+                        {% if item.the_book_ref %}
+                            <span class="ext_ref"><a href="{{ item.the_book_ref }}">
+                                <img src="/static/img/buttons/mem_mark.jpg" width="12px"></a>
                         </span>
-                    {% endif %}
-                    <span class="follow-down">
+                        {% endif %}
+                        <span class="follow-down">
                         <div class="g-ytsubscribe" data-channel="ystavatube" data-layout="default"
                              data-count="hidden"></div>
                     </span>
+                    </div>
                 </div>
             </div>
         </div>
