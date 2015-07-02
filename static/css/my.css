@@ -169,6 +169,17 @@ a:hover {
     height: 40px;
 }
 
+@media (max-width: 768px) {
+    .left-header {
+        display: none;
+    }
+
+    [class*="-header"] {
+        background: none;
+        border: none;
+    }
+}
+
 .cartoon-row {
     padding-left: 190px;
     padding-right: 190px;
