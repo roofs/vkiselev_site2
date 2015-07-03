@@ -70,12 +70,53 @@
             <div>
                 <a href="javascript:window.scrollTo(0,0);" class="pull-right"><img src="/static/img/arrow_up.jpg"
                                                                                    width="20px"
-                        alt="Up!"/></a>
+                                                                                   alt="Up!"/></a>
             </div>
             <br/>
+
             <div class="clear-fix"></div>
             {% include 'social_share.html' %}
         </div>
     </div>
+
+    <script>
+        function equalizeHeights(selector) {
+            var heights = new Array();
+
+            // Loop to get all element heights
+            $(selector).each(function () {
+
+                // Need to let sizes be whatever they want so no overflow on resize
+                $(this).css('min-height', '0');
+                $(this).css('max-height', 'none');
+                $(this).css('height', 'auto');
+
+                // Then add size (no units) to array
+                heights.push($(this).height());
+            });
+
+            // Find max height of all elements
+            var max = Math.max.apply(Math, heights);
+
+            // Set all heights to max height
+            $(selector).each(function () {
+                $(this).css('height', max + 'px');
+            });
+        }
+
+        $(window).load(function () {
+            // Fix heights on page load
+            equalizeHeights(".cartoon_item");
+
+            // Fix heights on window resize
+            $(window).resize(function () {
+
+                // Needs to be a timeout function so it doesn't fire every ms of resize
+                setTimeout(function () {
+                    equalizeHeights(".cartoon_item");
+                }, 120);
+            });
+        });
+    </script>
 
 {% endblock %}
