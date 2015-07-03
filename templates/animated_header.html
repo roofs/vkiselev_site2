@@ -2,8 +2,8 @@
     <div class="col-md-12 global-header">
         <div class="animated-header">
             <a class="left-header" href="{{ url_for('animated') }}"> <img class="black-hover" src="/static/img/anim_inv.png"></a>
-            <a class="left-header" href="{{ url_for('animated') }}#cartoon">animation</a> |
-            <a class="left-header" href="{{ url_for('animated') }}#princess">the princess</a> |
+            <a class="left-header" href="{{ url_for('animated') }}#cartoon">animation</a> <span class="left-header">|</span>
+            <a class="left-header" href="{{ url_for('animated') }}#princess">the princess</a> <span class="left-header">|</span>
             <a class="left-header" href="{{ url_for('animated') }}#misc">misc</a>
             {% include 'right_header.html' %}
         </div>

@@ -175,8 +175,9 @@ a:hover {
     }
 
     [class*="-header"] {
-        background: none;
-        border: none;
+        /*background: none;*/
+        /*border: none;*/
+        height: 46px;
     }
 }
 
