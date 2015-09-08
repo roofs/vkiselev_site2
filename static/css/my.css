@@ -15,6 +15,15 @@
     padding-top: 0;
 }
 
+h2 {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: 1000px !important;
