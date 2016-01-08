@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Vasili Kiselev</title>
+<link>http://vkiselev.com/</link>
+<description>New animations, stills, projects and other.</description>
+
+<item>
+<title>Vote for Ryaba the Hen</title>
+<link>http://vkiselev.com/cartoons/ryaba</link>
+<guid>http://vkiselev.com/cartoons/ryaba1</guid>
+<pubDate>Tue, 5 Jan 2016 11:11:11 GMT</pubDate>
+<description>Watch 'Ryaba the Hen' @Funny Cat Animation Festival on-line (limited time only) and vote for Ryaba and other animations.</description>
+</item>
+
+<item>
+<title>Cats</title>
+<link>http://vkiselev.com/flat/28</link>
+<guid>http://vkiselev.com/flat/28</guid>
+<pubDate>Tue, 22 Dec 2015 17:17:17 GMT</pubDate>
+<description>A new painting.</description>
+</item>
+
+<item>
+<title>Ryaba the Hen @Sardinia Queer SFF</title>
+<link>http://vkiselev.com/cartoons/ryaba</link>
+<guid>http://vkiselev.com/cartoons/ryaba</guid>
+<pubDate>Tue, 10 Nov 2013 16:16:16 GMT</pubDate>
+<description>If you happen to be in Cagliari on 19 November, don't miss Ryaba the Hen competing in Sardinia Queer SFF.</description>
+</item>
+
+</channel>
+</rss>
