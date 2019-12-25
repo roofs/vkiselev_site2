@@ -54,7 +54,7 @@ def hello():
     items.extend(prepare_animated_section('comics'))
     pitems.append(random.choice(items))
 
-    return render_template('index.html', preview=pitems, cols_class="col-md-5 col-sm-5 col-landscape")
+    return render_template('index.html', preview=pitems, cols_class="col-md-6 col-sm-5 col-landscape")
 
 
 def get_yaml(block, id):
