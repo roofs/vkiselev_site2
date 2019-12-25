@@ -1,3 +1,4 @@
+import random
 from uuid import uuid4
 import os
 import re
@@ -37,7 +38,23 @@ templates_dir = os.path.join(os.path.dirname(__file__), 'templates')
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    pitems = []
+
+    items = prepare_animated_section('cartoons')
+    pitems.append(random.choice(items))
+
+    items = prepare_flat_section('flat')
+    pitems.append(random.choice(items))
+
+    items = prepare_animated_section('princess')
+    items.extend(prepare_animated_section('misc'))
+    pitems.append(random.choice(items))
+
+    items = prepare_animated_section('projects')
+    items.extend(prepare_animated_section('comics'))
+    pitems.append(random.choice(items))
+
+    return render_template('index.html', preview=pitems, cols_class="col-md-5 col-sm-5 col-landscape")
 
 
 def get_yaml(block, id):
