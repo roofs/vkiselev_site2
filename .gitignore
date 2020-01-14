@@ -1,6 +1,7 @@
 *.pyc
 # don't include third-party dependencies.
 penv/
+venv/
 .DS_Store
 
 # User-specific stuff:

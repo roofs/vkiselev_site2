@@ -3,9 +3,9 @@
 {% block title %}Vasili Kiselev{% endblock %}
 {% block content %}
     <div class="container-fluid">
-        <div class="row">
+        <div class="row index-row">
             <div class="col-md-6">
-                <div class="row index-row">
+                <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-11">
                         <a href="{{ url_for('animated') }}"><img title="animated"
@@ -14,41 +14,40 @@
                         <a href="{{ url_for('still') }}"><img class="index_image shade-hover" title="still"
                                                               src="/static/img/still_big.jpg"></a>
                     </div>
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-11">
-                            <a href="{{ url_for('memories') }}"><img class="index_image shade-hover" title="memories"
-                                                                     src="/static/img/mem_big.jpg"></a>
-                            <a href="{{ url_for('vasili') }}"><img class="index_image shade-hover" title="vasili"
-                                                                   src="/static/img/vk_big.jpg"></a>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        <a href="{{ url_for('memories') }}"><img class="index_image shade-hover" title="memories"
+                                                                 src="/static/img/mem_big.jpg"></a>
+                        <a href="{{ url_for('vasili') }}"><img class="index_image shade-hover" title="vasili"
+                                                               src="/static/img/vk_big.jpg"></a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <br/><div class="news"><a class="link" href="http://www.vkiselev.com/vasili"><b>Here you can read<img src="/static/img/book.png" height=13px width=13px> my story</b><br/>and find a link to Patreon.</a></div>
-                
-                <br/><div class="news"><a class="link" href="http://www.vkiselev.com/projects/dolls"><b>Let's play <img src="/static/img/raisedhand.png" height=13px width=13px></b><br/>porn...</a></div>
-                
-                <br/><div class="news"><a class="link" href="http://www.vkiselev.com/projects/nominator"><b>What would you do <img src="/static/img/gamedie.png" height=13px width=13px></b><br/>when nominated?</a></div>
-                
-                <br/><div class="news"><a class="link" href="http://www.vkiselev.com/misc/bluefence"><b>Some thoughts<img src="/static/img/thoughts.png" height=13px width=13px> on Russia.</b><br/>Share yours!</a></div>
-                <br/>
-                <div class="news"><a class="link" href="http://www.vkiselev.com/cartoons/he"><b>He is so full of joy <img src="/static/img/naus.png" height=13px width=13px>! 2016</b><br/>So just enjoy..</a>
-                   </div>
-                
-                
-{#                <a class="twitter-timeline" href="https://twitter.com/ystava" data-widget-id="613080241171529728">Tweets#}
-{#                    by @ystava</a>#}
-{#                <script>!function (d, s, id) {#}
-{#                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';#}
-{#                    if (!d.getElementById(id)) {#}
-{#                        js = d.createElement(s);#}
-{#                        js.id = id;#}
-{#                        js.src = p + "://platform.twitter.com/widgets.js";#}
-{#                        fjs.parentNode.insertBefore(js, fjs);#}
-{#                    }#}
-{#                }(document, "script", "twitter-wjs");</script>#}
+
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-9">
+                    </div>
+                    <div class="col-md-3">
+                        {% for item in preview %}
+                            <div class="row">
+                                <div class="cartoon_item">
+                                    <a href="{{ item.url }}"><img class="shade-hover" src="{{ item.img }}"
+                                                                  width="100%"/></a>
+
+                                    <div class="cartoon_desc">
+                                        <a href="{{ item.url }}">{{ item.desc }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
