@@ -217,10 +217,15 @@ a:hover {
 }
 
 .index_image {
-    width: 45%;
+    width: 50%;
 }
 
 .index-row {
+    margin-left: 20px;
+    margin-right: 20px;
+   
+    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 @media (min-width: 768px) {
@@ -230,10 +235,16 @@ a:hover {
     }
 
     .index_image {
+/*
         height: calc(45vh - 60px);
         max-height: 233px;
         width: auto;
+*/
     }
+}
+
+.break-index {
+    padding-bottom: 90px;
 }
 
 .flat-img-container {
