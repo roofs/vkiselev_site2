@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import arrowLeft from "../assets/img/arrow_left.jpg";
+import arrowRight from "../assets/img/arrow_right.jpg";
+
+interface LinkItem { url: string; name: string }
+interface Props { prev?: LinkItem; next?: LinkItem }
+const { prev, next } = Astro.props as Props;
+---
+<div class="col-md-12 navigation global-header">
+  {prev && (
+    <div class="navprev">
+      <Image src={arrowLeft} alt="Prev" width={10} />
+      <a class="link" href={prev.url}> {prev.name}</a>
+    </div>
+  )}
+  {next && (
+    <div class="navnext">
+      <a class="link" href={next.url}>{next.name} </a>
+      <Image src={arrowRight} alt="Next" width={10} />
+    </div>
+  )}
+</div>
+<br />

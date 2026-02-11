@@ -1,0 +1,29 @@
+---
+interface Props {
+  twitter?: string | null;
+  facebook?: string | null;
+  the_book?: string | null;
+}
+const { twitter, facebook, the_book } = Astro.props as Props;
+---
+<div class="follow-block pull-right text-right">
+  <span class="share">Follow:</span>
+  {twitter && (
+    <span class="ext_ref">
+      <a href={twitter} target="_blank">Twitter</a>
+    </span>
+  )}
+  {facebook && (
+    <span class="ext_ref">
+      <a href={facebook} target="_blank">Facebook</a>
+    </span>
+  )}
+  {the_book && (
+    <span class="ext_ref">
+      <a href={the_book} target="_blank">The Book</a>
+    </span>
+  )}
+  <span class="follow-down">
+    <a href="https://www.youtube.com/@ystavatube" target="_blank">Subscribe on YouTube</a>
+  </span>
+</div>
