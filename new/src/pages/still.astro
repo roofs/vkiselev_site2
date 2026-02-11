@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import StillHeader from "../components/StillHeader.astro";
 
 const flat = (await getCollection("flat")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 const projects = (await getCollection("projects")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
@@ -10,8 +11,11 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
 <Layout 
   title="Still Graphics - vkiselev.com" 
   description="Flat graphics, projects and comics by Vasili Kiselev."
+  showGlobalHeader={false}
 >
-  <div class="still_section">Flat</div>
+  <StillHeader />
+  <div class="padding-top-big"></div>
+  <div id="flat" class="still_section">Flat</div>
   <div class="row">
     {flat.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -23,7 +27,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     ))}
   </div>
 
-  <div class="still_section">Projects</div>
+  <div id="projects" class="still_section">Projects</div>
   <div class="row">
     {projects.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -35,7 +39,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     ))}
   </div>
 
-  <div class="still_section">Comics</div>
+  <div id="comics" class="still_section">Comics</div>
   <div class="row">
     {comics.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">

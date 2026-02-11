@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
 import VideoEmbed from "../../components/VideoEmbed.astro";
+import AnimatedHeader from "../../components/AnimatedHeader.astro";
 
 function buildLink(e: any, collection: string) {
   return `/${collection}/${e.data.url || e.id}`;
@@ -51,7 +52,10 @@ const { Content } = await entry.render();
   twitter={entry.data.twitter}
   facebook={entry.data.facebook}
   the_book={entry.data.the_book}
+  showGlobalHeader={false}
 >
+  <AnimatedHeader />
+  <div class="padding-top-big"></div>
   <article>
     {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
     <Content />

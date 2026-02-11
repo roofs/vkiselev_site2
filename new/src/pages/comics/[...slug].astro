@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
+import StillHeader from "../../components/StillHeader.astro";
 
 function buildLink(e: any, collection: string) {
   return `/${collection}/${e.data.url || e.id}`;
@@ -50,7 +51,10 @@ const { Content } = await entry.render();
   twitter={entry.data.twitter}
   facebook={entry.data.facebook}
   the_book={entry.data.the_book}
+  showGlobalHeader={false}
 >
+  <StillHeader />
+  <div class="padding-top-big"></div>
   <article>
     {entry.data.cover && <p><img src={entry.data.cover} alt={entry.data.hover_text} /></p>}
     <Content />

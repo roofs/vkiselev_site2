@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import stillInvImg from "../assets/img/still_inv.png";
+import animSmImg from "../assets/img/anim_sm.png";
+import stillSmImg from "../assets/img/still_sm.png";
+import memSmImg from "../assets/img/mem_sm.png";
+import vkSmImg from "../assets/img/vk_sm.png";
+---
+<div class="row global-header">
+    <div class="col-md-12">
+        <div class="still-header">
+            <a class="left-header" href="/still">
+                <Image class="black-hover" src={stillInvImg} alt="Still" width={40} />
+            </a>
+            <a class="left-header" href="/still#flat">flat</a> <span class="left-header">|</span>
+            <a class="left-header" href="/still#projects">projects</a> <span class="left-header">|</span>
+            <a class="left-header" href="/still#comics">comics</a>
+            
+            <span class="header-rest pull-right">
+                <a href="/animated"><Image class="shade-hover" src={animSmImg} alt="Animated" width={40} /></a>
+                <a href="/still"><Image class="shade-hover" src={stillSmImg} alt="Still" width={40} /></a>
+                <a href="/memories"><Image class="shade-hover" src={memSmImg} alt="Memories" width={40} /></a>
+                <a href="/vasili"><Image class="shade-hover" src={vkSmImg} alt="Vasili" width={40} /></a>
+            </span>
+        </div>
+    </div>
+</div>

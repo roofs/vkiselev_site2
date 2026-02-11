@@ -395,3 +395,8 @@ a:hover {
 .videoWrapper iframe {
     max-width: 100%;
 }
+
+
+/* bootstrap-like helpers for headers alignment */
+.pull-right { float: right; }
+.header-rest a { display: inline-block; }

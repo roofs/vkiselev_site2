@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import AnimatedHeader from "../components/AnimatedHeader.astro";
 
 const cartoons = (await getCollection("cartoons")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
@@ -11,8 +12,11 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
 <Layout 
   title="Animated - vkiselev.com" 
   description="Animation, cartoons and motion graphics by Vasili Kiselev."
+  showGlobalHeader={false}
 >
-  <div class="anim_section">Cartoons</div>
+  <AnimatedHeader />
+  <div class="padding-top-big"></div>
+  <div id="cartoons" class="anim_section">Cartoons</div>
   <div class="row">
     {cartoons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -24,7 +28,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
     ))}
   </div>
 
-  <div class="anim_section">Misc</div>
+  <div id="misc" class="anim_section">Misc</div>
   <div class="row">
     {misc.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -36,7 +40,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
     ))}
   </div>
 
-  <div class="anim_section">Princess</div>
+  <div id="princess" class="anim_section">Princess</div>
   <div class="row">
     {princess.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
