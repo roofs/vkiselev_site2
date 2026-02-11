@@ -13,9 +13,9 @@ interface Props {
   twitter?: string;
   facebook?: string;
   the_book?: string;
-  showGlobalHeader?: boolean;
+  containerClass?: string;
 }
-const { title, description, image, twitter, facebook, the_book, showGlobalHeader = true } = Astro.props as Props & { showGlobalHeader?: boolean };
+const { title, description, image, twitter, facebook, the_book, showGlobalHeader = true, containerClass = "container" } = Astro.props as Props & { showGlobalHeader?: boolean };
 ---
 <html lang="en">
   <head>
@@ -44,7 +44,7 @@ const { title, description, image, twitter, facebook, the_book, showGlobalHeader
         </div>
       </header>
     )}
-    <main class="container">
+    <main class={containerClass}>
       <slot />
     </main>
     <footer>

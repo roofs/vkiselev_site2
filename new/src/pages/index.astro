@@ -23,21 +23,14 @@ const pitems = [
   getRandom([...projects, ...(await getCollection("comics"))])
 ].filter(Boolean);
 ---
-<Layout title="vkiselev.com" showGlobalHeader={false}>
-  <div class="container-fluid">
+<Layout title="vkiselev.com" showGlobalHeader={false} containerClass="container-fluid">
     <div class="row index-row">
-      <div class="col-md-6 break-index">
+      <div class="col-md-6 break-index" style="padding: 0 !important;">
         <div class="row">
-          <nobr>
-            <a href="/animated"><Image src={animBigImg} alt="animated" class="index_image shade-hover" /></a>
-            <a href="/still"><Image src={stillBigImg} alt="still" class="index_image shade-hover" /></a>
-          </nobr>
+          <nobr><a href="/animated"><img src={animBigImg.src} alt="animated" class="index_image shade-hover" /></a><a href="/still"><img src={stillBigImg.src} alt="still" class="index_image shade-hover" /></a></nobr>
         </div>
         <div class="row">
-          <nobr>
-            <a href="/memories"><Image src={memBigImg} alt="memories" class="index_image shade-hover" /></a>
-            <a href="/vasili"><Image src={vkBigImg} alt="vasili" class="index_image shade-hover" /></a>
-          </nobr>
+          <nobr><a href="/memories"><img src={memBigImg.src} alt="memories" class="index_image shade-hover" /></a><a href="/vasili"><img src={vkBigImg.src} alt="vasili" class="index_image shade-hover" /></a></nobr>
         </div>
       </div>
 
@@ -48,7 +41,7 @@ const pitems = [
           <div class="row">
             <div class="cartoon_item">
               <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={150} />}
+                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} />}
                 <div class="cartoon_desc">{e.data.hover_text}</div>
               </a>
             </div>

@@ -4,7 +4,7 @@
 
 /* Копируем старые стили */
 .row {
-    margin: 0em 0px
+    margin: 0px 0px;
 }
 
 [class*="col-"] {
@@ -222,22 +222,30 @@ a:hover {
 }
 
 .index_image {
-    width: 50%;
+    width: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    vertical-align: top !important;
 }
 
-.index-row {
-    margin-left: 20px;
-    margin-right: 20px;
-   
-    margin-bottom: 60px;
-    margin-top: 60px;
+.index-row .row {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+.index-row [class*="col-"] {
+    padding: 0 !important;
 }
 
 @media (min-width: 768px) {
-    .index-row {
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
+.index-row {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
 
     .index_image {
 /*
