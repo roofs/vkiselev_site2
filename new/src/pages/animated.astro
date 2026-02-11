@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
-const cartoons = await getCollection("cartoons");
-const misc = await getCollection("misc");
-const princess = await getCollection("princess");
-const princessSeasons = await getCollection("princess_seasons");
+const cartoons = (await getCollection("cartoons")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
+const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
+const princess = (await getCollection("princess")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
+const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
 ---
 <Layout title="Animated">
   <div class="anim_section">Cartoons</div>
@@ -13,6 +14,7 @@ const princessSeasons = await getCollection("princess_seasons");
     {cartoons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/cartoons/${e.data.url || e.id}`}>
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
       </div>
@@ -24,6 +26,7 @@ const princessSeasons = await getCollection("princess_seasons");
     {misc.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/misc/${e.data.url || e.id}`}>
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
       </div>
@@ -35,6 +38,7 @@ const princessSeasons = await getCollection("princess_seasons");
     {princess.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/princess/${e.data.url || e.id}`}>
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
       </div>
@@ -46,6 +50,7 @@ const princessSeasons = await getCollection("princess_seasons");
     {princessSeasons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/princess_seasons/${e.data.url || e.id}`}>
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
       </div>

@@ -1,20 +1,57 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
+import VideoEmbed from "../../components/VideoEmbed.astro";
 
-export async function getStaticPaths() {
-  const entries = await getCollection('princess_seasons');
-  return entries.map((entry) => ({
-    params: { slug: entry.data.url || entry.id },
-    props: { entry },
-  }));
+function buildLink(e: any, collection: string) {
+  return `/${collection}/${e.data.url || e.id}`;
 }
 
-const { entry } = Astro.props as { entry: any };
+export async function getStaticPaths() {
+  const collection = 'princess_seasons';
+  const reverse = false;
+  const entries = await getCollection(collection);
+  const byId = new Map(entries.map((e) => [e.id, e] as const));
+
+  return entries.map((entry) => {
+    const id = parseInt(entry.id, 10);
+    const prevId = String(id - 1);
+    const nextId = String(id + 1);
+
+    let prev: any = undefined;
+    let next: any = undefined;
+
+    if (byId.has(prevId)) {
+      const pe = byId.get(prevId)!;
+      prev = { url: buildLink(pe, collection), name: pe.data.hover_text };
+    }
+    if (byId.has(nextId)) {
+      const ne = byId.get(nextId)!;
+      next = { url: buildLink(ne, collection), name: ne.data.hover_text };
+    }
+
+    if (reverse) {
+      const t = prev; prev = next; next = t;
+    }
+
+    return {
+      params: { slug: entry.data.url || entry.id },
+      props: { entry, prev, next },
+    };
+  });
+}
+
+const { entry, prev, next } = Astro.props as { entry: any, prev?: {url: string, name: string}, next?: {url: string, name: string} };
 const { Content } = await entry.render();
 ---
 <Layout title={entry.data.hover_text} description={entry.data.hover_text}>
   <article>
+    {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
     <Content />
+
+    <div class="navigation">
+      <div class="navprev">{prev && <a class="link" href={prev.url}>&larr; {prev.name}</a>}</div>
+      <div class="navnext">{next && <a class="link" href={next.url}>{next.name} &rarr;</a>}</div>
+    </div>
   </article>
 </Layout>
