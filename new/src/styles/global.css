@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./social-likes_flat.css";
+@import "./social-likes_birman.css";
 
 /* Копируем старые стили */
 .row {
@@ -379,4 +381,17 @@ a:hover {
 
 .scroll-top-a {
     margin-top: -7px;
+}
+
+/* Фиксы сетки и ленивой загрузки */
+.cartoon_item img, .index_image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: auto; /* Позволяем изображениям сохранять пропорции */
+}
+
+/* Ограничение ширины для iframe видео */
+.videoWrapper iframe {
+    max-width: 100%;
 }

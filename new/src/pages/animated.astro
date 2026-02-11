@@ -8,7 +8,10 @@ const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parse
 const princess = (await getCollection("princess")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
 const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
 ---
-<Layout title="Animated">
+<Layout 
+  title="Animated - vkiselev.com" 
+  description="Animation, cartoons and motion graphics by Vasili Kiselev."
+>
   <div class="anim_section">Cartoons</div>
   <div class="row">
     {cartoons.map((e) => (

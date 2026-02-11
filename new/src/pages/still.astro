@@ -7,7 +7,10 @@ const flat = (await getCollection("flat")).sort((a, b) => parseInt(b.id) - parse
 const projects = (await getCollection("projects")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 ---
-<Layout title="Still">
+<Layout 
+  title="Still Graphics - vkiselev.com" 
+  description="Flat graphics, projects and comics by Vasili Kiselev."
+>
   <div class="still_section">Flat</div>
   <div class="row">
     {flat.map((e) => (
