@@ -23,7 +23,7 @@ const pitems = [
   <div class="row index-row">
     {pitems.map((e) => (
       <div class="col-md-6 col-sm-5 col-landscape cartoon_item">
-         <a class="shade-hover" href={`/${e.collection}/${e.data.url || e.id}`}>
+         <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
             {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} class="index_image" />}
             <div class="cartoon_desc">{e.data.hover_text}</div>
          </a>

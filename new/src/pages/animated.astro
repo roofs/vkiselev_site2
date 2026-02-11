@@ -20,7 +20,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
   <div class="row">
     {cartoons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/cartoons/${e.data.url || e.id}`}>
+        <a class="shade-hover" href={`/cartoons/${e.data.url || String(parseInt(e.id, 10))}`}>
           {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
@@ -32,7 +32,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
   <div class="row">
     {misc.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/misc/${e.data.url || e.id}`}>
+        <a class="shade-hover" href={`/misc/${e.data.url || String(parseInt(e.id, 10))}`}>
           {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
@@ -44,7 +44,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
   <div class="row">
     {princess.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/princess/${e.data.url || e.id}`}>
+        <a class="shade-hover" href={`/princess/${e.data.url || String(parseInt(e.id, 10))}`}>
           {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
@@ -56,7 +56,7 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
   <div class="row">
     {princessSeasons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/princess_seasons/${e.data.url || e.id}`}>
+        <a class="shade-hover" href={`/princess_seasons/${e.data.url || String(parseInt(e.id, 10))}`}>
           {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>

@@ -7,18 +7,19 @@ interface LinkItem { url: string; name: string }
 interface Props { prev?: LinkItem; next?: LinkItem }
 const { prev, next } = Astro.props as Props;
 ---
-<div class="col-md-12 navigation global-header">
-  {prev && (
-    <div class="navprev">
-      <Image src={arrowLeft} alt="Prev" width={10} />
-      <a class="link" href={prev.url}> {prev.name}</a>
-    </div>
-  )}
-  {next && (
-    <div class="navnext">
-      <a class="link" href={next.url}>{next.name} </a>
-      <Image src={arrowRight} alt="Next" width={10} />
-    </div>
-  )}
+<div class="row">
+  <div class="col-md-12 navigation global-header">
+    {prev && (
+      <div class="navprev">
+        <Image src={arrowLeft} alt="Prev" width={10} />
+        <a class="link" href={prev.url}> {prev.name}</a>
+      </div>
+    )}
+    {next && (
+      <div class="navnext">
+        <a class="link" href={next.url}>{next.name} </a>
+        <Image src={arrowRight} alt="Next" width={10} />
+      </div>
+    )}
+  </div>
 </div>
-<br />

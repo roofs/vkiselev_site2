@@ -7,32 +7,28 @@ import NextPrev from "../../components/NextPrev.astro";
 import SocialShare from "../../components/SocialShare.astro";
 import FollowBlock from "../../components/FollowBlock.astro";
 
-function buildLink(e: any, collection: string) {
-  return `/${collection}/${e.data.url || e.id}`;
-}
-
 export async function getStaticPaths() {
   const collection = 'princess_seasons';
   const reverse = false;
   const entries = await getCollection(collection);
-  const byId = new Map(entries.map((e) => [e.id, e] as const));
+  const byId = new Map(entries.map((e) => [String(parseInt(e.id, 10)), e] as const));
 
   return entries.map((entry) => {
-    const slug = entry.data.url || entry.id;
-    const id = parseInt(entry.id, 10);
-    const prevId = String(id - 1);
-    const nextId = String(id + 1);
+    const idNum = parseInt(entry.id, 10);
+    const slug = entry.data.url || String(idNum);
+    const prevId = String(idNum - 1);
+    const nextId = String(idNum + 1);
 
     let prev: any = undefined;
     let next: any = undefined;
 
     if (byId.has(prevId)) {
       const pe = byId.get(prevId)!;
-      prev = { url: buildLink(pe, collection), name: pe.data.hover_text };
+      prev = { url: `/${collection}/${pe.data.url || String(parseInt(pe.id, 10))}` , name: pe.data.hover_text };
     }
     if (byId.has(nextId)) {
       const ne = byId.get(nextId)!;
-      next = { url: buildLink(ne, collection), name: ne.data.hover_text };
+      next = { url: `/${collection}/${ne.data.url || String(parseInt(ne.id, 10))}` , name: ne.data.hover_text };
     }
 
     if (reverse) {
@@ -40,7 +36,7 @@ export async function getStaticPaths() {
     }
 
     return {
-      params: { slug: entry.data.url || entry.id },
+      params: { slug },
       props: { entry, prev, next, path: `/${collection}/${slug}` },
     };
   });
