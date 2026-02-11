@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const flat = await getCollection("flat");
+const projects = await getCollection("projects");
+const comics = await getCollection("comics");
+---
+<Layout title="Still">
+  <div class="still_section">Flat</div>
+  <div class="row">
+    {flat.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/flat/${e.data.url || e.id}`}>
+          <div class="still_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="still_section">Projects</div>
+  <div class="row">
+    {projects.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/projects/${e.data.url || e.id}`}>
+          <div class="still_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="still_section">Comics</div>
+  <div class="row">
+    {comics.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/comics/${e.data.url || e.id}`}>
+          <div class="still_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+</Layout>

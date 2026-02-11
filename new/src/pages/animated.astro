@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const cartoons = await getCollection("cartoons");
+const misc = await getCollection("misc");
+const princess = await getCollection("princess");
+const princessSeasons = await getCollection("princess_seasons");
+---
+<Layout title="Animated">
+  <div class="anim_section">Cartoons</div>
+  <div class="row">
+    {cartoons.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/cartoons/${e.data.url || e.id}`}>
+          <div class="cartoon_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="anim_section">Misc</div>
+  <div class="row">
+    {misc.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/misc/${e.data.url || e.id}`}>
+          <div class="cartoon_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="anim_section">Princess</div>
+  <div class="row">
+    {princess.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/princess/${e.data.url || e.id}`}>
+          <div class="cartoon_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div class="anim_section">Princess seasons</div>
+  <div class="row">
+    {princessSeasons.map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/princess_seasons/${e.data.url || e.id}`}>
+          <div class="cartoon_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+</Layout>
