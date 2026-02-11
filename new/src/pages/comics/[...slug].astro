@@ -61,6 +61,7 @@ const { Content } = await entry.render();
 >
   <StillHeader />
   <div class="padding-top-big"></div>
+  <NextPrev prev={prev} next={next} />
   <article>
     {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} /></p>}
     <Content />
@@ -75,7 +76,5 @@ const { Content } = await entry.render();
 
     <SocialShare url={fullUrl} title={entry.data.hover_text} />
     <FollowBlock twitter={entry.data.twitter} facebook={entry.data.facebook} the_book={entry.data.the_book} />
-
-    <NextPrev prev={prev} next={next} />
   </article>
 </Layout>

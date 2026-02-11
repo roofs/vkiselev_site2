@@ -62,13 +62,12 @@ const { Content } = await entry.render();
 >
   <AnimatedHeader />
   <div class="padding-top-big"></div>
+  <NextPrev prev={prev} next={next} />
   <article>
     {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
     <Content />
 
     <SocialShare url={fullUrl} title={entry.data.hover_text} />
     <FollowBlock twitter={entry.data.twitter} facebook={entry.data.facebook} the_book={entry.data.the_book} />
-
-    <NextPrev prev={prev} next={next} />
   </article>
 </Layout>
