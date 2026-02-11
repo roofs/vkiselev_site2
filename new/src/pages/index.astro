@@ -23,32 +23,38 @@ const pitems = [
   getRandom([...projects, ...(await getCollection("comics"))])
 ].filter(Boolean);
 ---
-<Layout title="vkiselev.com">
-  <div class="row index-row">
-    <div class="col-md-6 break-index">
-      <div class="row">
-        <a href="/animated"><Image src={animBigImg} alt="animated" class="index_image shade-hover" /></a>
-        <a href="/still"><Image src={stillBigImg} alt="still" class="index_image shade-hover" /></a>
-      </div>
-      <div class="row">
-        <a href="/memories"><Image src={memBigImg} alt="memories" class="index_image shade-hover" /></a>
-        <a href="/vasili"><Image src={vkBigImg} alt="vasili" class="index_image shade-hover" /></a>
-      </div>
-    </div>
-
-    <div class="col-md-4"></div>
-
-    <div class="col-md-2">
-      {pitems.map((e) => (
+<Layout title="vkiselev.com" showGlobalHeader={false}>
+  <div class="container-fluid">
+    <div class="row index-row">
+      <div class="col-md-6 break-index">
         <div class="row">
-          <div class="cartoon_item">
-            <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-              {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} style={{ width: '100%', height: 'auto' }} />}
-              <div class="cartoon_desc">{e.data.hover_text}</div>
-            </a>
-          </div>
+          <nobr>
+            <a href="/animated"><Image src={animBigImg} alt="animated" class="index_image shade-hover" /></a>
+            <a href="/still"><Image src={stillBigImg} alt="still" class="index_image shade-hover" /></a>
+          </nobr>
         </div>
-      ))}
+        <div class="row">
+          <nobr>
+            <a href="/memories"><Image src={memBigImg} alt="memories" class="index_image shade-hover" /></a>
+            <a href="/vasili"><Image src={vkBigImg} alt="vasili" class="index_image shade-hover" /></a>
+          </nobr>
+        </div>
+      </div>
+
+      <div class="col-md-4"></div>
+
+      <div class="col-md-2">
+        {pitems.map((e) => (
+          <div class="row">
+            <div class="cartoon_item">
+              <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
+                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={150} />}
+                <div class="cartoon_desc">{e.data.hover_text}</div>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </Layout>

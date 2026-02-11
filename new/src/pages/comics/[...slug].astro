@@ -57,20 +57,22 @@ const { Content } = await entry.render();
 >
   <StillHeader />
   <div class="padding-top-big"></div>
-  <NextPrev prev={prev} next={next} />
-  <article>
-    {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} /></p>}
-    <Content />
+  <article class="row">
+    <div class="col-md-7">
+      {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} /></p>}
+      {entry.data.pages_images && (
+        <div class="comic-pages">
+          {entry.data.pages_images.map((src: any) => (
+            <p><Image src={src} alt={entry.data.hover_text} /></p>
+          ))}
+        </div>
+      )}
+    </div>
+    <div class="col-md-5 cartoon_item-text">
+      <Content />
 
-    {entry.data.pages_images && (
-      <div class="comic-pages">
-        {entry.data.pages_images.map((src: any) => (
-          <p><Image src={src} alt={entry.data.hover_text} /></p>
-        ))}
-      </div>
-    )}
-
-    <SocialShare url={fullUrl} title={entry.data.hover_text} />
-    <FollowBlock twitter={entry.data.twitter} facebook={entry.data.facebook} the_book={entry.data.the_book} />
+      <SocialShare url={fullUrl} title={entry.data.hover_text} />
+      <FollowBlock twitter={entry.data.twitter} facebook={entry.data.facebook} the_book={entry.data.the_book} />
+    </div>
   </article>
 </Layout>
