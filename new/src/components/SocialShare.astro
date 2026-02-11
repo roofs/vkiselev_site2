@@ -11,10 +11,11 @@ const tw = `https://twitter.com/intent/tweet?url=${enc(url)}${title ? `&text=${e
 ---
 <div class="social-center pull-right">
   <div class="social-likes" data-counters="no">
-    <div class="share">Share:</div>
-    <a class="ext_ref" href={fb} target="_blank" title="Share on Facebook">Facebook</a>
-    <a class="ext_ref" href={vk} target="_blank" title="Share on VK">VK</a>
-    <a class="ext_ref" href={tw} target="_blank" title="Share on Twitter">Twitter</a>
+    <div class="share" style="padding-left: 6px">Share:</div>
+    <!-- Используем те же классы, что и в старом шаблоне, чтобы сработали подключённые CSS -->
+    <a class="facebook" href={fb} target="_blank" title="Share link on Facebook"></a>
+    <a class="vkontakte" href={vk} target="_blank" title="Share link on VK"></a>
+    <a class="twitter" href={tw} target="_blank" title="Share link on Twitter"></a>
   </div>
 </div>
 <br />

@@ -63,8 +63,10 @@ const { Content } = await entry.render();
     </div>
     <div class="col-md-5 cartoon_item-text">
       <Content />
-
-      <SocialShare url={fullUrl} title={entry.data.hover_text} />
     </div>
   </article>
+
+  <div class="row">
+    <SocialShare url={fullUrl} title={entry.data.hover_text} />
+  </div>
 </Layout>
