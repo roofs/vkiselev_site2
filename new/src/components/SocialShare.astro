@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import fbPng from "../assets/img/buttons/fb.png";
+import vkPng from "../assets/img/buttons/vk.png";
+import twPng from "../assets/img/buttons/twitter.png";
+
 interface Props {
   url: string; // absolute URL to share
   title?: string;
@@ -10,12 +15,11 @@ const vk = `https://vk.com/share.php?url=${enc(url)}`;
 const tw = `https://twitter.com/intent/tweet?url=${enc(url)}${title ? `&text=${enc(title)}` : ''}`;
 ---
 <div class="social-center pull-right">
-  <div class="social-likes">
+  <div class="social-likes" data-counters="no">
     <div class="share" style="padding-left: 6px">Share:</div>
-    <!-- Используем структуру, совместимую с нашими fallback-стилями в global.css -->
-    <a href={fb} target="_blank" rel="noopener noreferrer" class="facebook"><div class="social-likes__icon"></div></a>
-    <a href={vk} target="_blank" rel="noopener noreferrer" class="vkontakte"><div class="social-likes__icon"></div></a>
-    <a href={tw} target="_blank" rel="noopener noreferrer" class="twitter"><div class="social-likes__icon"></div></a>
+    <a href={fb} target="_blank" rel="noopener noreferrer" title="Share on Facebook"><Image src={fbPng} alt="Facebook" width={14} height={14} /></a>
+    <a href={vk} target="_blank" rel="noopener noreferrer" title="Share on VK"><Image src={vkPng} alt="VK" width={14} height={14} /></a>
+    <a href={tw} target="_blank" rel="noopener noreferrer" title="Share on Twitter"><Image src={twPng} alt="Twitter" width={14} height={14} /></a>
   </div>
 </div>
 <br />
