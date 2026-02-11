@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import animBigImg from "../assets/img/anim_big.jpg";
+import stillBigImg from "../assets/img/still_big.jpg";
+import memBigImg from "../assets/img/mem_big.jpg";
+import vkBigImg from "../assets/img/vk_big.jpg";
 
 const cartoons = await getCollection("cartoons");
 const flat = await getCollection("flat");
@@ -21,13 +25,30 @@ const pitems = [
 ---
 <Layout title="vkiselev.com">
   <div class="row index-row">
-    {pitems.map((e) => (
-      <div class="col-md-6 col-sm-5 col-landscape cartoon_item">
-         <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-            {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} class="index_image" />}
-            <div class="cartoon_desc">{e.data.hover_text}</div>
-         </a>
+    <div class="col-md-6 break-index">
+      <div class="row">
+        <a href="/animated"><Image src={animBigImg} alt="animated" class="index_image shade-hover" /></a>
+        <a href="/still"><Image src={stillBigImg} alt="still" class="index_image shade-hover" /></a>
       </div>
-    ))}
+      <div class="row">
+        <a href="/memories"><Image src={memBigImg} alt="memories" class="index_image shade-hover" /></a>
+        <a href="/vasili"><Image src={vkBigImg} alt="vasili" class="index_image shade-hover" /></a>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-2">
+      {pitems.map((e) => (
+        <div class="row">
+          <div class="cartoon_item">
+            <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
+              {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} style={{ width: '100%', height: 'auto' }} />}
+              <div class="cartoon_desc">{e.data.hover_text}</div>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </Layout>
