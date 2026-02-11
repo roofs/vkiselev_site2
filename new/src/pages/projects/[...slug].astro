@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import StillHeader from "../../components/StillHeader.astro";
 import NextPrev from "../../components/NextPrev.astro";
 import SocialShare from "../../components/SocialShare.astro";
-import FollowBlock from "../../components/FollowBlock.astro";
 
 export async function getStaticPaths() {
   const collection = 'projects';
@@ -66,7 +65,6 @@ const { Content } = await entry.render();
       <Content />
 
       <SocialShare url={fullUrl} title={entry.data.hover_text} />
-      <FollowBlock twitter={entry.data.twitter} facebook={entry.data.facebook} the_book={entry.data.the_book} />
     </div>
   </article>
 </Layout>

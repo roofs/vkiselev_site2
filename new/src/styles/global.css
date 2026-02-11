@@ -401,6 +401,14 @@ a:hover {
 .pull-right { float: right; }
 .header-rest a { display: inline-block; }
 
+/* keep header items on one line and inline */
+.animated-header, .still-header, .mem-header, .vk-header { white-space: nowrap; }
+.left-header, .left-header a, .left-header img { display: inline-block; vertical-align: middle; }
+.header-rest img { display: inline-block; vertical-align: middle; }
+
+/* keep arrow + text in one line in navigation */
+.navigation { white-space: nowrap; }
+.navigation img, .navprev a, .navnext a { display: inline-block; vertical-align: middle; }
 
 /* clearfix for rows to prevent floats overlapping following content */
 .row::before,

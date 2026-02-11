@@ -46,14 +46,6 @@ const { title, description, image, twitter, facebook, the_book, showGlobalHeader
     )}
     <main class="container">
       <slot />
-      
-      {(twitter || facebook || the_book) && (
-        <div class="share social-likes-topm">
-          {twitter && <a href={twitter} class="ext_ref" target="_blank">Twitter</a>}
-          {facebook && <a href={facebook} class="ext_ref" target="_blank">Facebook</a>}
-          {the_book && <a href={the_book} class="ext_ref" target="_blank">The Book</a>}
-        </div>
-      )}
     </main>
     <footer>
       <div class="container text-center">

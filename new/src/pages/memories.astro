@@ -9,6 +9,7 @@ import animSmImg from "../assets/img/anim_sm.png";
 import stillSmImg from "../assets/img/still_sm.png";
 import memSmImg from "../assets/img/mem_sm.png";
 import vkSmImg from "../assets/img/vk_sm.png";
+import SocialShare from "../components/SocialShare.astro";
 ---
 
 <Layout
@@ -166,4 +167,5 @@ import vkSmImg from "../assets/img/vk_sm.png";
       </div>
     </div>
   </div>
+  {(() => { const fullUrl = new URL('/memories', Astro.site!).toString(); return <SocialShare url={fullUrl} title="Memories" /> })()}
 </Layout>
