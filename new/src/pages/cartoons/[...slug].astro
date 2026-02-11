@@ -45,7 +45,14 @@ export async function getStaticPaths() {
 const { entry, prev, next } = Astro.props as { entry: any, prev?: {url: string, name: string}, next?: {url: string, name: string} };
 const { Content } = await entry.render();
 ---
-<Layout title={entry.data.hover_text} description={entry.data.hover_text}>
+<Layout 
+  title={entry.data.hover_text} 
+  description={entry.data.hover_text}
+  image={entry.data.thumbnail?.src}
+  twitter={entry.data.twitter}
+  facebook={entry.data.facebook}
+  the_book={entry.data.the_book}
+>
   <article>
     {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
     <Content />

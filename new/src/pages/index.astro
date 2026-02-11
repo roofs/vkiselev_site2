@@ -1,9 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const cartoons = await getCollection("cartoons");
+const flat = await getCollection("flat");
+const princess = await getCollection("princess");
+const projects = await getCollection("projects");
+
+function getRandom(arr: any[]) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+const pitems = [
+  getRandom(cartoons),
+  getRandom(flat),
+  getRandom([...princess, ...(await getCollection("misc"))]),
+  getRandom([...projects, ...(await getCollection("comics"))])
+].filter(Boolean);
 ---
-<Layout title="vkiselev.com (Astro migration)">
-  <h1>vkiselev.com — миграция на Astro</h1>
-  <ul>
-    <li><a href="/cartoons/mosquitoes">Пример: Cartoons → Mosquitoes</a></li>
-  </ul>
+<Layout title="vkiselev.com">
+  <div class="row index-row">
+    {pitems.map((e) => (
+      <div class="col-md-6 col-sm-5 col-landscape cartoon_item">
+         <a class="shade-hover" href={`/${e.collection}/${e.data.url || e.id}`}>
+            {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} class="index_image" />}
+            <div class="cartoon_desc">{e.data.hover_text}</div>
+         </a>
+      </div>
+    ))}
+  </div>
 </Layout>

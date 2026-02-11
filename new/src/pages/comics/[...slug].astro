@@ -43,7 +43,14 @@ export async function getStaticPaths() {
 const { entry, prev, next } = Astro.props as { entry: any, prev?: {url: string, name: string}, next?: {url: string, name: string} };
 const { Content } = await entry.render();
 ---
-<Layout title={entry.data.hover_text} description={entry.data.hover_text}>
+<Layout 
+  title={entry.data.hover_text} 
+  description={entry.data.hover_text}
+  image={(entry.data.cover && entry.data.cover.src) || entry.data.thumbnail?.src}
+  twitter={entry.data.twitter}
+  facebook={entry.data.facebook}
+  the_book={entry.data.the_book}
+>
   <article>
     {entry.data.cover && <p><img src={entry.data.cover} alt={entry.data.hover_text} /></p>}
     <Content />

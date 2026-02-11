@@ -4,8 +4,11 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  twitter?: string;
+  facebook?: string;
+  the_book?: string;
 }
-const { title, description, image } = Astro.props as Props;
+const { title, description, image, twitter, facebook, the_book } = Astro.props as Props;
 ---
 <html lang="en">
   <head>
@@ -15,22 +18,42 @@ const { title, description, image } = Astro.props as Props;
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    {image && <meta name="twitter:image" content={image} />}
   </head>
   <body>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/animated">Animated</a>
-        <a href="/still">Still</a>
-        <a href="/memories">Memories</a>
-        <a href="/vasili">Vasili</a>
-      </nav>
+      <div class="row global-header">
+        <div class="header-rest">
+          <a href="/"><img src="/favicon.ico" alt="vkiselev" /></a>
+        </div>
+        <nav class="navigation">
+          <div class="page_menu">
+            <a class="link" href="/animated">Animated</a> | 
+            <a class="link" href="/still">Still</a> | 
+            <a class="link" href="/memories">Memories</a> | 
+            <a class="link" href="/vasili">Vasili</a>
+          </div>
+        </nav>
+      </div>
     </header>
-    <main>
+    <main class="container">
       <slot />
+      
+      {(twitter || facebook || the_book) && (
+        <div class="share social-likes-topm">
+          {twitter && <a href={twitter} class="ext_ref" target="_blank">Twitter</a>}
+          {facebook && <a href={facebook} class="ext_ref" target="_blank">Facebook</a>}
+          {the_book && <a href={the_book} class="ext_ref" target="_blank">The Book</a>}
+        </div>
+      )}
     </main>
     <footer>
-      <p>© vkiselev.com</p>
+      <div class="container text-center">
+        <p>© vkiselev.com</p>
+      </div>
     </footer>
   </body>
 </html>
