@@ -1,0 +1,31 @@
+<script async src="/old/staticial-likes.min.js"></script>
+
+<div id='likesv' class="social-likes-topm">
+    <div class="social-likes pull-right text-right" data-counters="no">
+        <div class="facebook" title="Share link on Facebook"></div>
+        <div class="vkontakte" title="Share link on VK"></div>
+        <div class="twitter" title="Share link on Twitter"></div>
+    </div>
+</div>
+
+<script>
+    // media query event handler
+    if (matchMedia) {
+        var mq = window.matchMedia("(min-width: 992px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+
+    // media query change
+    function WidthChange(mq) {
+
+        if (mq.matches) {
+            $("#likesv").addClass("social-likes_vertical");
+        }
+        else {
+            $("#likesv").removeClass("social-likes_vertical");
+        }
+
+    }
+
+</script>

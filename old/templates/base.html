@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Vasili Kiselev">
+    <meta name="keywords" content="animation, cartoon, painting, stop-motion, art projects, princess">
+    <meta name="author" content="VKiselev">
+
+    <title>{% block title %}Vasili Kiselev{% endblock %}</title>
+    {% block microformats %}
+        <meta property="og:title" content="Vasili Kiselev"/>
+        {# о чем  сайт? сюда можно большое описание, будет видно в FB, когда кто-то дает на тебя ссылку#}
+        <meta property="og:description" content="Vasili Kiselev is an artist interested in the world around, problems of perception, interpretation and exploration of colour and movement. Vasily started his work with painting and applications and gradually moved to puppetry and animation."/>
+        {# и картинку, которая будет при шаринге ссылки на тебя через fb#}
+        <meta property="og:image" content="http://vkiselev.com/static/img/fb_base.jpg?cache=1"/>
+    {% endblock %}
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/old/static.css" rel="stylesheet">
+    <link rel="stylesheet" href="/old/staticcial-likes_birman.css">
+
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//apis.google.com/js/platform.js"></script>
+
+    <script>
+        window.setup_ajax = function (csrftoken) {
+            function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+            $.ajaxSetup({
+                beforeSend: function (xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            });
+        };
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/old/staticvicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/old/staticvicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/old/staticvicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/old/staticvicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/old/staticvicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/old/staticvicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/old/staticvicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/old/staticvicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/old/staticvicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/old/staticvicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/old/staticvicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/old/staticvicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/old/staticvicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/old/staticvicon/manifest.json">
+    <link rel="shortcut icon" href="/old/staticvicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/static/img/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=774772439256086";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+    setup_ajax("{{ csrf_token() }}");
+</script>
+
+{% include 'counters.html' %}
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
