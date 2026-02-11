@@ -387,8 +387,12 @@ a:hover {
     margin-right: -14px;
 }
 
-.scroll-top-a {
-    margin-top: -7px;
+.share-block {
+    margin-top: 20px;
+}
+
+.clear-fix {
+    clear: both;
 }
 
 /* Фиксы сетки и ленивой загрузки */
