@@ -1,10 +1,80 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import vasiliImg from "../assets/img/vasili.gif";
+import vkInvImg from "../assets/img/vk_inv.png";
+import animSmImg from "../assets/img/anim_sm.png";
+import stillSmImg from "../assets/img/still_sm.png";
+import memSmImg from "../assets/img/mem_sm.png";
+import vkSmImg from "../assets/img/vk_sm.png";
 ---
-<Layout 
+
+<Layout
   title="Vasili Kiselev - vkiselev.com"
-  description="About Vasili Kiselev."
+  description="Vasili Kiselev is an artist interested in the world around, problems of perception, interpretation and exploration of colour and movement. Vasily started his work with painting and applications and gradually moved to puppetry and animation. His paintings can be found in private collections and animations on amazing festivals all over the world."
 >
-  <div class="mem_section">Vasili</div>
-  <p>Страница в процессе миграции.</p>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+  />
+
+  <div class="row global-header">
+    <div class="col-md-12">
+      <div class="vk-header">
+        <a class="left-header" href="/vasili">
+          <Image class="black-hover" src={vkInvImg} alt="VK" width={40} />
+        </a>
+        <span class="left-header"> VK</span>
+        <span class="header-rest pull-right">
+          <a href="/animated"><Image class="shade-hover" src={animSmImg} alt="Animated" width={40} /></a>
+          <a href="/still"><Image class="shade-hover" src={stillSmImg} alt="Still" width={40} /></a>
+          <a href="/memories"><Image class="shade-hover" src={memSmImg} alt="Memories" width={40} /></a>
+          <a href="/vasili"><Image class="shade-hover" src={vkSmImg} alt="Vasili" width={40} /></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="padding-top-big"></div>
+  <div class="row">
+    <div class="col-md-9">
+      <Image src={vasiliImg} class="vk-img" alt="Vasili Kiselev" style={{ width: '100%', height: 'auto' }} />
+    </div>
+    <div class="col-md-3">
+      <div>
+        <h1>About</h1>
+
+        <div class="desc">
+          Vasily Kiselev was born in Leningrad, USSR back in 1984. He is
+          interested in the world around, problems of perception, interpretation
+          and exploration of colour and movement. Vasily started his work with
+          painting and applications and gradually moved to puppetry and
+          animation.
+          <br />
+          His paintings can be found in private collections and animations on amazing
+          festivals all over the world.
+        </div>
+        <div class="desc">
+          Василий Киселёв родился в Ленинграде, СССР в 1984 году. Его интересует
+          мир вокруг, процессы восприятия, интерпретации и изучения цвета и
+          движения. Василий начал работу с живописи и аппликаций и постепенно
+          перешел к куклам и анимации.
+          <br />
+          Его рисунки разбежались по частным коллекциям, а мультфильмы по восхитительным
+          фестивалям всего мира.
+        </div>
+        <div class="desc"><i class="fa fa-phone"></i> + 7 90 52 78 90 20</div>
+        <div class="desc">
+          <i class="fa fa-envelope-o"></i>
+          <a href="mailto:kloito@gmail.com">koito@gmail.com</a>
+        </div>
+        <div class="desc">
+          <a class="link" href="https://www.patreon.com/ystava" target="_blank">
+            <img src="http://www.google.com/s2/favicons?domain=patreon.com" /> Become
+            a patron
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
