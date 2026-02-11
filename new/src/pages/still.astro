@@ -12,12 +12,12 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
 ---
 <Layout 
   title="Still Graphics - vkiselev.com" 
-  description="Flat graphics, projects and comics by Vasili Kiselev."
+  description="A collection of still stuff by Vasili Kiselev. It includes different paintings. applications, projects and comics. The artist is interested in colour, emotions and relationships between people and with oneself."
   showGlobalHeader={false}
 >
   <StillHeader />
   <div class="padding-top-big"></div>
-  <div id="flat" class="still_section">Flat</div>
+  <div id="flat" class="still_section">flat</div>
   <div class="row">
     {flat.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -29,7 +29,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     ))}
   </div>
 
-  <div id="projects" class="still_section">Projects</div>
+  <div id="projects" class="still_section">projects</div>
   <div class="row">
     {projects.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -41,7 +41,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     ))}
   </div>
 
-  <div id="comics" class="still_section">Comics</div>
+  <div id="comics" class="still_section">comics and series</div>
   <div class="row">
     {comics.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">

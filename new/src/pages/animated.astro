@@ -7,18 +7,18 @@ import UpButton from "../components/UpButton.astro";
 import SocialShare from "../components/SocialShare.astro";
 
 const cartoons = (await getCollection("cartoons")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
-const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
-const princess = (await getCollection("princess")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
 const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
+const princess = (await getCollection("princess")).sort((a, b) => parseInt(a.id) - parseInt(b.id));
+const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 ---
 <Layout 
   title="Animated - vkiselev.com" 
-  description="Animation, cartoons and motion graphics by Vasili Kiselev."
+  description="A collection of moving stuff by Vasili Kiselev. It includes different types of clay, cut-out animation on sports, LGBT, love etc., finger puppet show about adventures of a little princess and a number of experimental videos."
   showGlobalHeader={false}
 >
   <AnimatedHeader />
   <div class="padding-top-big"></div>
-  <div id="cartoons" class="anim_section">Cartoons</div>
+  <div id="cartoon" class="anim_section">animation</div>
   <div class="row">
     {cartoons.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
@@ -30,35 +30,23 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
     ))}
   </div>
 
-  <div id="misc" class="anim_section">Misc</div>
+  <div id="princess" class="anim_section">the princess</div>
+  <div class="row">
+    {[...princessSeasons, ...princess].map((e) => (
+      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+        <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
+          <div class="cartoon_desc">{e.data.hover_text}</div>
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <div id="misc" class="anim_section">misc</div>
   <div class="row">
     {misc.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/misc/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
-          <div class="cartoon_desc">{e.data.hover_text}</div>
-        </a>
-      </div>
-    ))}
-  </div>
-
-  <div id="princess" class="anim_section">Princess</div>
-  <div class="row">
-    {princess.map((e) => (
-      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/princess/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
-          <div class="cartoon_desc">{e.data.hover_text}</div>
-        </a>
-      </div>
-    ))}
-  </div>
-
-  <div class="anim_section">Princess seasons</div>
-  <div class="row">
-    {princessSeasons.map((e) => (
-      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/princess_seasons/${e.data.url || String(parseInt(e.id, 10))}`}>
           {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
