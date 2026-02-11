@@ -445,6 +445,14 @@ a:hover {
     text-decoration: none;
 }
 
+/* make Google s2 favicons inline and tight with text */
+img[src^="http://www.google.com/s2/favicons"],
+img[src^="https://www.google.com/s2/favicons"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
 /* clearfix for rows to prevent floats overlapping following content */
 .row::before,
 .row::after {
