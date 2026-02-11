@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import arrowUp from "../assets/img/arrow_up.jpg";
+---
+<div class="row">
+  <div class="col-md-12">
+    <a href="javascript:window.scrollTo(0,0);" class="pull-left">
+      <Image class="scroll-top-a" src={arrowUp} alt="Up!" width={20} />
+    </a>
+  </div>
+</div>

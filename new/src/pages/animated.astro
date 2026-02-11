@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import AnimatedHeader from "../components/AnimatedHeader.astro";
+import UpButton from "../components/UpButton.astro";
 
 const cartoons = (await getCollection("cartoons")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
@@ -63,4 +64,6 @@ const princessSeasons = (await getCollection("princess_seasons")).sort((a, b) =>
       </div>
     ))}
   </div>
+
+  <UpButton />
 </Layout>

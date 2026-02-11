@@ -400,3 +400,14 @@ a:hover {
 /* bootstrap-like helpers for headers alignment */
 .pull-right { float: right; }
 .header-rest a { display: inline-block; }
+
+
+/* clearfix for rows to prevent floats overlapping following content */
+.row::before,
+.row::after {
+    content: " ";
+    display: table;
+}
+.row::after {
+    clear: both;
+}

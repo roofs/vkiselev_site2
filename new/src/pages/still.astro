@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import StillHeader from "../components/StillHeader.astro";
+import UpButton from "../components/UpButton.astro";
 
 const flat = (await getCollection("flat")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
 const projects = (await getCollection("projects")).sort((a, b) => parseInt(b.id) - parseInt(a.id));
@@ -50,4 +51,6 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
       </div>
     ))}
   </div>
+
+  <UpButton />
 </Layout>
