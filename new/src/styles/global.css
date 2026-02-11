@@ -1,1 +1,382 @@
 @import "tailwindcss";
+
+/* Копируем старые стили */
+.row {
+    margin: 0em 0px
+}
+
+[class*="col-"] {
+    padding: 0 0px;
+}
+
+.title, h1 {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
+.news {
+    font-family: sans-serif;
+    font-size: 13px;
+    text-align: right;
+    padding-right: 20px;
+    vertical-align: middle;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-top: 0;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px !important;
+    }
+}
+
+.length {
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: right;
+    margin-top: 0px;
+}
+
+.desc {
+    font-family: sans-serif;
+    font-size: 13px;
+    text-align: right;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.share {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: right;
+    text-decoration: underline;
+    margin-top: 0px;
+    padding-left: 20px;
+}
+
+/*ЦВЕТ ССЫЛОК*/
+.link {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*ЦВЕТ ССЫЛОК*/
+
+.anim_section, .still_section, .mem_section {
+    font-family: sans-serif;
+    font-size: 30px;
+    text-align: left; /*color: anim #5099c6; still #ae111a; mem #eac31a;vk #3daf35 */;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-left: 0;
+}
+
+.cartoon_desc, .still_desc {
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 1px;
+    color: black;
+}
+
+.cartoon_item {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.page_menu {
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center
+}
+
+.navigation {
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 100%;
+
+}
+
+.animated-header {
+    background-color: #5099c6;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 100%;
+    border: double #5099c6;
+}
+
+.animated-header a {
+    color: white;
+}
+
+.header-rest {
+    background-color: white;
+    margin-right: 10px;
+}
+
+.header-rest > a > img {
+    height: 40px;
+}
+
+.still-header {
+    background-color: #ae111a;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 100%;
+    border: double #ae111a;
+}
+
+.still-header a {
+    color: white;
+}
+
+.mem-header {
+    background-color: #eac31a;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 100%;
+    border: double #eac31a;
+}
+
+.vk-header {
+    background-color: #3daf35;
+    color: white;
+    font-family: sans-serif;
+    font-size: 20px;
+    width: 100%;
+    border: double #3daf35;
+}
+
+.global-header {
+    margin-left: 0;
+    padding-left: 2px;
+    margin-right: 0;
+    padding-right: 2px;
+}
+
+.global-header > div > a > img {
+    margin-left: 10px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .left-header {
+        display: none;
+    }
+
+    [class*="-header"] {
+        /*background: none;*/
+        /*border: none;*/
+        height: 46px;
+    }
+}
+
+.cartoon-row {
+    padding-left: 190px;
+    padding-right: 190px;
+}
+
+.center-align {
+    display: table;
+    margin: 0 auto;
+}
+
+.padding-top-big {
+    margin-bottom: 60px;
+}
+
+.index_image {
+    width: 50%;
+}
+
+.index-row {
+    margin-left: 20px;
+    margin-right: 20px;
+   
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .index-row {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .index_image {
+/*
+        height: calc(45vh - 60px);
+        max-height: 233px;
+        width: auto;
+*/
+    }
+}
+
+.break-index {
+    padding-bottom: 90px;
+}
+
+.flat-img-container {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .flat-img-container {
+        height: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .flat-img-container {
+        height: 78vh;
+    }
+}
+
+.flat-img {
+    height: auto;
+    width: 100%;
+    margin-left: 0px;
+    padding-bottom: 50px;
+}
+
+.flat-img-large {
+    width: 100%;
+}
+
+.cartoon_item-big {
+    padding: 0;
+    margin-left: 0px;
+    align-items: left;
+}
+
+.videoWrapper {
+    width: 100%;
+}
+
+.cartoon_item-text {
+    padding-left: 20px;
+}
+
+.social-likes-topm {
+    margin-top: 20px;
+    padding-top: 30px;
+}
+
+.vk-img {
+    margin-left: 0px;
+    width: 100%;
+}
+
+.shade-hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.shade-hover:hover {
+    -webkit-filter: brightness(130%);
+    filter: brightness(130%);
+}
+
+.black-hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.black-hover:hover {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.navprev {
+    float: none !important;
+    text-align: center;
+}
+
+.navnext {
+    float: none !important;
+    text-align: center;
+}
+
+@media (min-width: 450px) {
+    .navprev {
+        float: left !important;
+    }
+
+    .navnext {
+        float: right !important;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .col-landscape {
+        width: 50%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+    }
+}
+
+.social-center {
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*text-align: center;*/
+}
+
+.ext_ref {
+    padding-right: 8px;
+}
+
+.follow-down {
+    position: relative;
+    top: 1px;
+    padding-right: 8px;
+}
+
+.follow-block {
+    width: 100%;
+    margin-right: -14px;
+}
+
+.scroll-top-a {
+    margin-top: -7px;
+}
