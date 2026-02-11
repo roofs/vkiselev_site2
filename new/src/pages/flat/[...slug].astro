@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('flat');
+  return entries.map((entry) => ({
+    params: { slug: entry.data.url || entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as { entry: any };
+const { Content } = await entry.render();
+---
+<Layout title={entry.data.hover_text} description={entry.data.hover_text}>
+  <article>
+    <Content />
+  </article>
+</Layout>

@@ -48,18 +48,22 @@ def copy_media(col: str, item_id: str, item_dir: Path):
 
 def guess_images(col: str, item_id: str, media_names):
     # Сопоставление известных имён для frontmatter
+    # ВНИМАНИЕ: пути должны быть ОТНОСИТЕЛЬНЫМИ к MD-файлу (`src/content/<col>/<id>.md`),
+    # чтобы работал helper image() в Astro. До ассетов путь: ../../assets/content/<col>/<id>/<file>
+    base_rel = f"../../assets/content/{col}/{item_id}"
     fm = {}
     for key in ['thumbnail', 'cover', 'full', 'original']:
         for name in media_names:
             if name.lower().startswith(key):
-                fm[key if key != 'original' else 'full'] = f"./src/assets/content/{col}/{item_id}/{name}"
+                rel = f"{base_rel}/{name}"
+                fm[key if key != 'original' else 'full'] = rel
                 break
     # Для комиксов соберём страницы p1.jpg ...
     if col == 'comics':
         pages = []
         for name in sorted(media_names):
             if name.lower().startswith('p') and name.lower().endswith('.jpg'):
-                pages.append(f"./src/assets/content/{col}/{item_id}/{name}")
+                pages.append(f"{base_rel}/{name}")
         if pages:
             fm['pages_images'] = pages
     return fm
