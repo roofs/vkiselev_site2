@@ -36,12 +36,12 @@ const pitems = [
 
       <div class="col-md-4"></div>
 
-      <div class="col-md-2">
+      <div class="col-md-2" style="padding-top: 60px !important;">
         {pitems.map((e) => (
           <div class="row">
             <div class="cartoon_item">
               <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={150} height={112} />}
+                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={200} height={150} />}
                 <div class="cartoon_desc">{e.data.hover_text}</div>
               </a>
             </div>
