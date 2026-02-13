@@ -1,9 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import twPng from "../assets/img/buttons/twitter.png";
-import fbPng from "../assets/img/buttons/fb.png";
-import memMark from "../assets/img/buttons/mem_mark.jpg";
-import ybPng from "../assets/img/buttons/yb.png";
 
 interface Props {
   twitter?: string | null;
@@ -16,20 +11,20 @@ const { twitter, facebook, the_book } = Astro.props as Props;
   <span class="share">Follow:</span>
   {twitter && (
     <span class="ext_ref">
-      <a href={twitter} target="_blank" rel="noopener noreferrer"><Image src={twPng} alt="Twitter" width={14} height={14} /></a>
+      <a href={twitter} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
     </span>
   )}
   {facebook && (
     <span class="ext_ref">
-      <a href={facebook} target="_blank" rel="noopener noreferrer"><Image src={fbPng} alt="Facebook" width={14} height={14} /></a>
+      <a href={facebook} target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
     </span>
   )}
   {the_book && (
     <span class="ext_ref">
-      <a href={the_book} target="_blank" rel="noopener noreferrer"><Image src={memMark} alt="The Book" width={12} height={12} /></a>
+      <a href={the_book} target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book"></i></a>
     </span>
   )}
   <span class="follow-down">
-    <a href="https://www.youtube.com/@ystavatube" target="_blank" rel="noopener noreferrer"><Image src={ybPng} alt="YouTube" width={14} height={14} /></a>
+    <a href="https://www.youtube.com/ystavatube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
   </span>
 </div>

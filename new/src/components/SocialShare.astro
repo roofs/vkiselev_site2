@@ -1,26 +1,27 @@
 ---
-import { Image } from "astro:assets";
-import fbPng from "../assets/img/buttons/fb.png";
-import vkPng from "../assets/img/buttons/vk.png";
-import twPng from "../assets/img/buttons/twitter.png";
-
 interface Props {
   url: string; // absolute URL to share
   title?: string;
 }
 const { url, title } = Astro.props as Props;
-const enc = encodeURIComponent;
-const fb = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`;
-const vk = `https://vk.com/share.php?url=${enc(url)}`;
-const tw = `https://twitter.com/intent/tweet?url=${enc(url)}${title ? `&text=${enc(title)}` : ''}`;
 ---
 <div class="social-center pull-right">
-  <div class="social-likes" data-counters="no">
-    <div class="share" style="padding-left: 6px">Share:</div>
-    <a href={fb} target="_blank" rel="noopener noreferrer" title="Share on Facebook"><Image src={fbPng} alt="Facebook" width={14} height={14} /></a>
-    <a href={vk} target="_blank" rel="noopener noreferrer" title="Share on VK"><Image src={vkPng} alt="VK" width={14} height={14} /></a>
-    <a href={tw} target="_blank" rel="noopener noreferrer" title="Share on Twitter"><Image src={twPng} alt="Twitter" width={14} height={14} /></a>
+  <div class="shareon" data-url={url} data-title={title}>
+    <a class="facebook" title="Facebook"></a>
+    <a class="twitter" title="Twitter"></a>
+    <a class="telegram" title="Telegram"></a>
+    <a class="whatsapp" title="WhatsApp"></a>
+    <a class="pinterest" title="Pinterest"></a>
+    <a class="copy-url" title="Copy Link"></a>
   </div>
 </div>
 <br />
 <div class="clear-fix"></div>
+
+<style>
+  .social-center {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 32px;
+  }
+</style>

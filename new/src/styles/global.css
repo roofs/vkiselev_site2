@@ -1,6 +1,5 @@
 @import "tailwindcss";
-@import "./social-likes_flat.css";
-@import "./social-likes_birman.css";
+
 
 /* Копируем старые стили */
 .row {
@@ -301,10 +300,7 @@ a:hover {
     padding-left: 20px;
 }
 
-.social-likes-topm {
-    margin-top: 20px;
-    padding-top: 30px;
-}
+
 
 .vk-img {
     margin-left: 0px;
@@ -422,40 +418,7 @@ a:hover {
 .navigation { white-space: nowrap; }
 .navigation img, .navprev a, .navnext a { display: inline-block; vertical-align: middle; }
 
-/* fallback styles for social-likes when JS is not used */
-.social-likes {
-    opacity: 1 !important;
-}
-.social-likes > * {
-    visibility: visible !important;
-}
-.social-likes__icon {
-    position: static !important;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: middle;
-}
-.facebook .social-likes__icon {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAaklEQVR42mJ0Cp7jycDAMBeIJRnwg+dAnMxEpGIGqJq5THgULwFicSBmBGJbmCYWPCYWAvEbdEF8GmCK/yMLMjGQCLBpsIW6GwaQ/UC6Ddj8cBjJZOr44TkJ6l+ANKSAGEQofgpKGgABBgAWcxAZp2KpkQAAAABJRU5ErkJggg==");
-}
-.vkontakte .social-likes__icon {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAsElEQVR42mTSzytEURjG8Xtn0IyIDc1SFpJQ5EdN1ChLC6PJFCsWsvInKCvFQllYKPaaZpIpC83CntkgsrBSLP1K2Wh8n3pupubU5865p/c9533PnbBWDaLRijWsYMBrLyhiF69aCJ3Qg7J/j3DrhDFkPV/FuRKSTK6RQAbtmMEPCojjxGv9TTw2XIJ2n/PxN2jDFh5wjA69x1yzytBJB1hCGsPYxyxS2FN5SuhDxYH3OAv+xw4+vZlO/VVCqAma8RU0jpq1KFYJz5jCKSYxXhe87NrfMaq+1HQJ69h2w5e+4k738o1BTONC19rNpOpd5jGEHD5wiAVs4k2VRB9uwneectCd6x5xBervCY9h3V+jy99kEb1eU395XEVBfwIMAE0mQy9JLJUSAAAAAElFTkSuQmCC");
-}
-.twitter .social-likes__icon {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAA9ElEQVR42mKU3vqak4GB4TcQ/2HABFxAXA3EzkD8DIjbgfg+ECuwAIkwIHYD4gSoAchgORD7IfEDgPgpEGczAQlBII4C4kNAbIikSAqIfdEMYgRiMSD+B7JxJ9SZFkB8Foj3A/FWIP4KVYgO5gHxFpBGNSA+DsS2UIVOUIwLfAYRIKe+gGoiFpyDaTwJxEVA/J0ITd+hXgNrBIETMCcQADOA+D26RpCn/+LRdAuI62EcmMb/0IjOx6H5ATSu4a4ChaoPEMcAsTUQy6Bp+AfEy4C4EIjfIEuANG4B4rvQVKEOTWYfoKG3HYgfoluvPm8jA0CAAQAqvDQ/IXqkWQAAAABJRU5ErkJggg==");
-}
 
-.social-likes a {
-    display: inline-block;
-    padding: 2px 5px;
-    vertical-align: middle;
-}
-.social-likes a:hover {
-    text-decoration: none;
-}
 
 /* make Google s2 favicons inline and tight with text */
 img[src^="http://www.google.com/s2/favicons"],
