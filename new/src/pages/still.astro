@@ -23,7 +23,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     {flat.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/flat/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} height={187} />}
           <div class="still_desc">{e.data.hover_text}</div>
         </a>
       </div>
@@ -35,7 +35,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     {projects.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/projects/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} height={187} />}
           <div class="still_desc">{e.data.hover_text}</div>
         </a>
       </div>
@@ -47,7 +47,7 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     {comics.map((e) => (
       <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
         <a class="shade-hover" href={`/comics/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} />}
+          {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={250} height={187} />}
           <div class="still_desc">{e.data.hover_text}</div>
         </a>
       </div>

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from 'astro:content';
+import { Image } from "astro:assets";
 import VideoEmbed from "../../components/VideoEmbed.astro";
 import AnimatedHeader from "../../components/AnimatedHeader.astro";
 import NextPrev from "../../components/NextPrev.astro";
@@ -61,6 +62,7 @@ const { Content } = await entry.render();
   <article class="row">
     <div class="col-md-7">
       {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
+      {!entry.data.youtube && entry.data.full && <Image src={entry.data.full} alt={entry.data.hover_text} width={600} />}
     </div>
     <div class="col-md-5 cartoon_item-text">
       <Content />

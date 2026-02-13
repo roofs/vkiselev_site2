@@ -59,7 +59,7 @@ const { Content } = await entry.render();
   <div class="padding-top-big"></div>
   <article class="row">
     <div class="col-md-7">
-      {entry.data.full && <Image src={entry.data.full} alt={entry.data.hover_text} />}
+      {entry.data.full && <Image src={entry.data.full} alt={entry.data.hover_text} width={600} />}
     </div>
     <div class="col-md-5 cartoon_item-text">
       <Content />

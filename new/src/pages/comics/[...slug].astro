@@ -59,11 +59,11 @@ const { Content } = await entry.render();
   <div class="padding-top-big"></div>
   <article class="row">
     <div class="col-md-7">
-      {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} /></p>}
+      {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} width={600} /></p>}
       {entry.data.pages_images && (
         <div class="comic-pages">
           {entry.data.pages_images.map((src: any) => (
-            <p><Image src={src} alt={entry.data.hover_text} /></p>
+            <p><Image src={src} alt={entry.data.hover_text} width={600} /></p>
           ))}
         </div>
       )}
