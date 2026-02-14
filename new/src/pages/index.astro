@@ -27,10 +27,48 @@ const pitems = [
     <div class="row index-row">
       <div class="col-md-6 break-index" style="padding: 0 !important;">
         <div class="row">
-          <nobr><a href="/animated"><img src={animBigImg.src} alt="animated" class="index_image shade-hover" /></a><a href="/still"><img src={stillBigImg.src} alt="still" class="index_image shade-hover" /></a></nobr>
+          <nobr>
+            <a href="/animated">
+              <Image 
+                src={animBigImg} 
+                alt="animated" 
+                class="index_image shade-hover" 
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 767px) 50vw, 25vw"
+              />
+            </a>
+            <a href="/still">
+              <Image 
+                src={stillBigImg} 
+                alt="still" 
+                class="index_image shade-hover" 
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 767px) 50vw, 25vw"
+              />
+            </a>
+          </nobr>
         </div>
         <div class="row">
-          <nobr><a href="/memories"><img src={memBigImg.src} alt="memories" class="index_image shade-hover" /></a><a href="/vasili"><img src={vkBigImg.src} alt="vasili" class="index_image shade-hover" /></a></nobr>
+          <nobr>
+            <a href="/memories">
+              <Image 
+                src={memBigImg} 
+                alt="memories" 
+                class="index_image shade-hover" 
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 767px) 50vw, 25vw"
+              />
+            </a>
+            <a href="/vasili">
+              <Image 
+                src={vkBigImg} 
+                alt="vasili" 
+                class="index_image shade-hover" 
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 767px) 50vw, 25vw"
+              />
+            </a>
+          </nobr>
         </div>
       </div>
 
@@ -41,7 +79,16 @@ const pitems = [
           <div class="row">
             <div class="cartoon_item">
               <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-                {e.data.thumbnail && <Image src={e.data.thumbnail} alt={e.data.hover_text} width={200} height={150} />}
+                {e.data.thumbnail && (
+                  <Image 
+                    src={e.data.thumbnail} 
+                    alt={e.data.hover_text} 
+                    width={200} 
+                    height={150}
+                    widths={[200, 400]}
+                    sizes="(max-width: 767px) 200px, 200px"
+                  />
+                )}
                 <div class="cartoon_desc">{e.data.hover_text}</div>
               </a>
             </div>

@@ -63,7 +63,15 @@ const { Content } = await entry.render();
   <article class="row">
     <div class="col-md-7">
       {entry.data.youtube && <VideoEmbed url={entry.data.youtube} width={entry.data.width} height={entry.data.height} />}
-      {!entry.data.youtube && entry.data.full && <Image src={entry.data.full} alt={entry.data.hover_text} width={600} />}
+      {!entry.data.youtube && entry.data.full && (
+        <Image 
+          src={entry.data.full} 
+          alt={entry.data.hover_text} 
+          width={600} 
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 767px) 100vw, 600px"
+        />
+      )}
     </div>
     <div class="col-md-5 cartoon_item-text">
       <Content />

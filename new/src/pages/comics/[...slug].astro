@@ -59,11 +59,29 @@ const { Content } = await entry.render();
   <div class="padding-top-big"></div>
   <article class="row">
     <div class="col-md-7">
-      {entry.data.cover && <p><Image src={entry.data.cover} alt={entry.data.hover_text} width={600} /></p>}
+      {entry.data.cover && (
+        <p>
+          <Image 
+            src={entry.data.cover} 
+            alt={entry.data.hover_text} 
+            width={600} 
+            widths={[400, 800, 1200]}
+            sizes="(max-width: 767px) 100vw, 600px"
+          />
+        </p>
+      )}
       {entry.data.pages_images && (
         <div class="comic-pages">
           {entry.data.pages_images.map((src: any) => (
-            <p><Image src={src} alt={entry.data.hover_text} width={600} /></p>
+            <p>
+              <Image 
+                src={src} 
+                alt={entry.data.hover_text} 
+                width={600} 
+                widths={[400, 800, 1200]}
+                sizes="(max-width: 767px) 100vw, 600px"
+              />
+            </p>
           ))}
         </div>
       )}

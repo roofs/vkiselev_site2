@@ -22,14 +22,47 @@ import vkSmImg from "../assets/img/vk_sm.png";
     <div class="col-md-12">
       <div class="mem-header">
         <a class="left-header" href="/memories">
-          <Image class="black-hover" src={memInvImg} alt="Memories" width={40} />
+          <Image 
+            class="black-hover" 
+            src={memInvImg} 
+            alt="Memories" 
+            width={40} 
+          />
         </a>
         <span class="left-header"> Memories</span>
         <span class="header-rest pull-right">
-          <a href="/animated"><Image class="shade-hover" src={animSmImg} alt="Animated" width={40} /></a>
-          <a href="/still"><Image class="shade-hover" src={stillSmImg} alt="Still" width={40} /></a>
-          <a href="/memories"><Image class="shade-hover" src={memSmImg} alt="Memories" width={40} /></a>
-          <a href="/vasili"><Image class="shade-hover" src={vkSmImg} alt="Vasili" width={40} /></a>
+          <a href="/animated">
+            <Image 
+              class="shade-hover" 
+              src={animSmImg} 
+              alt="Animated" 
+              width={40} 
+            />
+          </a>
+          <a href="/still">
+            <Image 
+              class="shade-hover" 
+              src={stillSmImg} 
+              alt="Still" 
+              width={40} 
+            />
+          </a>
+          <a href="/memories">
+            <Image 
+              class="shade-hover" 
+              src={memSmImg} 
+              alt="Memories" 
+              width={40} 
+            />
+          </a>
+          <a href="/vasili">
+            <Image 
+              class="shade-hover" 
+              src={vkSmImg} 
+              alt="Vasili" 
+              width={40} 
+            />
+          </a>
         </span>
       </div>
     </div>
@@ -43,7 +76,14 @@ import vkSmImg from "../assets/img/vk_sm.png";
         href="http://www.lulu.com/content/e-book/princess/13780154"
         target="_blank"
       >
-        <Image class="shade-hover" src={ecoverImg} alt="The Princess" style={{ width: '100%', height: 'auto' }} />
+        <Image 
+          class="shade-hover" 
+          src={ecoverImg} 
+          alt="The Princess" 
+          style={{ width: '100%', height: 'auto' }} 
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 767px) 100vw, 58vw"
+        />
       </a>
     </div>
     <div class="col-md-5">
@@ -90,7 +130,14 @@ import vkSmImg from "../assets/img/vk_sm.png";
   <div class="row">
     <div class="col-md-7">
       <a href="http://vkiselev.spreadshirt.com" target="_blank">
-        <Image class="shade-hover" src={tsImg} alt="Ts and more" style={{ width: '100%', height: 'auto' }} />
+        <Image 
+          class="shade-hover" 
+          src={tsImg} 
+          alt="Ts and more" 
+          style={{ width: '100%', height: 'auto' }} 
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 767px) 100vw, 58vw"
+        />
       </a>
     </div>
     <div class="col-md-5">
@@ -121,7 +168,14 @@ import vkSmImg from "../assets/img/vk_sm.png";
   <div class="row">
     <div class="col-md-7">
       <a href="https://www.saatchiart.com/vkiselev" target="_blank">
-        <Image class="shade-hover" src={fbStillImg} alt="Stills" style={{ width: '100%', height: 'auto' }} />
+        <Image 
+          class="shade-hover" 
+          src={fbStillImg} 
+          alt="Stills" 
+          style={{ width: '100%', height: 'auto' }} 
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 767px) 100vw, 58vw"
+        />
       </a>
     </div>
     <div class="col-md-5">
