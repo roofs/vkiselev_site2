@@ -40,26 +40,7 @@ const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parse
     ))}
   </div>
 
-  <div id="princess" class="anim_section">the princess</div>
-  <div class="row">
-    {[...princessSeasons, ...princess].map((e) => (
-      <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
-        <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
-          {e.data.thumbnail && (
-            <Image 
-              src={e.data.thumbnail} 
-              alt={e.data.hover_text} 
-              width={250} 
-              height={187}
-              widths={[250, 500]}
-              sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 250px"
-            />
-          )}
-          <div class="cartoon_desc">{e.data.hover_text}</div>
-        </a>
-      </div>
-    ))}
-  </div>
+
 
   <div id="misc" class="anim_section">misc</div>
   <div class="row">
@@ -79,6 +60,46 @@ const misc = (await getCollection("misc")).sort((a, b) => parseInt(b.id) - parse
           <div class="cartoon_desc">{e.data.hover_text}</div>
         </a>
       </div>
+    ))}
+  </div>
+
+  <div id="princess" class="anim_section">the princess</div>
+  <div class="row">
+    {princessSeasons.map((e) => (
+        <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+          <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
+            {e.data.thumbnail && (
+                <Image
+                    src={e.data.thumbnail}
+                    alt={e.data.hover_text}
+                    width={250}
+                    height={187}
+                    widths={[250, 500]}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 250px"
+                />
+            )}
+            <div class="cartoon_desc">{e.data.hover_text}</div>
+          </a>
+        </div>
+    ))}
+  </div>
+  <div class="row">
+    {princess.map((e) => (
+        <div class="col-md-3 col-sm-4 col-landscape cartoon_item">
+          <a class="shade-hover" href={`/${e.collection}/${e.data.url || String(parseInt(e.id, 10))}`}>
+            {e.data.thumbnail && (
+                <Image
+                    src={e.data.thumbnail}
+                    alt={e.data.hover_text}
+                    width={250}
+                    height={187}
+                    widths={[250, 500]}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1023px) 33vw, 250px"
+                />
+            )}
+            <div class="cartoon_desc">{e.data.hover_text}</div>
+          </a>
+        </div>
     ))}
   </div>
 

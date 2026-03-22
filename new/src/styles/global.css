@@ -385,12 +385,12 @@ a:hover {
 .follow-down {
     position: relative;
     top: 1px;
-    padding-right: 8px;
+    padding-right: 0px;
 }
 
 .follow-block {
     width: 100%;
-    margin-right: -14px;
+    margin-right: 0px;
 }
 
 .share-block {
