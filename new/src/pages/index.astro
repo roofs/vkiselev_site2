@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/LayoutnoFooter.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import animBigImg from "../assets/img/anim_big.jpg";
@@ -24,7 +24,8 @@ const pitems = [
 ].filter(Boolean);
 ---
 <Layout title="VK - Home" image="/static/img/fb_base.jpg" showGlobalHeader={false} containerClass="container-fluid">
-    <div class="row index-row">
+
+  <div class="row index-row">
       <div class="col-md-6 break-index" style="padding: 0 !important;">
         <div class="row">
           <nobr>
@@ -96,4 +97,6 @@ const pitems = [
         ))}
       </div>
     </div>
+
 </Layout>
+

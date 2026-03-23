@@ -7,6 +7,7 @@ import animSmImg from "../assets/img/anim_sm.png";
 import stillSmImg from "../assets/img/still_sm.png";
 import memSmImg from "../assets/img/mem_sm.png";
 import vkSmImg from "../assets/img/vk_sm.png";
+import SocialShare from "../components/SocialShare.astro";
 ---
 
 <Layout
@@ -118,5 +119,8 @@ import vkSmImg from "../assets/img/vk_sm.png";
         </div>
       </div>
     </div>
+  </div>
+  <div class="row">
+    <SocialShare url={new URL('/vasili', Astro.site!).toString()} title="Vasili" />
   </div>
 </Layout>

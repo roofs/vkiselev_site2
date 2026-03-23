@@ -39,6 +39,8 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
     ))}
   </div>
 
+  <UpButton />
+
   <div id="projects" class="still_section">projects</div>
   <div class="row">
     {projects.map((e) => (
@@ -59,6 +61,8 @@ const comics = (await getCollection("comics")).sort((a, b) => parseInt(b.id) - p
       </div>
     ))}
   </div>
+
+  <UpButton />
 
   <div id="comics" class="still_section">comics and series</div>
   <div class="row">
