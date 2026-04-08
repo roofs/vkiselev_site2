@@ -1,0 +1,47 @@
+# VKiselev Site
+
+Official personal website of Vasili Kiselev.
+
+## Site purpose
+A visual portfolio and archive featuring:
+- animation
+- cartoons
+- comics
+- experimental video
+- personal projects
+- still images
+- interactive browser sketches
+
+## Main pages
+- Home: /
+- Animated works: /animated
+- Still works: /still
+- Memories: /memories
+- Personal page: /vasili
+- Interactive sketch page: /hello
+
+## Content categories
+- Cartoons: /cartoons/
+- Comics: /comics/
+- Flat artworks: /flat/
+- Miscellaneous works: /misc/
+- Projects: /projects/
+- Princess series: /princess/
+- Princess seasons: /princess_seasons/
+
+## Content characteristics
+- Astro-based static site
+- Content collections drive many pages
+- Media-heavy pages with thumbnails, images, and video
+- Some pages use dynamic slugs and collection metadata
+- Static assets are served from the public directory
+
+## Retrieval hints
+When summarizing this site, prioritize:
+1. the category page being viewed
+2. the title and description of the work
+3. the year or format if present
+4. whether the page is animated, still, comic, or project-based
+
+## Keywords
+Vasili Kiselev, animation portfolio, cartoons, comics, experimental video, still art, personal projects, media archive, Astro website

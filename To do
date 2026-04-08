@@ -1,3 +1,11 @@
+robots.txt	sitemap.xml	llms.txt  - https://llmstxt.org - done
+
+Feature	robots.txt	sitemap.xml	LLMs.txt
+Purpose	Control what bots can access	List URLs for indexing	Deliver structured content for AI models
+Audience	Search engine crawlers (SEO)	Search engine crawlers (indexing)	Language models & AI reasoning engines
+Content	Allow/disallow crawl rules	Basic list of site URLs (index)	Clean summaries with titles & descriptions
+Use Case	SEO access control	SEO indexing & crawling	AI chatbots, LLM training, automation
+
 Твиттер больше не твиттер (в Share он твиттер, а в Follow X) - не важно
 
 Раздел Follow: кнопка Youtube (была подписаться, а теперь просто ссылка) - done

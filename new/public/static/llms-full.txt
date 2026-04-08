@@ -1,0 +1,138 @@
+# VKiselev Site — Full Site Overview
+
+## About the site
+VKiselev Site is a personal portfolio and archive by Vasili Kiselev.
+It presents visual and media-based work including animation, cartoons, comics, still artworks, experimental video, and interactive browser content.
+
+The site is built with Astro and uses content collections for structured content management.
+
+## Core themes
+- animation
+- visual storytelling
+- cartoons and short-form works
+- comics
+- still artworks
+- personal projects
+- experimental media
+- interactive web sketches
+
+## Primary navigation and pages
+
+### Home
+- URL: /
+- Role: landing page and entry point
+- Includes featured categories and selected works
+
+### Animated
+- URL: /animated
+- Role: main hub for animated and moving-image content
+- Content types: animation, miscellaneous media, princess series
+- Useful summary keywords: animated works, video, clips, media gallery, thumbnails
+
+### Still
+- URL: /still
+- Role: still-image and non-animated project page
+- Useful summary keywords: still art, illustration, static work, visual project
+
+### Memories
+- URL: /memories
+- Role: memory/archive-style page
+- Useful summary keywords: archive, personal memories, visual record
+
+### Vasili
+- URL: /vasili
+- Role: personal/about-style page
+- Useful summary keywords: author page, biography, personal profile
+
+### Hello
+- URL: /hello
+- Role: interactive page
+- Contains browser-based sketch content, likely p5.js-based
+- Useful summary keywords: interactive sketch, generative art, browser canvas, p5.js
+
+## Content sections
+
+### Cartoons
+- URL: /cartoons/
+- Contains individual cartoon entries
+- Likely generated from content collection items
+- Useful summary keywords: cartoons, animated shorts, thumbnail gallery, collection entries
+
+### Comics
+- URL: /comics/
+- Contains comic-related content
+- Useful summary keywords: comics, illustrated stories, sequential art
+
+### Flat
+- URL: /flat/
+- Contains flat artworks and illustration-style pieces
+- Useful summary keywords: painting, mixed media, flat artworks, visual art
+
+### Misc
+- URL: /misc/
+- Contains miscellaneous media and experiments
+- Useful summary keywords: experimental work, mixed content, media archive
+
+### Projects
+- URL: /projects/
+- Contains project-oriented entries
+- Useful summary keywords: projects, portfolio items, creative work, featured projects
+
+### Princess
+- URL: /princess/
+- Contains entries related to the Princess series
+- Useful summary keywords: princess series, episodes, illustrated series, animated story
+
+### Princess seasons
+- URL: /princess_seasons/
+- Contains season-based entries for the Princess content
+- Useful summary keywords: seasons, episodes, series organization
+
+## Content structure hints
+- The site uses Astro pages and layouts.
+- Many pages are driven by content collections.
+- Individual entries often include:
+  - title
+  - short hover text
+  - thumbnail
+  - full image or media asset
+  - year or date
+  - description
+- Some entries may include external links or purchase links.
+- Some content appears in multiple languages or includes multilingual descriptions.
+
+## AI retrieval guidance
+When using this site as source material:
+- Prefer the page title and the short description/hover text.
+- If available, include year, medium, and format.
+- For category pages, summarize the category first, then mention representative works.
+- Do not fabricate details that are not explicitly present.
+- For image-heavy pages, summarize the theme and medium rather than listing every file.
+- For video-heavy pages, mention that the content is animated or moving-image based.
+
+## SEO-friendly keywords
+Vasili Kiselev, VKiselev Site, animation portfolio, cartoons, comics, still art, experimental video, interactive sketch, personal projects, visual archive, media art, Astro website, content collections
+
+## Suggested page priority
+1. /
+2. /animated
+3. /still
+4. /memories
+5. /vasili
+6. /hello
+7. /cartoons/
+8. /projects/
+9. /comics/
+10. /flat/
+11. /misc/
+12. /princess/
+13. /princess_seasons/
+
+## Summary
+This site is best described as a creative portfolio and archive with strong emphasis on:
+- animation
+- drawings and still artwork
+- comics
+- media experiments
+- personal visual projects
+- collection-based content organization
