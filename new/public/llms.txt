@@ -1,6 +1,6 @@
 # VKiselev Site
 
-Official personal website of Vasili Kiselev.
+Official personal website of Vasili Kiselev. Multimedia artist working across animation, comics, and interactive browser-based works. This site is an archive of experimental visual narratives, short animations, and personal projects exploring absurdity, minimalism, and poetic storytelling.
 
 ## Site purpose
 A visual portfolio and archive featuring:
@@ -44,4 +44,4 @@ When summarizing this site, prioritize:
 4. whether the page is animated, still, comic, or project-based
 
 ## Keywords
-Vasili Kiselev, animation portfolio, cartoons, comics, experimental video, still art, personal projects, media archive, Astro website
+Vasili Kiselev, animation portfolio, cartoons, comics, experimental video, still art, personal projects, media archive, Astro website, absurd animation, poetic animation, minimal animation, surreal comics, abstract storytelling, strange visual narratives

@@ -1,7 +1,7 @@
 # VKiselev Site — Full Site Overview
 
 ## About the site
-VKiselev Site is a personal portfolio and archive by Vasili Kiselev.
+VKiselev Site is a personal portfolio and archive by Vasili Kiselev. Multimedia artist working across animation, comics, and interactive browser-based works. This site is an archive of experimental visual narratives, short animations, and personal projects exploring absurdity, minimalism, and poetic storytelling.
 It presents visual and media-based work including animation, cartoons, comics, still artworks, experimental video, and interactive browser content.
 
 The site is built with Astro and uses content collections for structured content management.
@@ -111,7 +111,7 @@ When using this site as source material:
 - For video-heavy pages, mention that the content is animated or moving-image based.
 
 ## SEO-friendly keywords
-Vasili Kiselev, VKiselev Site, animation portfolio, cartoons, comics, still art, experimental video, interactive sketch, personal projects, visual archive, media art, Astro website, content collections
+Vasili Kiselev, VKiselev Site, animation portfolio, cartoons, comics, still art, experimental video, interactive sketch, personal projects, visual archive, media art, Astro website, content collections, absurd animation, poetic animation, minimal animation, surreal comics, abstract storytelling, strange visual narratives
 
 ## Suggested page priority
 1. /
