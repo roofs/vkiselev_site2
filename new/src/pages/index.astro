@@ -23,7 +23,11 @@ const pitems = [
   getRandom([...projects, ...(await getCollection("comics"))])
 ].filter(Boolean);
 ---
-<Layout title="VK - Home" image="/static/img/fb_base.jpg" showGlobalHeader={false} containerClass="container-fluid">
+<Layout title="VK - Home"
+        description="Official personal website of Vasili Kiselev. Multimedia artist working across animation, comics, and interactive browser-based works. This site is an archive of experimental visual narratives, short animations, and personal projects exploring absurdity, minimalism, and poetic storytelling."
+        image="/static/img/fb_base.jpg"
+        showGlobalHeader={false}
+        containerClass="container-fluid">
 
   <div class="row index-row">
       <div class="col-md-6 break-index" style="padding: 0 !important;">
@@ -63,7 +67,7 @@ const pitems = [
             <a href="/vasili">
               <Image 
                 src={vkBigImg} 
-                alt="vasili" 
+                alt="about"
                 class="index_image shade-hover" 
                 widths={[400, 800, 1200]}
                 sizes="(max-width: 767px) 50vw, 25vw"
