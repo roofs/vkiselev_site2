@@ -16,7 +16,7 @@ let currentIndex = 0
 // Здесь заранее собираем список путей к видео.
 function preload() {
     for (let i = 1; i <= VideoCount; i++) {
-        videoPaths.push("/videos/video" + nf(i, 3) + ".mp4")
+        videoPaths.push("/hello/videos/video" + nf(i, 3) + ".mp4")
     }
 //заполняю длительностями видео в формате строки, надо потом менять на float
     videoDuration = loadStrings('/hello/videos/Durations.txt');
