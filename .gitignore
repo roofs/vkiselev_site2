@@ -1,11 +1,39 @@
+# Astro
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# Old Site / Python
 *.pyc
 # don't include third-party dependencies.
 penv/
 venv/
-.DS_Store
 
 # User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
 .idea/libraries/Google_App_Engine_SDK.xml
+
+.junie/**
+
