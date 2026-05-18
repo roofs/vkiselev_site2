@@ -62,7 +62,8 @@ const { Content } = await entry.render();
       {entry.data.full && (
         <Image 
           src={entry.data.full} 
-          alt={entry.data.hover_text} 
+          alt={entry.data.hover_text}
+          class="flat-full-image"
           width={600} 
           widths={[400, 800, 1200]}
           sizes="(max-width: 767px) 100vw, 600px"

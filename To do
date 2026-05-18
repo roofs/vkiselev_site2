@@ -1,25 +1,9 @@
-robots.txt	sitemap.xml	llms.txt  - https://llmstxt.org - done
+1. hello:  на телефоне не запускается и кружочки с одним видео
+а в safari на батарейке - нет
+потому что в safari на батарейке обязательно в явном вида надо play надимать
+ну и плюс оно очень долго грузится в первый раз
+что может быть ок
+но может имеет смысл placholder image вставить пока видео не загрузилось (;там есть такая возможность)
 
-Feature	robots.txt	sitemap.xml	LLMs.txt
-Purpose	Control what bots can access	List URLs for indexing	Deliver structured content for AI models
-Audience	Search engine crawlers (SEO)	Search engine crawlers (indexing)	Language models & AI reasoning engines
-Content	Allow/disallow crawl rules	Basic list of site URLs (index)	Clean summaries with titles & descriptions
-Use Case	SEO access control	SEO indexing & crawling	AI chatbots, LLM training, automation
-
-Твиттер больше не твиттер (в Share он твиттер, а в Follow X) - не важно
-
-Раздел Follow: кнопка Youtube (была подписаться, а теперь просто ссылка) - done
-
-Копирайт внизу страницы - то ли убрать, то ли сделать мельче и незаметнее - done
-
-Принцесса: разделить сезоны и серии (первые два отдельность строкой) - done
-
-Поменять последовательность ссылок в верхней строке в Animated - done
-
-Get a book - вместо картинки квадратик (на страницах серий) - done
-
-Проверить, что в новом сайте нет ссылок на объекты в папке Old - done
-
-Есть ли на главной странице фавикон? - done
-
-Для Still он не берет thumbnails - done
+2. картинки на телефоне и в узком окне не помещаются
+3. верхнее меню на телефоне и в узком окне не помещается (не нужен текст)

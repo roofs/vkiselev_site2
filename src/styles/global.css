@@ -195,17 +195,7 @@ a:hover {
     height: 40px;
 }
 
-@media (max-width: 768px) {
-    .left-header {
-        display: none;
-    }
 
-    [class*="-header"] {
-        /*background: none;*/
-        /*border: none;*/
-        height: 46px;
-    }
-}
 
 .cartoon-row {
     padding-left: 190px;
@@ -310,7 +300,12 @@ a:hover {
     padding-left: 20px;
 }
 
-
+.flat-full-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
 
 .vk-img {
     margin-left: 0px;
@@ -428,7 +423,17 @@ a:hover {
 .navigation { white-space: nowrap; }
 .navigation img, .navprev a, .navnext a { display: inline-block; vertical-align: middle; }
 
+@media (max-width: 768px) {
+    .left-header-text {
+        display: none;
+    }
 
+    [class*="-header"] {
+        /*background: none;*/
+        /*border: none;*/
+        height: 46px;
+    }
+}
 
 /* make Google s2 favicons inline and tight with text */
 img[src^="http://www.google.com/s2/favicons"],
