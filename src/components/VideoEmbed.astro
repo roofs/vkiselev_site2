@@ -20,15 +20,19 @@ function processVideoUrl(url: string) {
 }
 
 const embedUrl = processVideoUrl(url);
+const videoWidth = width || 560;
+const videoHeight = height || 315;
 ---
 {embedUrl && (
-  <div class="videoWrapper">
-    <iframe 
-      width={width || 560} 
-      height={height || 315} 
-      src={embedUrl} 
-      frameborder="0" 
-      allowfullscreen
-    ></iframe>
+    <div class="videoWrapper"
+         style={`--video-width: ${videoWidth}; --video-height: ${videoHeight};`}>
+  <iframe
+      width={videoWidth}
+  height={videoHeight}
+  src={embedUrl}
+  frameborder="0"
+  allowfullscreen
+  ></iframe>
   </div>
 )}
+

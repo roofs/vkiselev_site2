@@ -409,6 +409,12 @@ a:hover {
     max-width: 100%;
 }
 
+.videoWrapper iframe {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: var(--video-width) / var(--video-height);
+    height: auto;
+}
 
 /* bootstrap-like helpers for headers alignment */
 .pull-right { float: right; }
