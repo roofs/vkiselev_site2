@@ -7,7 +7,7 @@ let circles = []
 let videoPool = []
 let videoPoolSize = 9
 let RespawnTime = 20000 //задержка перед появление нового круга
-let VideoCount = 145 //столько видео в папке
+let VideoCount = 165 //столько видео в папке
 
 let circleCount = 9
 let videoOrder = []
